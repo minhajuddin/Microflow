@@ -20,9 +20,5 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
   * Mailing list: http://groups.google.com/group/phoenix-talk
   * Source: https://github.com/phoenixframework/phoenix
 =======
-Microflow is here
 
-4:52pm. Creating first test edit.
-
-4:56pm. Creating second test edit. 
->>>>>>> 0221765d25ab0e8ee57b2cd409d7309e0f68d35a
+Creating test edit for github... 09:44
