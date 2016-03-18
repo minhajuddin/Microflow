@@ -1,0 +1,136 @@
+<!--NEW PROJECT FORM!!!-->
+
+<link href='https://fonts.googleapis.com/css?family=Noticia+Text:700italic,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<script src="//cdn.ckeditor.com/4.5.7/basic/ckeditor.js"></script> 
+<div style="text-align: center;">
+  
+  <script>
+  $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip(); 
+  });
+</script>
+
+<style>
+  .Montserrat-700{
+    font-family: 'Montserrat';
+      font-size: 32px;
+    }
+  }
+  form{
+    width: 400px;
+  }
+  
+  .btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+textshadow {
+    text-shadow: 2px 2px #ff0000;
+}
+
+.btn-xlarge {
+    padding: 23px 33px;
+    font-size: 22px;
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+    }
+</style>
+
+<div class="Montserrat-700 textshadow">
+  <h1 style ="font-size: 52px;">Crowdfund a Project</h1>
+</div>
+
+<!--NEW CODE:-->
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+
+      <%= form_for @changeset, project_path(@conn, :create), [multipart: true], fn f -> %> 
+      <div class="form-group">
+             <label for="project[name]" class= "Montserrat-700" >Project Name</label>
+                 <input type="text" name="project[name]" placeholder="What is your project called?" class="form-control" data-toggle="tooltip", title ="Make an eye-catching title!"
+                  style= 'float: left; width: 100%; display: block;' data-placement='right'/>
+                 
+    <div class="form-group">
+      <label class="Montserrat-700">Description</label>
+      <textarea name= "project[description]" placeholder="Describe your project in less than 100 words" id="ckeditor" /></textarea>
+    </div>             
+                 
+    <div class="form-group">
+    <label class="Montserrat-700">Upload Your Photo Here</label>
+    <br>
+    <br>
+<span class="btn-xlarge btn-info btn-file">
+    My Pic <input type="file" name="project[picture]">
+</span>
+  </div>
+
+
+<br>
+<br>
+  <div class="form-group">
+    <label class="Montserrat-700">Video</label>
+    <input type="text" name="project[video_url]" placeholder="Copy/paste your video here" class="form-control" />
+</div>
+
+<div class="form-group">
+<label class="Montserrat-700">Raise Amount</label>
+<input type="number" name="project[raise_amount]" placeholder="How much do you want to raise?"  class="form-control" />
+<br>
+<label class="Montserrat-700">Finished?</label>
+</div>
+  <button type="submit" class="btn-xlarge btn-info">Save Project</button>
+
+</div>
+
+
+ 
+  <br>
+
+<% end %>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  $(document).ready(function(){
+    CKEDITOR.replace( 'ckeditor' );
+    $('[data-toggle="tooltip"]').tooltip();
+
+  })
+</script>

@@ -1,0 +1,107 @@
+
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'><link>
+  <link href='https://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'><link>
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'><link>
+  <%# stylesheet_link_tag 'glowing-progress-bar.css', 'light-saber-handle.css' %>
+  <%# stylesheet_link_tag 'medsectionbuttons' %>
+
+ <style>
+ *START FONTS*/
+ 
+ .msrtsmallbox {
+            font-family: Montserrat; sans-serif; font-size:26px
+        }
+       
+.msrt2 {
+            font-family: Montserrat; sans-serif; font-weight: 300px;
+        }
+       
+.ralewaysmallbox  {  font-family: 'Raleway', sans-serif; font-size:18px}
+ 
+.raleway2  {  font-family: 'Raleway', sans-serif; line-height: 32px; font-size:24px; text-align: justify; letter-spacing: 0.2px;}
+ 
+.highlight {
+  background-color : #ffff00;
+}
+ 
+/*END FONTS*/
+ 
+</style>
+
+   <h2 style="font-family: 'Montserrat', sans-serif;">Live Projects</h2>
+    
+     <div class="container">
+  <div class="row">
+    <%= for project <- @projects do %>
+    <div class="col-sm-4">
+        <!--position: static; -->
+     <div class="panel panel-default"  style="height: 1200px; width: 400px;"> 
+           <!--<div class="panel panel-default"  style="height: 1200px; margin-bottom:50px;">-->
+        <div class="panel-heading">
+            <img src="<%= Microflow.Avatar.url({project.picture, project}, :original) %>" alt="" width="350px" height="240px"/>
+          </div>
+        <div class="panel-body" style="height: 280px">
+          <h2 style="font-family: 'Montserrat', sans-serif;"><%= project.name %></h2>
+          <h3 style="font-family: 'Raleway', sans-serif; height: 700px"><%= raw(project.description) %></h3>
+          </div>
+           <div class="panel-footer" style= "margin-top: 540px">
+          <h2 style="font-family: 'Montserrat', sans-serif;">Target: <%= project.raise_amount %> USD</h2>
+        <iframe width="360px" height="230" position= "absolute" src= "https://www.youtube.com/embed/<%=project.video_url%>"</iframe> 
+    <h2 style="font-family: 'Montserrat', sans-serif;"><%= project.video_url %></h2>        
+<%= link "Delete Project", to: project_path(@conn, :delete, project), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-info btn-xs" %>
+<%= link "Start Your Own Project", to: project_path(@conn, :new), method: :new, class: "btn btn-success btn-xs" %>
+           </div>
+           </div>
+             </div>
+<% end %>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div>
+<!--<table class="table">-->
+<!--  <thead>-->
+<!--    <tr>-->
+<!--      <th>Name</th>-->
+<!--      <th>Description</th>-->
+<!--      <th>Video Url</th>-->
+<!--      <th>Amount</th>-->
+<!--      <th>Picture</th>-->
+<!--      <th></th>-->
+<!--    </tr>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+    </div>
+<% for project <- @projects do %>
+    <tr>
+      <td><%= project.name %></td>
+      <td><%= project.description %></td>
+      <td><%= project.video_url %></td>
+      <td><%= project.raise_amount %></td>
+      <td><img src="<%= Microflow.Avatar.url({project.picture, project}, :original) %>" alt="" width="200px"/></td>
+      <td class="text-right">
+        <%= link "Show", to: project_path(@conn, :show, project), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: project_path(@conn, :edit, project), class: "btn btn-default btn-xs" %>
+        <%= link "Delete Project", to: project_path(@conn, :delete, project), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+
+<%#= link "New project", to: project_path(@conn, :new) %>
+<%#= link "Delete project", to: project_path(@conn, :delete) %>
+
+  <!--<li style="font-family: Roboto Slab; font-size: 17px;"># #link "Create New Project", to: project_path(@conn, :new) %></li>-->
+<br>
+<br>
+<br>
+<br>
+<br>
+ 
+  </body>
+</html>

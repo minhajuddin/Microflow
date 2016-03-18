@@ -1,0 +1,15 @@
+<h2>Show project</h2>
+
+<ul>
+
+</ul>
+
+</thead>
+  <tbody>
+<%# for project <- @projects do %>
+    <tr>
+    <td><%# project.name %></td>
+    <%# end %>
+
+<%= link "Edit", to: project_path(@conn, :edit, @project) %>
+<%= link "Back", to: project_path(@conn, :index) %>
