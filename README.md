@@ -22,12 +22,8 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
 =======
 Creating test edit for github... 09:44
 
-<<<<<<< HEAD
 Created second test edit for github... 09:48
 
 Third edit... github... 11:44
-=======
-Creating test edit for github... 09:44 
 
-Creating a new test edit at 10:16.
->>>>>>> cc1c7c7426d2da97d7454a5a1b083d4808c3ba40
+Fourth edit: On Saturday at 5:10
