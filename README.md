@@ -25,5 +25,13 @@ Creating test edit for github... 09:44
 Created second test edit for github... 09:48
 
 Third edit... github... 11:44
+<<<<<<< HEAD
 
 Fourth edit: On Saturday at 5:10
+=======
+Creating test edit for github... 09:44 
+
+Creating a new test edit at 10:16.
+
+Creating a new test edit Saturday at 5:06
+>>>>>>> parent of caea33b... Revert "Minor edit on Saturday"
