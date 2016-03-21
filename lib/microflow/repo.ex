@@ -1,25 +1,23 @@
 defmodule Microflow.Repo do
-@moduledoc """
-In memory repository.
-"""
 
-# use Ecto.Repo, otp_app: :microflow   - jnote: commented this out as per Programming Phoenix.
+  @moduledoc """
+  In memory Repository
+  """
 
-  def all(Rumbl.User) do
-    [%Rumbl.User{id: "1", name: "José", username: "josevalim", password: "elixir"},
-    %Rumbl.User{id: "2", name: "Bruce", username: "redrapids", password: "7langs"},
-    %Rumbl.User{id: "3", name: "Chris", username: "chrismccord", password: "phx"}]
-  end
-    def all(_module), do: []
-  end
-  
   def get(module, id) do
     Enum.find all(module), fn map -> map.id == id end
   end
 
   def get_by(module, params) do
     Enum.find all(module), fn map ->
-    Enum.all?(params, fn {key, val} -> Map.get(map, key) == val end)
+      Enum.all?(params, fn {key, val} -> Map.get(map, key) == val end)
+    end
   end
-end
 
+  def all(Microflow.User) do
+    [%Microflow.User{id: "1", name: "admin", username: "admin", password: "elixir"},
+     %Microflow.User{id: "2", name: "Bruce", username: "redrapids", password: "7langs"},
+     %Microflow.User{id: "3", name: "Chris", username: "chrismccord", password: "phx"}]
+  end
+  def all(_module), do: []
+end

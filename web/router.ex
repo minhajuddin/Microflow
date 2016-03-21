@@ -24,6 +24,9 @@ defmodule Microflow.Router do
     resources "/projects", Microflow.ProjectController # NOTE "Microflow" must be explicitly added to the controller name, otherwise it raises an error. 
     post "projects/new", Microflow.ProjectController, :new # Added route successfully.post
    
+    get "/users", UserController, :index
+    get "/users/:id", UserController, :show
+    get "/", PageController, :index
   end
 
   # Other scopes may use custProjectController, :indexom stacks.

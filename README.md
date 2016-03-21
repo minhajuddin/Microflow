@@ -25,6 +25,4 @@ Github testing finished for today.
 
 Changed 0707.
 
-MISTAKE, BAD CODE MISTAKE
-
-MISTAKE, MISTAKE
+TESTING
