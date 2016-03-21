@@ -10,7 +10,7 @@ defmodule Microflow do
       # Start the endpoint when the application starts
       supervisor(Microflow.Endpoint, []),
       # Start the Ecto repository
-      supervisor(Microflow.Repo, []),
+      supervisor(Microflow.Repo, []), # mynote: Commented this out as per P.Phoenix page 45
       # Here you could define other workers and supervisors as children
       # worker(Microflow.Worker, [arg1, arg2, arg3]),
     ]
