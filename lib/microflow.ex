@@ -8,11 +8,12 @@ defmodule Microflow do
 
     children = [
       # Start the endpoint when the application starts
-      supervisor(Microflow.Endpoint, []),
+      supervisor(Microflow.Endpoint, []), #jnote: Febbry commented this line.
       # Start the Ecto repository
       # supervisor(Microflow.Repo, []), # jnote: Commented this out as per P.Phoenix page 45
       # Here you could define other workers and supervisors as children
-      # worker(Microflow.Worker, [arg1, arg2, arg3]),
+      # worker(Microflow.Worker, []), 
+     # worker(Microflow.Repo, []) #jnote. Added this as per internet advice: repo Microflow.Repo is not started, please ensure it is part of your supervision tree
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

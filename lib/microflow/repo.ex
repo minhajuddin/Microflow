@@ -14,10 +14,10 @@ defmodule Microflow.Repo do
     end
   end
 
-  def all(Microflow.User) do
-    [%Microflow.User{id: "1", name: "admin", username: "admin", password: "wowamazing"},
-     %Microflow.User{id: "2", name: "febbry", username: "predi", password: "wowamazing"},
-     %Microflow.User{id: "3", name: "Superman", username: "superman", password: "wowamazing"}]
+  def alluser(Microflow.User) do
+    [%Microflow.User{id: "1", name: "admin", username: "admin", password: "elixir"},
+     %Microflow.User{id: "2", name: "Bruce", username: "redrapids", password: "7langs"},
+     %Microflow.User{id: "3", name: "Chris", username: "chrismccord", password: "phx"}]
   end
   def all(_module), do: []
 end

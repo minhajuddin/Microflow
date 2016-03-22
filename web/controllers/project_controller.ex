@@ -6,7 +6,7 @@ defmodule Microflow.ProjectController do
   plug :scrub_params, "project" when action in [:create, :update]
 
   def index(conn, _params) do
-    projects = Repo.all(Project)
+    projects = Microflow.Repo.all(Microflow.Project)
     
     render(conn, "index.html", projects: projects)
   end

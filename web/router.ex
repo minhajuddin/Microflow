@@ -20,7 +20,7 @@ defmodule Microflow.Router do
     get "/users/:id", Microflow.UserController, :show
     # get "/home/:messenger", Microflow.HomeController, :show 
     #get "/project/create", NewprojectController, :create
-    #resources "/projects", ProjectController
+    # resources "/projects", Micrflow.ProjectController
     resources "/projects", Microflow.ProjectController # NOTE "Microflow" must be explicitly added to the controller name, otherwise it raises an error. 
     post "projects/new", Microflow.ProjectController, :new # Added route successfully.post
    
