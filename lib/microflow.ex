@@ -10,7 +10,7 @@ defmodule Microflow do
       # Start the endpoint when the application starts
       supervisor(Microflow.Endpoint, []), #jnote: Febbry commented this line.
       # Start the Ecto repository
-      # supervisor(Microflow.Repo, []), # jnote: Commented this out as per P.Phoenix page 45
+      supervisor(Microflow.Repo, []), # jnote: Commented this out as per P.Phoenix page 45 #Uncommented as per page 56.
       # Here you could define other workers and supervisors as children
       # worker(Microflow.Worker, []), 
      # worker(Microflow.Repo, []) #jnote. Added this as per internet advice: repo Microflow.Repo is not started, please ensure it is part of your supervision tree

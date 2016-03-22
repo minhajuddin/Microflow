@@ -2,7 +2,7 @@ defmodule Microflow.UserController do
   use Microflow.Web, :controller
  
   def index(conn, _params) do
-    users = Repo.alltest(Microflow.User) #jnote: changed all to alltest
+    users = Repo.all(Microflow.User) #jnote: changed all to alltest
     render conn, "index.html", users: users
   end
   
