@@ -14,7 +14,7 @@ defmodule Microflow.Repo do
     end
   end
 
-  def alluser(Microflow.User) do
+  def alltest(Microflow.User) do #jnote: changed all to alltest
     [%Microflow.User{id: "1", name: "admin", username: "admin", password: "elixir"},
      %Microflow.User{id: "2", name: "Bruce", username: "redrapids", password: "7langs"},
      %Microflow.User{id: "3", name: "Chris", username: "chrismccord", password: "phx"}]

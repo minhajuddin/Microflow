@@ -7,7 +7,6 @@ defmodule Microflow.ProjectController do
 
   def index(conn, _params) do
     projects = Microflow.Repo.all(Microflow.Project)
-    
     render(conn, "index.html", projects: projects)
   end
   

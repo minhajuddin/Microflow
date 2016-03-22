@@ -20,13 +20,12 @@ defmodule Microflow.Router do
     get "/users/:id", Microflow.UserController, :show
     # get "/home/:messenger", Microflow.HomeController, :show 
     #get "/project/create", NewprojectController, :create
-    # resources "/projects", Micrflow.ProjectController
     resources "/projects", Microflow.ProjectController # NOTE "Microflow" must be explicitly added to the controller name, otherwise it raises an error. 
     post "projects/new", Microflow.ProjectController, :new # Added route successfully.post
    
-    get "/users", UserController, :index
-    get "/users/:id", UserController, :show
-    get "/", PageController, :index
+    get "/users", Microflow.UserController, :index # Added Microflow to both these routes.
+    get "/users/:id", Microflow.UserController, :show # Added Microflow to both these routes.
+    # get "/", PageController, :index #Commented this to avoid conflicts.
   end
 
   # Other scopes may use custProjectController, :indexom stacks.
