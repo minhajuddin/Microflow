@@ -17,16 +17,19 @@ defmodule Microflow.Router do
     pipe_through :browser # Use the default browser stack
     get "/", Microflow.HomeController, :index # NOTE "Microflow" must be explicitly added to the controller name, otherwise it raises an error. 
     get "/users", Microflow.UserController, :index
-    get "/users/:id", Microflow.UserController, :show
+    # get "/users/:id", Microflow.UserController, :show
     # get "/home/:messenger", Microflow.HomeController, :show 
     #get "/project/create", NewprojectController, :create
     resources "/projects", Microflow.ProjectController # NOTE "Microflow" must be explicitly added to the controller name, otherwise it raises an error. 
     post "projects/new", Microflow.ProjectController, :new # Added route successfully.post
    
-    get "/users", Microflow.UserController, :index # Added Microflow to both these routes.
-    get "/users/:id", Microflow.UserController, :show # Added Microflow to both these routes.
+    resources "/users", Microflow.UserController   
+    # get "/users", Microflow.UserController, :index # Added Microflow to both these routes.
+    # get "/users/:id", Microflow.UserController, :show # Added Microflow to both these routes.
     # get "/", PageController, :index #Commented this to avoid conflicts.
   end
+  
+  # Febbry commented 19, 20, 27, 28
 
   # Other scopes may use custProjectController, :indexom stacks.
   # scope "/api", Microflow do

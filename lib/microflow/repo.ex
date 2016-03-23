@@ -6,7 +6,7 @@ use Ecto.Repo, otp_app: :microflow
 
 #jnote. Added extra _empty argument to defs to keep arity. Underscore before a function means it is ignored.
 
-  def get(module, id, _empty) do
+  def get(module, id, _empty) do #jnote: removed the _empty as a test, still get errors: def get/2 conflicts with defaults from def get/3
     Enum.find all(module), fn map -> map.id == id end
   end
 
