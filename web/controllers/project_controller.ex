@@ -69,8 +69,8 @@ defmodule Microflow.ProjectController do
   #   # it to always work (and if it does not, it will raise).
    
 
-   conn
-   |> put_flash(:info, "Project deleted successfully.")
-   |> redirect(to: project_path(conn, :index))
+  # conn (UNECESSARY DELETION)
+  # |> put_flash(:info, "Project deleted successfully.")
+  # |> redirect(to: project_path(conn, :index))
   end
 end

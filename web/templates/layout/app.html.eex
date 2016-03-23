@@ -79,7 +79,7 @@
     
 <%#= render @view_module, @view_template, assigns jnote: Commented this line out to avoid view repitition %>
 </div> <!-- /container -->
-<script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+<!--<script src="<%#= static_path(@conn, "/js/app.js") %>"></script>-->
     
     
     <br><br><br>

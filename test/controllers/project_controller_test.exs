@@ -56,7 +56,7 @@ defmodule Microflow.ProjectControllerTest do
     conn = put conn, project_path(conn, :update, project), project: @invalid_attrs
     assert html_response(conn, 200) =~ "Edit project"
   end
-
+ #jnote: possible delete?
   test "deletes chosen resource", %{conn: conn} do
     project = Repo.insert! %Project{}
     conn = delete conn, project_path(conn, :delete, project)
