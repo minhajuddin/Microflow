@@ -62,6 +62,7 @@
               <li style="font-family: Roboto Slab; font-size: 17px;"><%= link "Search Projects", to: project_path(@conn, :index) %></li>
               <li style="font-family: Roboto Slab; font-size: 17px;"><%= link "Create New Project", to: project_path(@conn, :new) %></li>
               <li style="font-family: Roboto Slab; font-size: 17px;"><%= link "Home", to: home_path(@conn, :index) %></li> 
+              <!--<li style="font-family: Roboto Slab; font-size: 17px;"><%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %></li> TTD, ALIGN CORRCTLY-->
           </ul>
             <ul class="nav navbar-nav navbar-right">
               
@@ -70,11 +71,31 @@
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
       </nav>
+    <br>
+    <br>
+    <br>
+    <br>
     </div>
-    jnote: Added the below 5 lines, this now doubles the view. 
+    <!--jnote: Added the below 5 lines, this now doubles the view. -->
+
+
+<!--TTD: FIX THIS ALIGNMENT> MOVE BUTTONS TO NAVBAR.-->
+     <div class="header">
+      <ol class="text-right">
+<%= if @current_user do %>
+<li><%= @current_user.username %></li>
+<li>
+<%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %>
+</li>
+<% else %>
+<li><%= link "Register", to: user_path(@conn, :new) %></li>
+<li><%= link "Log in", to: session_path(@conn, :new) %></li>
+<% end %>
+</ol>
+<span class="logo"></span>
+</div>
     
-    
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+      <!--<p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p> TTD RED + BLUE BARS. CHECK FUNCTION IN PDF.-->
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
     
 <%#= render @view_module, @view_template, assigns jnote: Commented this line out to avoid view repitition %>
@@ -87,6 +108,9 @@
       <div style="margin-top:15px;">
     <%= render @view_module, @view_template, assigns %>
       </div>
+      
+     
+      
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>

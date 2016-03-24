@@ -25,7 +25,7 @@ defmodule Microflow.Router do
     post "projects/new", Microflow.ProjectController, :new # Added route successfully.post
    
     resources "/users", Microflow.UserController 
-    resources "/sessions", SessionController, only: [:new, :create, :delete]
+    resources "/sessions", Microflow.SessionController, only: [:new, :create, :delete]
     # get "/users", Microflow.UserController, :index # Added Microflow to both these routes.
     # get "/users/:id", Microflow.UserController, :show # Added Microflow to both these routes.
     get "/", Microflow.PageController, :index #Commented this to avoid conflicts.

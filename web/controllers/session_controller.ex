@@ -5,8 +5,8 @@ defmodule Microflow.SessionController do
     render conn, "new.html"
   end
 
-def create(conn, %{"session" => %{"username" => user, "password" =>
-                                   pass}}) do
+def create(conn,%{"session" => %{"username" => user, "password" =>
+                                 pass}}) do
     case Microflow.Auth.login_by_username_and_pass(conn, user, pass, repo: Repo) do
     {:ok, conn} ->
     conn
@@ -17,7 +17,11 @@ def create(conn, %{"session" => %{"username" => user, "password" =>
       |> put_flash(:error, "Invalid username/password combination")
       |> render("new.html")
     end
-end
+end    
 
-
+  def delete(conn, _) do
+    conn
+    |> Microflow.Auth.logout()
+    |> redirect(to: page_path(conn, :index))
+  end
 end

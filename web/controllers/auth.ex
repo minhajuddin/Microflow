@@ -1,6 +1,7 @@
 defmodule Microflow.Auth do
 
   import Plug.Conn
+  import Comeonin.Bcrypt, only: [checkpw: 2, dummy_checkpw: 0]
 
   def init(opts) do
     Keyword.fetch!(opts, :repo)
@@ -21,10 +22,11 @@ defmodule Microflow.Auth do
     |> configure_session(renew: true)
   end
 
-  import Comeonin.Bcrypt, only: [checkpw: 2, dummy_checkpw: 0]
+  
+  
   def login_by_username_and_pass(conn, username, given_pass, opts) do
     repo = Keyword.fetch!(opts, :repo)
-    user = repo.get_by(Rumbl.User, username: username)
+    user = repo.get_by(Microflow.User, username: username)
 
   cond do
     user && checkpw(given_pass, user.password_hash) ->
@@ -37,4 +39,7 @@ defmodule Microflow.Auth do
   end
 end
 
+  def logout(conn) do
+    configure_session(conn, drop: true)
+  end
 end
