@@ -62,7 +62,9 @@
               <li style="font-family: Roboto Slab; font-size: 17px;"><%= link "Search Projects", to: project_path(@conn, :index) %></li>
               <li style="font-family: Roboto Slab; font-size: 17px;"><%= link "Create New Project", to: project_path(@conn, :new) %></li>
               <li style="font-family: Roboto Slab; font-size: 17px;"><%= link "Home", to: home_path(@conn, :index) %></li> 
-              <!--<li style="font-family: Roboto Slab; font-size: 17px;"><%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %></li> TTD, ALIGN CORRCTLY-->
+              <% if @current_user do %>
+              <li style="font-family: Roboto Slab; font-size: 17px;"><%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %></li>
+              <% end %>
           </ul>
             <ul class="nav navbar-nav navbar-right">
               
@@ -99,8 +101,8 @@
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
     
 <%#= render @view_module, @view_template, assigns jnote: Commented this line out to avoid view repitition %>
-</div> <!-- /container -->
-<!--<script src="<%#= static_path(@conn, "/js/app.js") %>"></script>-->
+</div> </container>
+
     
     
     <br><br><br>

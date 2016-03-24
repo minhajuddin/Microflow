@@ -67,7 +67,7 @@ defmodule Microflow.UserController do
     else
       conn
       |> put_flash(:error, "Sorry Bub, you must be logged in to access that page")
-      |> redirect(to: page_path(conn, :index))
+      |> redirect(to: home_path(conn, :index))
       |> halt()
       end
   end

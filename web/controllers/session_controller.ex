@@ -1,5 +1,6 @@
 defmodule Microflow.SessionController do
   use Microflow.Web, :controller
+  plug :action #Added as per Chris Mccord's 2014 advice...
   
   def new(conn, _) do
     render conn, "new.html"
@@ -11,7 +12,7 @@ def create(conn,%{"session" => %{"username" => user, "password" =>
     {:ok, conn} ->
     conn
     |> put_flash(:info, "Welcome back!")
-    |> redirect(to: page_path(conn, :index))
+    |> redirect(to: home_path(conn, :index))
     {:error, _reason, conn} ->
       conn
       |> put_flash(:error, "Invalid username/password combination")
@@ -19,9 +20,9 @@ def create(conn,%{"session" => %{"username" => user, "password" =>
     end
 end    
 
-  def delete(conn, _) do
+  def delete(conn, _) do #Removed the empty argument ,_
     conn
     |> Microflow.Auth.logout()
-    |> redirect(to: page_path(conn, :index))
+    |> redirect(to: home_path(conn, :index))
   end
 end
