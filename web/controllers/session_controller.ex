@@ -15,7 +15,7 @@ def create(conn,%{"session" => %{"username" => user, "password" =>
     |> redirect(to: home_path(conn, :index))
     {:error, _reason, conn} ->
       conn
-      |> put_flash(:error, "Invalid username/password combination")
+      |> put_flash(:error, "Sorry, that looks like an incorrect username/password match... ") #TTD add a forgot password email function. 
       |> render("new.html")
     end
 end    

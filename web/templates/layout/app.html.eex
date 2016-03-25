@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Microflow!</title>
+    <title>Microflow! Where Dreams Hit The Ground</title>
  
     
     <!-- Latest compiled and minified CSS -->
@@ -44,8 +44,7 @@
   <body>
     
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:700' rel='stylesheet' type='text/css'>
-    <div style="font-family: Roboto Slab', serif;">
-    
+  
       <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
@@ -68,7 +67,7 @@
               <li style="font-family: Roboto Slab; font-size: 17px;"><%= @current_user.username %></li>
               <li style="font-family: Roboto Slab; font-size: 17px;"><%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %></li>
               <% else %> 
-              <li style="font-family: Roboto Slab; font-size: 17px;"><%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %></li>
+              <!--li style="font-family: Roboto Slab; font-size: 17px;"><%#= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %></li>
               <% end %>
           </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -90,10 +89,7 @@
      <div class="header">
       <ol class="text-right">
 <%= if @current_user do %>
-<li></li>
-<li>
 <%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %>
-</li>
 <% else %> 
 <%#= link "Register", to: user_path(@conn, :new) %>
 <%#= link "Log in", to: session_path(@conn, :new) %>
@@ -102,8 +98,7 @@
 <span class="logo"></span>
 </div>
     
-      <!--<p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p> TTD RED + BLUE BARS. CHECK FUNCTION IN PDF.-->
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+     
     
 <%#= render @view_module, @view_template, assigns jnote: Commented this line out to avoid view repitition %>
 </div> </container>
@@ -124,10 +119,11 @@
 
 
 
+<!--NOTEPAD SECTION-->
 
 
-
-
+ <!--TTD MOVED THIS, MA BE INTEGRAL TO THE APP> CHECK PROGRAMMING PHOENIX. <p class="alert alert-info" role="alert"><%#= get_flash(@conn, :info) %></p> TTD RED + BLUE BARS. CHECK FUNCTION IN PDF.-->
+      <!--p class="alert alert-danger" role="alert"><%#= get_flash(@conn, :error) %></p>
 
 
 

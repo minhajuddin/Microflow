@@ -1,6 +1,7 @@
 <!--NEW PROJECT FORM!!!-->
 
-<link href='https://fonts.googleapis.com/css?family=Noticia+Text:700italic,700' rel='stylesheet' type='text/css'>
+<!--font-family: 'Raleway', sans-serif;-->
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 <script src="//cdn.ckeditor.com/4.5.7/basic/ckeditor.js"></script> 
 <div style="text-align: center;">
@@ -14,6 +15,16 @@
 <style>
   .Montserrat-700{
     font-family: 'Montserrat';
+      font-size: 32px;
+    }
+    
+      .Raleway-300{
+    font-family: 'Raleway';
+      font-size: 32px;
+    }
+    
+       .Raleway-400{
+    font-family: 'Raleway';
       font-size: 32px;
     }
   }
@@ -56,9 +67,10 @@ textshadow {
 </style>
 
 <div class="Montserrat-700 textshadow">
-  <h1 style ="font-size: 52px;">Crowdfund a Project</h1>
+  <h1 style ="font-size: 52px;">What's your gift?</h1>
 </div>
-
+<br>
+<br>
 <!--NEW CODE:-->
 
   <div class="row">
@@ -66,37 +78,41 @@ textshadow {
 
       <%= form_for @changeset, project_path(@conn, :create), [multipart: true], fn f -> %> 
       <div class="form-group">
-             <label for="project[name]" class= "Montserrat-700" >Project Name</label>
-                 <input type="text" name="project[name]" placeholder="What is your project called?" class="form-control" data-toggle="tooltip", title ="Make an eye-catching title!"
-                  style= 'float: left; width: 100%; display: block;' data-placement='right'/>
-                 
+             <label for="project[name]" class= "Raleway-300" >Project Name</label>
+                 <input type="text" name="project[name]" placeholder="Project Name Here..." class="form-control" data-toggle="tooltip", title ="Make an eye-catching title!"
+                  style= 'float: left; width: 100%; display: block;' data-placement='right'/> <!--TTD. Increase size of Tooltip-->
+<br>
+<br>
+<br>
+<br>
     <div class="form-group">
-      <label class="Montserrat-700">Description</label>
+      <label class="Raleway-300">Description</label>
       <textarea name= "project[description]" placeholder="Describe your project in less than 100 words" id="ckeditor" /></textarea>
     </div>             
-                 
+        <br>
+        <br>
     <div class="form-group">
-    <label class="Montserrat-700">Upload Your Photo Here</label>
-    <br>
+     <br>
     <br>
 <span class="btn-xlarge btn-info btn-file">
-    My Pic <input type="file" name="project[picture]">
+    Click to Upload Photo<input type="file" name="project[picture]">
 </span>
   </div>
 
-
+<br>
 <br>
 <br>
   <div class="form-group">
-    <label class="Montserrat-700">Video</label>
-    <input type="text" name="project[video_url]" placeholder="Copy/paste your video here" class="form-control" />
+    <label class="Raleway-300">Video</label>
+    <input type="text" name="project[video_url]" placeholder="Paste your Youtube clip here" class="form-control" />
 </div>
-
-<div class="form-group">
-<label class="Montserrat-700">Raise Amount</label>
-<input type="number" name="project[raise_amount]" placeholder="How much do you want to raise?"  class="form-control" />
 <br>
-<label class="Montserrat-700">Finished?</label>
+<br>
+<div class="form-group">
+<label class="Raleway-300">Raise Amount</label>
+<input type="number" name="project[raise_amount]" placeholder="How much?"  class="form-control" />
+<br>
+<br>
 </div>
   <button type="submit" class="btn-xlarge btn-info">Save Project</button>
 
