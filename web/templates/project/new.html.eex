@@ -18,6 +18,11 @@
       font-size: 32px;
     }
     
+     .Montserrat-400{
+    font-family: 'Montserrat';
+      font-size: 32px;
+    }
+    
        .Raleway-200{
     font-family: 'Raleway';
       font-size: 32px;
@@ -76,74 +81,77 @@ textshadow {
 
 <div class="Montserrat-700 textshadow">
   <h1 style ="font-size: 52px;">What's your gift to Earth?</h1>
-</div>
+    </div>
 <!--NEW CODE:-->
-
+<br>
 
 
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-
       <%= form_for @changeset, project_path(@conn, :create), [multipart: true], fn f -> %> 
-      <div class="form-group">
-        <br>
-        <br>
-        <br>
-             <label for="project[name]" class= "Raleway-300" >Project Name</label>
-                 <input type="text" name="project[name]" placeholder="Project Name Here..." class="form-control" data-toggle="tooltip", title ="Make an eye-catching title!"
-                  style= 'float: left; width: 100%; display: block;' data-placement='right'/> <!--TTD. Increase size of Tooltip-->
+        <div class="form-group">
+<br>
+<br>
+<br>
+  
+  
+   <label for="project[name]" class= "Raleway-300" >Project Name</label>
+     <input type="text" name="project[name]" placeholder="Project Name Here..." class="form-control" data-toggle="tooltip", title ="Make an eye-catching title!"
+      style= 'float: left; width: 100%; display: block;' data-placement='right'/> <!--TTD. Increase size of Tooltip-->
+
 <br>
 <br>
 <br>
 <br>
+    
+    
     <div class="form-group">
       <label class="Raleway-300">What's your plan?</label>
-      <textarea name= "project[description]" placeholder="Describe your project in less than 100 words" id="ckeditor" /></textarea>
-    </div>             
-        <br>
-        <br>
+        <textarea name= "project[description]" placeholder="Describe your project in less than 100 words" id="ckeditor" /></textarea>
+          </div>             
+
+<br>
+<br>
+<br>
+<br>
+   
     <div class="form-group">
-     <br>
-    <br>
-    <a><image src="/images/brass-camera.jpg" height="100" width="170"></image></a>
-<span class="btn-xlarge btn-primary btn-file"> <!--TTD: Fix this button -->
-   Select Photo<input type="file" name="project[picture]">
-</span>
-  </div>
-  <br>
-  <br>
+     <a><image src="/images/brass-camera.jpg" height="100" width="170"></image></a>
+      <span class="btn-xlarge btn-primary btn-file"> <!--TTD: Fix this button -->
+       Select Photo<input type="file" name="project[picture]">
+     </span>
+       </div>
+
 <br>
 <br>
 <br>
+<br>
+<br>
+
   <div class="form-group">
       <a><image src="/images/youtube-classy.jpg" height="100" width="170"></image></a>
     <input type="text" name="project[video_url]" placeholder="Paste your Youtube clip here" class="form-control" />
-</div>
+     </div>
+
 <br>
 <br>
-<div class="form-group">
- <a><image src="/images/gold-buddha.jpg"></image></a>
- <br>
-  <br>
-<input type="number" name="project[raise_amount]" placeholder="Cash on the barrelhead.."  class="form-control" />
+
+
+    <div class="form-group">
+     <a><image src="/images/gold-buddha.jpg"></image></a>
+<br>
+<br>
+      <input type="number" name="project[raise_amount]" placeholder="Cash on the barrelhead.."  class="form-control" />
 <br>
 <br>
 </div>
   <button type="submit" class="btn-xlarge btn-default">Save Project</button>
-
 </div>
-
-
- 
   <br>
-
 <% end %>
 
 </div>
-
 </div>
-
-
 <br>
 <br>
 <br>
