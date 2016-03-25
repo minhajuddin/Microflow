@@ -1,6 +1,5 @@
 
   <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'><link>
-  <link href='https://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'><link>
   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'><link>
   <%# stylesheet_link_tag 'glowing-progress-bar.css', 'light-saber-handle.css' %>
   <%# stylesheet_link_tag 'medsectionbuttons' %>
@@ -25,31 +24,48 @@
 }
  
 /*END FONTS*/
- 
 </style>
 
+
    <h2 style="font-family: 'Montserrat', sans-serif;">Live Projects</h2>
+
+
     
      <div class="container">
-  <div class="row">
-    <%= for project <- @projects do %>
-    <div class="col-sm-4">
+      <div class="row">
+       <%= for project <- @projects do %>
+        <div class="col-sm-4">
         <!--position: static; -->
+     
      <div class="panel panel-default"  style="height: 1200px; width: 400px;"> 
            <!--<div class="panel panel-default"  style="height: 1200px; margin-bottom:50px;">-->
-        <div class="panel-heading">
-            <img src="<%= Microflow.Avatar.url({project.picture, project}, :original) %>" alt="" width="350px" height="240px"/>
+            <div class="panel-heading">
+             <img src="<%= Microflow.Avatar.url({project.picture, project}, :original) %>" alt="" width="350px" height="240px"/>
+              </div>
+             
+             
+             
+    <div class="panel-body" style="height: 280px">
+      <h2 style="font-family: 'Montserrat', sans-serif;"><%= project.name %></h2>
+       <h3 style="font-family: 'Raleway', sans-serif; height: 700px"><%= raw(project.description) %></h3>
           </div>
-        <div class="panel-body" style="height: 280px">
-          <h2 style="font-family: 'Montserrat', sans-serif;"><%= project.name %></h2>
-          <h3 style="font-family: 'Raleway', sans-serif; height: 700px"><%= raw(project.description) %></h3>
-          </div>
+     
+     
+     <!--TTD. Need to add a progress bar and percentages-->
+     
+     <!--TTD. Need to put a maximum total amount. See Selfstarter-->
+     
            <div class="panel-footer" style= "margin-top: 540px">
-          <h2 style="font-family: 'Montserrat', sans-serif;">Target: <%= project.raise_amount %> USD</h2>
-        <iframe width="360px" height="230" position= "absolute" src= "https://www.youtube.com/embed/<%=project.video_url%>"</iframe> 
-    <h2 style="font-family: 'Montserrat', sans-serif;"><%= project.video_url %></h2>        
-<%= link "Delete Project", to: project_path(@conn, :delete, project), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-info btn-xs" %>
-<%= link "Start Your Own Project", to: project_path(@conn, :new), method: :new, class: "btn btn-success btn-xs" %>
+            <h2 style="font-family: 'Raleway', sans-serif;">$<%= project.raise_amount %></h2>
+             <iframe width="360px" height="230" position= "absolute" src= "https://www.youtube.com/embed/<%=project.video_url%>"</iframe> 
+    
+    
+    <!--h2 style="font-family: 'Montserrat', sans-serif;"--><%#= project.video_url %></h2>        
+    <br>
+    <br>
+    
+     <%= link "Delete Project", to: project_path(@conn, :delete, project), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-default btn-large" %>
+<%= link "Start Your Own Project", to: project_path(@conn, :new), method: :new, class: "btn btn-default btn-large" %>
            </div>
            </div>
              </div>
@@ -102,6 +118,5 @@
 <br>
 <br>
 <br>
- 
   </body>
 </html>

@@ -1,4 +1,9 @@
-<h1>Login</h1>
+<!--LOGIN FORM-->
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'><link>
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'><link>
+
+<h1 style="font-family: 'Raleway', sans-serif;">Login</h1>
 
 <%= form_for @conn, session_path(@conn, :create), [as: :session], fn f -> %>
   
