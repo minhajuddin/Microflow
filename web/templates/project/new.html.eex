@@ -3,7 +3,9 @@
 <!--font-family: 'Raleway', sans-serif;-->
 <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,200' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-<script src="//cdn.ckeditor.com/4.5.7/basic/ckeditor.js"></script> 
+<script src="/css/ckeditor/ckeditor.js"></script> 
+
+<link href='/css/ckeditor/contents.css' rel='stylesheet' type='text/css'>
 <div style="text-align: center;">
   
   <script>
@@ -42,6 +44,8 @@
   form{
     width: 400px;
        }
+       
+       
   
   .btn-file {
     position: relative;
@@ -97,7 +101,7 @@ textshadow {
   
    <label for="project[name]" class= "Raleway-300" >Project Name</label>
      <input type="text" name="project[name]" placeholder="Project Name Here..." class="form-control" data-toggle="tooltip", title ="Make an eye-catching title!"
-      style= 'float: left; width: 100%; display: block; font-family:"Raleway-400"' data-placement='right'/> <!--TTD. Increase size of Tooltip + Change Font--> 
+      style= 'float: left; width: 100%; display: block;' class='Raleway-400' data-placement='right'/> <!--TTD. Increase size of Tooltip + Change Font--> 
 
 <br>
 <br>

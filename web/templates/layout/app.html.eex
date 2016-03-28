@@ -63,18 +63,16 @@
               <li style="font-family: Roboto Slab; font-size: 17px;"><%= link "Home", to: home_path(@conn, :index) %></li> 
               
               
-              <li style="font-family: Roboto Slab; font-size: 17px; text-align: right;"><%= link "Log in", to: session_path(@conn, :new) %></li>
-              <li style="font-family: Roboto Slab; font-size: 17px; text-align: right;"><%= link "Sign up!", to: user_path(@conn, :new) %></li>
-              
-              <% if @current_user do %>
-              <li style="font-family: Roboto Slab; font-size: 17px;"><%= @current_user.username %></li>
-              <li style="font-family: Roboto Slab; font-size: 17px; float: right; padding: right 15px"><%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %></li>
-              <% else %> 
-              <!--li style="font-family: Roboto Slab; font-size: 17px;"><%#= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %></li>
-              <% end %>
           </ul>
             <ul class="nav navbar-nav navbar-right">
               
+              <%= if @current_user do %>
+              <li style="font-family: Roboto Slab; font-size: 17px;"><%= @current_user.username %></li>
+              <li style="font-family: Roboto Slab; font-size: 17px; float: right; padding: right 15px"><%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %></li>
+              <% else %> 
+              <li style="font-family: Roboto Slab; font-size: 17px; text-align: right;"><%= link "Log in", to: session_path(@conn, :new) %></li>
+              <li style="font-family: Roboto Slab; font-size: 17px; text-align: right;"><%= link "Sign up!", to: user_path(@conn, :new) %></li>
+              <% end %>
               
             </ul>
           </div><!-- /.navbar-collapse -->

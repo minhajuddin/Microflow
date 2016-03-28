@@ -40,7 +40,7 @@ defmodule Microflow.Mixfile do
      {:arc, "~> 0.3.0"},
      {:arc_ecto, "~> 0.3.2"},
      {:comeonin, "~> 2.0"},#From Programming Phoenix Page 74
-     {:braintree, "~> 0.0.1"}
+     {:braintree, "~> 0.3.2"}
      ]
   end
 
