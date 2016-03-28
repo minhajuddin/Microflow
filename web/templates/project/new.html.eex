@@ -62,7 +62,7 @@
     filter: alpha(opacity=0);
     opacity: 0;
     outline: none;
-    background: white;
+    background: #9a0707;
     cursor: inherit;
     display: block;
 }
@@ -78,6 +78,7 @@ textshadow {
     -webkit-border-radius: 95px;
        -moz-border-radius: 95px;
             border-radius: 95px;
+            color: #9a0707;
     }
 </style>
 
@@ -121,7 +122,7 @@ textshadow {
    
     <div class="form-group">
      <a><image src="/images/brass-camera.jpg" height="100" width="170"></image></a>
-      <span class="btn-xlarge btn-primary btn-file"> <!--TTD: Fix this button -->
+      <span class="btn-xlarge btn-file"> <!--TTD: Fix this button -->
        Select Photo<input type="file" name="project[picture]">
      </span>
        </div>
@@ -149,7 +150,7 @@ textshadow {
 <br>
 <br>
 </div>
-  <button type="submit" class="btn-xlarge btn-default">Save Project</button>
+  <button type="submit" class="btn-xlarge">Save Project</button>
 </div>
   <br>
 <% end %>
