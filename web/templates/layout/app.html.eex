@@ -41,7 +41,7 @@
         
 .ralewaysmallbox  {  font-family: 'Raleway', sans-serif; font-size:18px}
 
-.raleway2  {  font-family: 'Raleway', sans-serif; line-height: 32px; font-size:24px; text-align: justify; letter-spacing: 0.2px;}
+.raleway  {  font-family: 'Raleway', sans-serif; line-height: 32px; font-size:24px; text-align: justify; letter-spacing: 0.2px;}
 
 .highlight {
   background-color : #ffff00;

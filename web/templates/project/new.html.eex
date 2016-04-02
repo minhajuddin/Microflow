@@ -1,5 +1,16 @@
 <!--NEW PROJECT FORM!!!-->
 
+  <link href='/css/ckeditor/contents.css' rel='stylesheet' type='text/css'>
+  
+  <link href='https://fonts.googleapis.com/css?family=Jim+Nightshade' rel='stylesheet' type='text/css'>    
+<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,200' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Jim+Nightshade' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Josefin+Sans|Alegreya' rel='stylesheet' type='text/css'>
+
+<link href='https://fonts.googleapis.com/css?family=Raleway|Noto-Serif|Jim Nightshade'> 
+
 <!--font-family: 'Raleway', sans-serif;-->
 
 <div style="text-align: center;">
@@ -21,7 +32,7 @@
       font-size: 32px;
     }
     
-       .Raleway-200{
+       .Raleway {
     font-family: 'Raleway';
       font-size: 32px;
     }
@@ -44,9 +55,7 @@
     width: 400px;
        }
        
-       
-  
-  .btn-file {
+.btn-file {
     position: relative;
     overflow: hidden;
 }
@@ -96,6 +105,18 @@ textshadow {
   -webkit-font-smoothing: antialiased;
 }
   /*ButtonFrom Charlie Park ^^^^*/
+  
+  <link href='/css/ckeditor/contents.css' rel='stylesheet' type='text/css'>
+  
+  <link href='https://fonts.googleapis.com/css?family=Jim+Nightshade' rel='stylesheet' type='text/css'>    
+<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,200' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Jim+Nightshade' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Josefin+Sans|Alegreya' rel='stylesheet' type='text/css'>
+
+<link href='https://fonts.googleapis.com/css?family=Raleway|Noto-Serif|Jim Nightshade'>  
+  
 </style>
 
 <a><image src="/images/black-and-white-forest.jpg" height="450" width="720"</image></a>
@@ -116,6 +137,8 @@ textshadow {
   
   
    <label for="project[name]" class= "Raleway-300" >Project Name</label>
+   <br>
+   <br>
      <input type="text" name="project[name]" placeholder="Project Name Here..." class="form-control" data-toggle="tooltip", title ="Make an eye-catching title!"
       style= 'float: left; width: 100%; display: block;' class='Raleway-400' data-placement='right'/> <!--TTD. Increase size of Tooltip + Change Font--> 
 
@@ -123,10 +146,14 @@ textshadow {
 <br>
 <br>
 <br>
-    
+<br>
+<br>
+
     
     <div class="form-group">
       <label class="Raleway-300">What's your plan?</label>
+      <br>
+      <br>
         <textarea name= "project[description]" placeholder="Describe your project in less than 100 words" id="ckeditor" /></textarea>
           </div>             
 
