@@ -2,17 +2,6 @@
 
   <link href='/css/ckeditor/contents.css' rel='stylesheet' type='text/css'>
   
-<!--  <link href='https://fonts.googleapis.com/css?family=Jim+Nightshade' rel='stylesheet' type='text/css'>    -->
-<!--<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:700' rel='stylesheet' type='text/css'>-->
-<!--<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,200' rel='stylesheet' type='text/css'>-->
-<!--<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
-<!--<link href='https://fonts.googleapis.com/css?family=Jim+Nightshade' rel='stylesheet' type='text/css'>-->
-<!--<link href='https://fonts.googleapis.com/css?family=Josefin+Sans|Alegreya' rel='stylesheet' type='text/css'>-->
-
-<!--<link href='https://fonts.googleapis.com/css?family=Raleway|Noto-Serif|Jim Nightshade'> -->
-
-<!--font-family: 'Raleway', sans-serif;-->
-
 <div style="text-align: center;">
   
   <script>
@@ -49,17 +38,7 @@
       font-size: 32px;
     }
     
-      .Raleway-300{
-    font-family: 'Raleway';
-      font-size: 32px;
-    }
-    
-       .Raleway-400{
-    font-family: 'Raleway';
-      font-size: 32px;
-    }
-    
-  
+ 
   form{
     width: 400px;
        }
@@ -120,15 +99,7 @@ textshadow {
 
   <link href='/css/ckeditor/contents.css' rel='stylesheet' type='text/css'>
   
-  <link href='https://fonts.googleapis.com/css?family=Jim+Nightshade' rel='stylesheet' type='text/css'>    
-<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:700' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,200' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Jim+Nightshade' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Josefin+Sans|Alegreya' rel='stylesheet' type='text/css'>
-
-<link href='https://fonts.googleapis.com/css?family=Raleway|Noto-Serif|Jim Nightshade'>  
-<a><image src="/images/black-and-white-forest.jpg" height="450" width="720"</image></a>
+ <a><image src="/images/black-and-white-forest.jpg" height="450" width="720"</image></a>
 
 <div class="Montserrat-700 textshadow">
   <h1 style ="font-size: 52px;">What's your gift to Earth?</h1>
@@ -145,11 +116,11 @@ textshadow {
 <br>
   
   
-   <label for="project[name]" class= "Raleway-300" >Project Name</label>
+   <label for="project[name]" class= "Raleway" >Project Name</label>
    <br>
    <br>
      <input type="text" name="project[name]" placeholder="Project Name Here..." class="form-control" data-toggle="tooltip", title ="Make an eye-catching title!"
-      style= 'float: left; width: 100%; display: block;' class='Raleway-400' data-placement='right'/> <!--TTD. Increase size of Tooltip + Change Font--> 
+      style= 'float: left; width: 100%; display: block;' class='Raleway' data-placement='right'/> <!--TTD. Increase size of Tooltip + Change Font--> 
 
 <br>
 <br>
@@ -160,7 +131,7 @@ textshadow {
 
     
     <div class="form-group">
-      <label class="Raleway-300">What's your plan?</label>
+      <label class="Raleway">What's your plan?</label>
       <br>
       <br>
         <textarea name= "project[description]" placeholder="Describe your project in less than 100 words" id="ckeditor" /></textarea>
@@ -222,4 +193,3 @@ textshadow {
   })
 </script>
 
-<p style="font-family: Raleway">Way it out</p>
