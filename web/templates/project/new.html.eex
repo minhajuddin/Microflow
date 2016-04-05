@@ -2,14 +2,14 @@
 
   <link href='/css/ckeditor/contents.css' rel='stylesheet' type='text/css'>
   
-  <link href='https://fonts.googleapis.com/css?family=Jim+Nightshade' rel='stylesheet' type='text/css'>    
-<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:700' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,200' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Jim+Nightshade' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Josefin+Sans|Alegreya' rel='stylesheet' type='text/css'>
+<!--  <link href='https://fonts.googleapis.com/css?family=Jim+Nightshade' rel='stylesheet' type='text/css'>    -->
+<!--<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:700' rel='stylesheet' type='text/css'>-->
+<!--<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,200' rel='stylesheet' type='text/css'>-->
+<!--<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
+<!--<link href='https://fonts.googleapis.com/css?family=Jim+Nightshade' rel='stylesheet' type='text/css'>-->
+<!--<link href='https://fonts.googleapis.com/css?family=Josefin+Sans|Alegreya' rel='stylesheet' type='text/css'>-->
 
-<link href='https://fonts.googleapis.com/css?family=Raleway|Noto-Serif|Jim Nightshade'> 
+<!--<link href='https://fonts.googleapis.com/css?family=Raleway|Noto-Serif|Jim Nightshade'> -->
 
 <!--font-family: 'Raleway', sans-serif;-->
 
@@ -21,7 +21,19 @@
   });
 </script>
 
-<style>
+<!--/*YAHOO YUI*/-->
+<!-- Skin CSS file -->
+<!--<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/assets/skins/sam/skin.css">-->
+<!-- Utility Dependencies -->
+<!--<script src="http://yui.yahooapis.com/2.9.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>-->
+<!--<script src="http://yui.yahooapis.com/2.9.0/build/element/element-min.js"></script>-->
+<!-- Needed for Menus, Buttons and Overlays used in the Toolbar -->
+<!--<script src="http://yui.yahooapis.com/2.9.0/build/container/container_core-min.js"></script>-->
+<!--<script src="http://yui.yahooapis.com/2.9.0/build/menu/menu-min.js"></script>-->
+<!--<script src="http://yui.yahooapis.com/2.9.0/build/button/button-min.js"></script>-->
+<!-- Source file for Rich Text Editor-->
+<!--<script src="http://yui.yahooapis.com/2.9.0/build/editor/editor-min.js"></script>-->
+  <style>
   .Montserrat-700{
     font-family: 'Montserrat';
       font-size: 32px;
@@ -47,10 +59,7 @@
       font-size: 32px;
     }
     
-    .Jim-Nightshade{
-    font-family: 'Jim Nightshade', cursive;
-    }
-     
+  
   form{
     width: 400px;
        }
@@ -106,6 +115,9 @@ textshadow {
 }
   /*ButtonFrom Charlie Park ^^^^*/
   
+  
+</style>
+
   <link href='/css/ckeditor/contents.css' rel='stylesheet' type='text/css'>
   
   <link href='https://fonts.googleapis.com/css?family=Jim+Nightshade' rel='stylesheet' type='text/css'>    
@@ -116,9 +128,6 @@ textshadow {
 <link href='https://fonts.googleapis.com/css?family=Josefin+Sans|Alegreya' rel='stylesheet' type='text/css'>
 
 <link href='https://fonts.googleapis.com/css?family=Raleway|Noto-Serif|Jim Nightshade'>  
-  
-</style>
-
 <a><image src="/images/black-and-white-forest.jpg" height="450" width="720"</image></a>
 
 <div class="Montserrat-700 textshadow">
@@ -194,6 +203,7 @@ textshadow {
   <button type="submit" class="btn-xlarge btn-custom-colour">Save Project</button>
 </div>
   <br>
+  
 <% end %>
 
 </div>
@@ -201,13 +211,6 @@ textshadow {
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-
-
-
-
 
 
 
@@ -219,3 +222,4 @@ textshadow {
   })
 </script>
 
+<p style="font-family: Raleway">Way it out</p>

@@ -24,7 +24,7 @@
 
 <link href='https://fonts.googleapis.com/css?family=Raleway|Noto-Serif|Jim Nightshade'>   
 
-<script src="/css/ckeditor/ckeditor.js"></script> 
+
 
 <link href='/css/ckeditor/contents.css' rel='stylesheet' type='text/css'>
     <style>
@@ -130,6 +130,7 @@
      
       
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script src="/css/ckeditor/ckeditor.js"></script> 
   </body>
 </html>
 
