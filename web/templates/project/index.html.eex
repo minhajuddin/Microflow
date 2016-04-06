@@ -85,7 +85,7 @@
 
       <div>
        <%= link "Admin Delete Project", to: project_path(@conn, :delete, project), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-default btn-large rounded-corners float: center" %>
-       <%= link "Start Your Own Project", to: project_path(@conn, :new), method: :new, class: "btn btn-default btn-large rounded-corners" %>
+       <%= link "Start Your Own Project", to: project_path(@conn, :new), class: "btn btn-default btn-large rounded-corners" %>
      </div>
    </div>
  </div>
