@@ -94,6 +94,20 @@ textshadow {
 }
   /*ButtonFrom Charlie Park ^^^^*/
   
+  .glyphicon.spinning {
+    animation: spin 1s infinite linear;
+    -webkit-animation: spin2 1s infinite linear;
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg); }
+    to { transform: scale(1) rotate(360deg); }
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
   
 </style>
 
@@ -144,8 +158,9 @@ textshadow {
    
     <div class="form-group">
      <a><image src="/images/brass-camera.jpg" height="100" width="170"></image></a>
-     <button class="btn-xlarge btn-file btn-custom-colour">Select Photo<input type="file" name="project[picture]"></button>
-      
+     <button class="btn-xlarge btn-file btn-custom-colour">Select Photo<input type="file" name="project[picture]">
+       <span class="glyphicon glyphicon-refresh spinning"></span>
+       </button>
        </div>
 
 <br>

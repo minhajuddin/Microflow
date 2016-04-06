@@ -71,7 +71,7 @@
 
     <div class="panel-footer" style= "margin-top: 40px">
 
-      <h2 style="font-family: 'Raleway', sans-serif;">Looking for $<%= project.raise_amount %></h2>
+      <h2 style="font-family: 'Raleway', sans-serif;">Help us raise $<%= project.raise_amount %></h2>
 
 
       <iframe width="100%" height="100%" position= "absolute" src= "https://www.youtube.com/embed/<%=project.video_url%>"></iframe> 
@@ -85,7 +85,7 @@
 
       <div>
        <%= link "Admin Delete Project", to: project_path(@conn, :delete, project), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-default btn-large rounded-corners float: center" %>
-       <%= link "Start Your Own Project", to: project_path(@conn, :new), class: "btn btn-default btn-large rounded-corners" %>
+       <style="font-family: ralewaycustom; font-size: 17px;"><%= link "Start Your Own Project", to: project_path(@conn, :new), class: "btn btn-default btn-large rounded-corners" %></style>
      </div>
    </div>
  </div>
