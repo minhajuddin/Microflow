@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Microflow! Where Dreams Hit The Ground</title>
+    <title>Microflow! Where Dreams Hit Reality</title>
  
     
     <!-- Latest compiled and minified CSS -->
@@ -131,6 +131,7 @@
       
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
     <script src="/css/ckeditor/ckeditor.js"></script> 
+    <script src="/js/main.js"></script> 
   </body>
 </html>
 
@@ -139,7 +140,7 @@
 <!--NOTEPAD SECTION-->
 
 
- <!--TTD MOVED THIS, MA BE INTEGRAL TO THE APP> CHECK PROGRAMMING PHOENIX. <p class="alert alert-info" role="alert"><%#= get_flash(@conn, :info) %></p> TTD RED + BLUE BARS. CHECK FUNCTION IN PDF.-->
+ <!--TTD MOVED THIS, MAY BE INTEGRAL TO THE APP> CHECK PROGRAMMING PHOENIX. <p class="alert alert-info" role="alert"><%#= get_flash(@conn, :info) %></p> TTD RED + BLUE BARS. CHECK FUNCTION IN PDF.-->
       <!--p class="alert alert-danger" role="alert"><%#= get_flash(@conn, :error) %></p>
 
 

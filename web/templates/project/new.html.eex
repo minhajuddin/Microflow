@@ -1,14 +1,10 @@
 <!--NEW PROJECT FORM!!!-->
 
-  <link href='/css/ckeditor/contents.css' rel='stylesheet' type='text/css'>
+  <!--<link href='/css/ckeditor/contents.css' rel='stylesheet' type='text/css'>-->
   
 <div style="text-align: center;">
-  
-  <script>
-  $(document).ready(function(){
-      $('[data-toggle="tooltip"]').tooltip(); 
-  });
-</script>
+
+
 
 <!--/*YAHOO YUI*/-->
 <!-- Skin CSS file -->
@@ -94,24 +90,116 @@ textshadow {
 }
   /*ButtonFrom Charlie Park ^^^^*/
   
-  .glyphicon.spinning {
-    animation: spin 1s infinite linear;
-    -webkit-animation: spin2 1s infinite linear;
-}
+  /*SPINNER LOADER*/
 
-@keyframes spin {
-    from { transform: scale(1) rotate(0deg); }
-    to { transform: scale(1) rotate(360deg); }
-}
-
-@-webkit-keyframes spin2 {
-    from { -webkit-transform: rotate(0deg); }
-    to { -webkit-transform: rotate(360deg); }
-}
+.spinner {
+  margin: 100px auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  text-align: center;
   
-</style>
+  -webkit-animation: sk-rotate 2.0s infinite linear;
+  animation: sk-rotate 2.0s infinite linear;
+}
 
-  <link href='/css/ckeditor/contents.css' rel='stylesheet' type='text/css'>
+.dot1, .dot2 {
+  width: 60%;
+  height: 60%;
+  /*display: inline-block;*/
+  position: absolute;
+  top: 0;
+  background-color: #333;
+  border-radius: 100%;
+  
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.dot2 {
+  top: auto;
+  bottom: 0;
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-rotate { 100% { -webkit-transform: rotate(360deg) }}
+@keyframes sk-rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+  
+  .loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -28px 0 0 -25px;
+}
+.loading-bar {
+  display: inline-block;
+  width: 6px;
+  height: 100px;
+  border-radius: 4px;
+  animation: loading 1s ease-in-out infinite;
+}
+.loading-bar:nth-child(1) {
+  background-color: #3498db;
+  animation-delay: 0;
+}
+.loading-bar:nth-child(2) {
+  background-color: #c0392b;
+  animation-delay: 0.09s;
+}
+.loading-bar:nth-child(3) {
+  background-color: #f1c40f;
+  animation-delay: .18s;
+}
+.loading-bar:nth-child(4) {
+  background-color: #27ae60;
+  animation-delay: .27s;
+}
+
+@keyframes loading {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1, 2.2);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+#overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: #000;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    height: auto;
+    z-index: 10000;
+}
+
+ </style>
+
+  <!--<link href='/css/ckeditor/contents.css' rel='stylesheet' type='text/css'>-->
   
  <a><image src="/images/black-and-white-forest.jpg" height="450" width="720"</image></a>
 
@@ -123,7 +211,7 @@ textshadow {
 
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <%= form_for @changeset, project_path(@conn, :create), [multipart: true], fn f -> %> 
+      <%= form_for @changeset, project_path(@conn, :create), [multipart: true, class: "new-project-form"], fn f -> %> 
         <div class="form-group">
 <br>
 <br>
@@ -159,12 +247,15 @@ textshadow {
     <div class="form-group">
      <a><image src="/images/brass-camera.jpg" height="100" width="170"></image></a>
      <button class="btn-xlarge btn-file btn-custom-colour">Select Photo<input type="file" name="project[picture]">
-       <span class="glyphicon glyphicon-refresh spinning"></span>
        </button>
        </div>
 
 <br>
 <br>
+<div class="spinner" style="display: none;">
+  <div class="dot1"></div>
+  <div class="dot2"></div>
+</div>
 <br>
 <br>
 <br>
@@ -197,14 +288,4 @@ textshadow {
 <br>
 <br>
 <br>
-
-
-
-<script>
-  $(document).ready(function(){
-    CKEDITOR.replace( 'ckeditor' );
-    $('[data-toggle="tooltip"]').tooltip();
-
-  })
-</script>
 
