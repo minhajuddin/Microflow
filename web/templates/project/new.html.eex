@@ -5,19 +5,6 @@
 <div style="text-align: center;">
 
 
-
-<!--/*YAHOO YUI*/-->
-<!-- Skin CSS file -->
-<!--<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/assets/skins/sam/skin.css">-->
-<!-- Utility Dependencies -->
-<!--<script src="http://yui.yahooapis.com/2.9.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>-->
-<!--<script src="http://yui.yahooapis.com/2.9.0/build/element/element-min.js"></script>-->
-<!-- Needed for Menus, Buttons and Overlays used in the Toolbar -->
-<!--<script src="http://yui.yahooapis.com/2.9.0/build/container/container_core-min.js"></script>-->
-<!--<script src="http://yui.yahooapis.com/2.9.0/build/menu/menu-min.js"></script>-->
-<!--<script src="http://yui.yahooapis.com/2.9.0/build/button/button-min.js"></script>-->
-<!-- Source file for Rich Text Editor-->
-<!--<script src="http://yui.yahooapis.com/2.9.0/build/editor/editor-min.js"></script>-->
   <style>
   .Montserrat-700{
     font-family: 'Montserrat';
@@ -209,6 +196,8 @@ textshadow {
 <!--NEW CODE:-->
 <br>
 
+
+
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <%= form_for @changeset, project_path(@conn, :create), [multipart: true, class: "new-project-form"], fn f -> %> 
@@ -246,9 +235,9 @@ textshadow {
    
     <div class="form-group">
      <a><image src="/images/brass-camera.jpg" height="100" width="170"></image></a>
-     <button class="btn-xlarge btn-file btn-custom-colour">Select Photo<input type="file" name="project[picture]">
+     <button class="btn-xlarge btn-file btn-custom-colour upload-button">Select Photo<input type="file" name="project[picture]" class="file-upload">
        </button>
-       </div>
+       <img class="prev-pic" />
 
 <br>
 <br>

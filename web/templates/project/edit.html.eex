@@ -1,6 +1,36 @@
+*
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+</head>
+<body>
+    <a href="http://jquery.com/">jQuery</a>
+    <script src="jquery.js"></script>
+    <script>
+ 
+$( document ).ready(function() {
+ 
+    $( "a" ).click(function( event ) {
+ 
+        alert( "Thanks for visiting!" );
+ 
+    });
+ 
+});
+ 
+    </script>
+</body>
+</html>
+
+*
+
 <h2>Edit project</h2>
 
 <%= render "form.html", changeset: @changeset,
                         action: project_path(@conn, :update, @project) %>
 
 <%= link "Back", to: project_path(@conn, :index) %>
+

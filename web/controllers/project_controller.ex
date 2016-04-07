@@ -1,4 +1,5 @@
 defmodule Microflow.ProjectController do
+  require Logger
   use Microflow.Web, :controller
 
   alias Microflow.Project
@@ -28,6 +29,7 @@ defmodule Microflow.ProjectController do
         |> put_flash(:info, "Project created successfully.")
         |> redirect(to: project_path(conn, :index))
       {:error, changeset} ->
+        IO.inspect changeset
         render(conn, "new.html", changeset: changeset)
     end
   end
