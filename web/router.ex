@@ -17,6 +17,7 @@ defmodule Microflow.Router do
   scope "/" do
     pipe_through :browser # Use the default browser stack
     get "/", Microflow.HomeController, :index # NOTE "Microflow" must be explicitly added to the controller name, otherwise it raises an error. 
+    get "/test", Microflow.TestController, :index
     # get "/users/:id", Microflow.UserController, :show - THIS LINE RAISED THE ERROR. UNCOMMENT AT YE PERIL.
     # get "/home/:messenger", Microflow.HomeController, :show 
     #get "/project/create", NewprojectController, :create

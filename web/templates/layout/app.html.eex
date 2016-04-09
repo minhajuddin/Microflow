@@ -23,7 +23,7 @@
 <link href='https://fonts.googleapis.com/css?family=Josefin+Sans|Alegreya' rel='stylesheet' type='text/css'>
 
 <link href='https://fonts.googleapis.com/css?family=Raleway|Noto-Serif|Jim Nightshade'>   
-
+<link rel="stylesheet" href="css/box_peel_up.css">
 
 
 <!--<link href='/css/ckeditor/contents.css' rel='stylesheet' type='text/css'>-->
@@ -132,7 +132,7 @@
       </div>
       
      
-      
+     
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
     <script src="/css/ckeditor/ckeditor.js"></script> 
     <script src="/js/main.js"></script> 

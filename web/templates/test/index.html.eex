@@ -1,3 +1,5 @@
+<!--TEST PAGE-->
+
 
 <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
@@ -41,8 +43,7 @@
 
 </style>
 
-
-<h1 class="ralewaycustom" style="font-size:40px";>LIVE PROJECTS</h2>
+     <h1 class="ralewaycustom" style="font-size:40px";>LIVE PROJECTS</h2>
 
 <div class="container">
   <div class="row">
@@ -94,47 +95,3 @@
  </div>
 </div>
 <% end %>
-<br>
-<br>
-<br>
-<!--<div id="page">-->
-<!--  <div class="progress-bar">-->
-<!--      <canvas id="inactiveProgress" class="progress-inactive" height="275px" width="275px"></canvas>-->
-<!--    <canvas id="activeProgress" class="progress-active"  height="275px" width="275px"></canvas>-->
-<!--    <p>0%</p>-->
-<!--  </div>-->
-<!--  <div id="progressControllerContainer">-->
-<!--    <input type="range" id="progressController" min="0" max="100" value="15" />-->
-<!--  </div-->
-<!--</div>-->
-<br>
-<br>
-<br>
-<br>
-<div>
-  <!--<table class="table">-->
-  <!--  <thead>-->
-  <!--    <tr>-->
-  <!--      <th>Name</th>-->
-  <!--      <th>Description</th>-->
-  <!--      <th>Video Url</th>-->
-  <!--      <th>Amount</th>-->
-  <!--      <th>Picture</th>-->
-  <!--      <th></th>-->
-  <!--    </tr>-->
-  <!--  </thead>-->
-  <!--  <tbody>-->
-</div>
-
-
-<%#= link "New project", to: project_path(@conn, :new) %>
-<%#= link "Delete project", to: project_path(@conn, :delete) %>
-
-<!--<li style="font-family: Roboto Slab; font-size: 17px;"># #link "Create New Project", to: project_path(@conn, :new) %></li>-->
-<br>
-<br>
-<br>
-<br>
-<br>
-</body>
-</html>

@@ -188,7 +188,7 @@ textshadow {
 
   <!--<link href='/css/ckeditor/contents.css' rel='stylesheet' type='text/css'>-->
   
- <a><image src="/images/black-and-white-forest.jpg" height="450" width="720"</image></a>
+ <a><image src="/images/black-and-white-forest.changjpg" height="450" width="720"</image></a>
 
 <div class="Montserrat-700 textshadow">
   <h1 style ="font-size: 52px;">What's your gift to Earth?</h1>
@@ -233,11 +233,11 @@ textshadow {
 <br>
 <br>
    
-    <div class="form-group">
-     <a><image src="/images/brass-camera.jpg" height="100" width="170"></image></a>
-     <button class="btn-xlarge btn-file btn-custom-colour upload-button">Select Photo<input type="file" name="project[picture]" class="file-upload">
-       </button>
-       <img class="prev-pic" />
+    <DIV CLASS="FORM-GROUP">
+     <A><IMAGE SRC="/IMAGES/BRASS-CAMERA.JPG" HEIGHT="100" WIDTH="170"></IMAGE></A>
+     <BUTTON CLASS="BTN-XLARGE BTN-FILE BTN-CUSTOM-COLOUR UPLOAD-BUTTON">SELECT PHOTO<INPUT TYPE="FILE" NAME="PROJECT[PICTURE]" CLASS="FILE-UPLOAD">
+       </BUTTON>
+       <IMG CLASS="PREV-PIC" />
 
 <br>
 <br>
