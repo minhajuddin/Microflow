@@ -205,7 +205,7 @@ textshadow {
 <br>
 <br>
 <br>
-  
+
   
    <label for="project[name]" class= "Raleway" >Project Name</label>
    <br>
@@ -278,3 +278,14 @@ textshadow {
 <br>
 <br>
 
+<script>
+  $(document).ready(function(){
+    // ckeditor stuff
+    CKEDITOR.replace( 'ckeditor' );
+    // end ckeditor stuff
+    
+    // tooltip stuff
+    $('[data-toggle="tooltip"]').tooltip();
+    // end tooltip stuff
+ });
+</script>

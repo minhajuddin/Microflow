@@ -27,10 +27,19 @@ defmodule Microflow.Project do
   def changeset(model, params \\ :empty) do
     model
     |> cast(params, @required_fields, @optional_fields)
-    |> cast_attachments(params, @required_file_fields, @optional_file_fields)
+    # |> cast_attachments(params, @required_file_fields, @optional_file_fields)
     |> validate_length(:description, min: 5)
     |> validate_length(:description, max: 555) 
+    
   end
+  
+  def avatar_changeset(proj, params) do
+    proj |> cast_attachments(params, ~w(picture), ~w())
+  end
+
+  # def correct_image_path(path) do
+  #   String.replace path, "priv/static/mediamedia", "/"
+  # end
 end
 
 # Character count line 32

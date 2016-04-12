@@ -4,7 +4,6 @@
 <%# stylesheet_link_tag 'glowing-progress-bar.css', 'light-saber-handle.css' %>
 <%# stylesheet_link_tag 'medsectionbuttons' %>
 
-<link rel="stylesheet" href="css/box_peel_up.css">
 
 <style>
  /*START FONTS*/
@@ -53,9 +52,14 @@
     <div class="panel panel-default box6"  style="height: 1500px;width: auto;"> 
      <div class="panel-heading text-center" style="padding:0;background:#fff">
        <!--<div class="panel panel-default"  style="height: 1200px; margin-bottom:50px;">-->
-       <img src="<%= Microflow.Avatar.url({project.picture, project}, :original) %>" width="100%" height="240px"/>
+       <%=project.id  %>
+       <!-- for obtaining image url -->
+       <% s = to_string(Microflow.Avatar.url({project.picture, project})) %>
+       <% img_url = String.slice(s, 11, String.length(s)) %>
+       <img src="<%= img_url %>" width="100%" height="240px"/>
+      
      </div>
-
+     
      <!--jonote, removed alt '"-->
 
 
@@ -76,8 +80,9 @@
 
       <h2 style="font-family: 'Raleway', sans-serif;">Help us raise $<%= project.raise_amount %></h2>
 
-
-      <iframe width="100%" height="100%" position= "absolute" src= "https://www.youtube.com/embed/<%=project.video_url%>"></iframe> 
+      <% video_string = to_string(project.video_url) %>
+      <% video = String.slice(video_string,32,String.length(video_string)) %>
+      <iframe width="100%" height="100%" position= "absolute" src= "https://www.youtube.com/embed/<%=video%>"></iframe> 
 
 
 

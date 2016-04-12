@@ -6,8 +6,7 @@
 <%# stylesheet_link_tag 'glowing-progress-bar.css', 'light-saber-handle.css' %>
 <%# stylesheet_link_tag 'medsectionbuttons' %>
 
-<link rel="stylesheet" href="css/box_peel_up.css">
-<link rel="stylesheet" href="css/light-saber-handle.css">
+<link rel="stylesheet" href="/css/light-saber-handle.css">
 
 <style >
  /*START FONTS*/

@@ -9,7 +9,9 @@ defmodule Microflow.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/", from: :microflow, gzip: false,
-    only: ~w(css fonts images js favicon.ico robots.txt Tmp_pics)
+    only: ~w(css fonts images js favicon.ico robots.txt media)
+    
+
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
@@ -36,4 +38,8 @@ defmodule Microflow.Endpoint do
     signing_salt: "GajEm3B0"
 
   plug Microflow.Router
+  
+  plug Plug.Static,
+    at: "/media", from: Path.expand('./media'), gzip: false
+    
 end

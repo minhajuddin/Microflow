@@ -28,11 +28,19 @@ defmodule Microflow.Avatar do
   
    def __storage, do: Arc.Storage.Local
 
-   def filename(version,  {file, scope}), do: "#{version}-#{file.file_name}"
+  # def filename(version,  {file, scope}), do: "#{file.file_name}"
 
   # Override the storage directory:
   def storage_dir(version, {file, scope}) do
-    "Tmp_pics/"
+    "priv/static/media"
   end
   
+#  priv/static/media - Saves project but doesn't store pic.
+#  /priv/static/media = Doesn't work.
+#  /priv/static/media/ = Doesn't work
+  
+  def correct_image_path(path) do
+    String.replace path, "priv/static/", "/"
+  end
+
 end

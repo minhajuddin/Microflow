@@ -23,7 +23,9 @@ defmodule Microflow.ProjectController do
   
     changeset = Project.changeset(%Project{}, project_params)
     case Repo.insert(changeset) do
-      {:ok, _project} ->
+      {:ok, project} ->
+        project = Project.avatar_changeset(project, project_params) |> Repo.update
+
         conn
         
         |> put_flash(:info, "Project created successfully.")
