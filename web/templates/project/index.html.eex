@@ -5,7 +5,7 @@
 <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 <%# stylesheet_link_tag 'glowing-progress-bar.css', 'light-saber-handle.css' %>
 <%# stylesheet_link_tag 'medsectionbuttons' %>
-
+<link rel="stylesheet" href="/css/light-saber-handle.css">
 
 <style>
  /*START FONTS*/
@@ -43,7 +43,7 @@
 </style>
 
 
-<h1 class="ralewaycustom" style="font-size:40px";>LIVE PROJECTS</h2>
+  <h1 class="ralewaycustom" style="font-size:40px";>LIVE PROJECTS</h2>
 
 <div class="container">
   <div class="row">
@@ -51,40 +51,53 @@
    <div class="col-sm-5">
     <!--position: static; -->
 
-    <div class="panel panel-default box6"  style="height: 1500px;width: 85%;"> 
+    <div class="panel panel-default box6"  style="height: 1500px;width: auto;"> 
      <div class="panel-heading text-center" style="padding:0;background:#fff">
        <!--<div class="panel panel-default"  style="height: 1200px; margin-bottom:50px;">-->
-       <%=project.id  %>
+     <%=project.id  %>
        <!-- for obtaining image url -->
        <% s = to_string(Microflow.Avatar.url({project.picture, project})) %>
        <% img_url = String.slice(s, 11, String.length(s)) %>
        <img src="<%= img_url %>" width="100%" height="240px"/>
-      
      </div>
-     
+
      <!--jonote, removed alt '"-->
 
 
+   
      <div class="panel-body" style="height: 280px">
       <h2 style="font-family: 'Montserrat', sans-serif;"><%= project.name %></h2>
       <h3 class="ralewaycustom" style="font-size:22px; height: 700px"><%= raw(project.description) %></h3>
-    </div>
+     </div>
 
-    <!--TTD. Need to add a progress bar and percentages-->
-    <div class="progress" style= "margin-top: 500px">
-      <div class="progress-bar progress-bar-custom active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
-        <span class="sr-only">70% Complete</span>70%
-      </div>
+    
+      <!--TTD. Need to add a progress bar and percentages-->
+<div id="lightsaber" class="purple" style= "margin-top: 500px;margin-left:0px;">
+  <div id="handle">
+    <div id="handle-top"></div>
+    <div id="handle-button"><a href="#" class="show_hide"></a></div>
+    <div id="handle-middle"></div>
+    <div id="handle-bottom"></div>
+  </div>
+  <div class="slidingDiv"  style="height:220px">
+    <div id="light"  style="height:250px">
+      <div id="lightcap"></div>
+      <div id="lightmain" style="height:305px;width:19px"></div> <!--Change height to adjust length. Width to adjust thicknes of beam.-->
     </div>
+  </div>
+</div>
+
     <!--TTD. Need to put a maximum total amount. See Selfstarter-->
 
     <div class="panel-footer" style= "margin-top: 40px">
 
       <h2 style="font-family: 'Raleway', sans-serif;">Help us raise $<%= project.raise_amount %></h2>
 
-      <% video_string = to_string(project.video_url) %>
+ <% video_string = to_string(project.video_url) %>
       <% video = String.slice(video_string,32,String.length(video_string)) %>
       <iframe width="100%" height="100%" position= "absolute" src= "https://www.youtube.com/embed/<%=video%>"></iframe> 
+
+      
 
 
 
@@ -104,6 +117,13 @@
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 <!--<div id="page">-->
 <!--  <div class="progress-bar">-->
 <!--      <canvas id="inactiveProgress" class="progress-inactive" height="275px" width="275px"></canvas>-->

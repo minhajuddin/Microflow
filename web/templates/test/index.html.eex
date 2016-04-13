@@ -48,23 +48,27 @@
 <div class="container">
   <div class="row">
    <%= for project <- @projects do %>
-   <div class="col-sm-4">
+   <div class="col-sm-5">
     <!--position: static; -->
 
     <div class="panel panel-default box6"  style="height: 1500px;width: auto;"> 
      <div class="panel-heading text-center" style="padding:0;background:#fff">
        <!--<div class="panel panel-default"  style="height: 1200px; margin-bottom:50px;">-->
-       <img src="<%= Microflow.Avatar.url({project.picture, project}, :original) %>" width="100%" height="240px"/>
+     <%=project.id  %>
+       <!-- for obtaining image url -->
+       <% s = to_string(Microflow.Avatar.url({project.picture, project})) %>
+       <% img_url = String.slice(s, 11, String.length(s)) %>
+       <img src="<%= img_url %>" width="100%" height="240px"/>
      </div>
 
      <!--jonote, removed alt '"-->
 
 
+   
      <div class="panel-body" style="height: 280px">
       <h2 style="font-family: 'Montserrat', sans-serif;"><%= project.name %></h2>
       <h3 class="ralewaycustom" style="font-size:22px; height: 700px"><%= raw(project.description) %></h3>
-      
-    </div>
+     </div>
 
     
       <!--TTD. Need to add a progress bar and percentages-->
@@ -78,7 +82,7 @@
   <div class="slidingDiv"  style="height:220px">
     <div id="light"  style="height:250px">
       <div id="lightcap"></div>
-      <div id="lightmain" style="height:220px;width:15px"></div> <!--Change this to adjust beam.-->
+      <div id="lightmain" style="height:220px;width:19px"></div> <!--Change this to adjust beam.-->
     </div>
   </div>
 </div>
@@ -89,8 +93,11 @@
 
       <h2 style="font-family: 'Raleway', sans-serif;">Help us raise $<%= project.raise_amount %></h2>
 
+ <% video_string = to_string(project.video_url) %>
+      <% video = String.slice(video_string,32,String.length(video_string)) %>
+      <iframe width="100%" height="120%" position= "absolute" src= "https://www.youtube.com/embed/<%=video%>"></iframe> 
 
-      <iframe width="100%" height="100%" position= "absolute" src= "https://www.youtube.com/embed/<%=project.video_url%>"></iframe> 
+      
 
 
 
