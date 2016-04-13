@@ -12,6 +12,7 @@
      
        <link rel="stylesheet" href="<%= static_path(@conn, "/css/fonts.css") %>">
        <link rel="stylesheet" href="<%= static_path(@conn, "/css/largesectionbuttons.css") %>" />
+       <link rel="stylesheet" href="<%= static_path(@conn, "/css/picbutton.css") %>" />    
           
 <style>     
      
@@ -375,25 +376,25 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   
    
-   <!--SECTION BUTTONS-->
-
+   
 <div>
-    <a href class="largesectionbuttons hvr-skew" <h4 style="font-family:Montserrat">WATER PROJECTS</h4></a>
+  <div style="text-align: center;">
+      <a href class="largesectionbuttons hvr-bob"<h4 style="font-family:Raleway">WATER, FOOD + FARMING</h4></a>
     <br>
     <br>
-   <a href class="largesectionbuttons hvr-bob" <h4 style="font-family:Montserrat">FARMING PROJECTS</h4></a>
     <br>
+     <button id="close-image"><img src="https://s-media-cache-ak0.pinimg.com/236x/08/61/54/08615465aa8a58a739d44621fca24925.jpg"><a href class="largesectionbuttons hvr-buzz"<h4 style="font-family:Raleway">ENERGY, HOMES + EDUCATION </h4></a>
+    </button>
     <br>
-    <a href class="largesectionbuttons hvr-buzz"<h4 style="font-family:Montserrat">ENERGY PROJECTS</h4></a>
+     <br>
     <br>
-    <br>
-    <a href class="largesectionbuttons hvr-grow-rotate"<h4 style="font-family:Montserrat">ORGANIC FOOD PROJECTS</h4></a>
-    <br>
-    <br>
-    <a href class="largesectionbuttons hvr-bob"<h4 style="font-family:Montserrat">NATURAL HOMES</h4></a>
+  
+ </div>
  </div>
    <br>
   <br>
+ <button id="close-image"><img src="https://s-media-cache-ak0.pinimg.com/236x/08/61/54/08615465aa8a58a739d44621fca24925.jpg"></button>
+<button id="close-CSS"></button>
    <br>
   <br>
    <br>

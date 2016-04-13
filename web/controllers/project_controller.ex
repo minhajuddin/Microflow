@@ -31,7 +31,7 @@ defmodule Microflow.ProjectController do
         |> put_flash(:info, "Project created successfully.")
         |> redirect(to: project_path(conn, :index))
       {:error, changeset} ->
-        IO.inspect changeset
+        # IO.inspect changeset
         render(conn, "new.html", changeset: changeset)
     end
   end

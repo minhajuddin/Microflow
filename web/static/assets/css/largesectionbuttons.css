@@ -12,8 +12,8 @@
 	background-color:#ffffff;
 	-moz-border-radius:8px;
 	-webkit-border-radius:8px;
-	border-radius:8px;
-	border:4px solid #dcdcdc;
+	border-radius:100px; /*Change this for rounded or sharp corners.*/
+	border:3px solid #dcdcdc;
 	display:inline-block;
 	cursor:pointer;
 	color:#666666;

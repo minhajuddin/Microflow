@@ -199,13 +199,22 @@ textshadow {
 
 
 <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-10 col-md-offset-3">
       <%= form_for @changeset, project_path(@conn, :create), [multipart: true, class: "new-project-form"], fn f -> %> 
         <div class="form-group">
 <br>
 <br>
 <br>
-
+<%= if f.errors != [] do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below:</p>
+      <ul>
+        <%= for {attr, message} <- f.errors do %>
+          <li><%= humanize(attr) %> <%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   
    <label for="project[name]" class= "Raleway" >Project Name</label>
    <br>
