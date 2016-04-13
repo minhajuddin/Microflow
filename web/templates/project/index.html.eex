@@ -48,10 +48,10 @@
 <div class="container">
   <div class="row">
    <%= for project <- @projects do %>
-   <div class="col-sm-4">
+   <div class="col-sm-5">
     <!--position: static; -->
 
-    <div class="panel panel-default box6"  style="height: 1500px;width: auto;"> 
+    <div class="panel panel-default box6"  style="height: 1500px;width: 85%;"> 
      <div class="panel-heading text-center" style="padding:0;background:#fff">
        <!--<div class="panel panel-default"  style="height: 1200px; margin-bottom:50px;">-->
        <%=project.id  %>
