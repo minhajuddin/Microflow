@@ -20,8 +20,8 @@
 	#contentContainer
 	{
 		position:absolute;
-		margin-left:-500px;
-		margin-top:-500px;
+		margin-left:-500px; 
+		margin-top: -80px; /*Change height with this number */
 		left:50%;
 		top:50%;
 		width:1000px;
@@ -85,33 +85,43 @@
   background-size: 100%;
 }
 
-#main {
-    padding-top:100px;
-    margin: auto;
-    width:284px;
+	bodylow {
+  height: 50%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  background: url('https://static.pexels.com/photos/28026/pexels-photo-28026-large.jpg') no-repeat center center;
+  background-size: 100%;
 }
 
-.btn-twt:before {
-    content: 'MICROFLOW';
-    display: inline-block;
-    border: 1px solid black;
-    color: black;
-    padding: 15px 41px;
-    width: 150px;
-    text-align: center;
-    background: linear-gradient(to left, rgba(255,255,255,0) 50%, black 50%);
-    background-size: 200% 100%;
-    background-position:right bottom;
-    vertical-align: middle;
-  transition:all 0.5s ease;
-}
-.btn-twt:hover:before {
-    content: '@igeorgetaylor';
-    color: white;
-    text-align: center;
-    background-position:left bottom;
-    transition:all 0.5s ease;
-}
+/*#main {*/
+/*    padding-top:100px;*/
+/*    margin: auto;*/
+/*    width:284px;*/
+/*}*/
+
+/*.btn-twt:before {*/
+/*    content: 'MICROFLOW';*/
+/*    display: inline-block;*/
+/*    border: 1px solid black;*/
+/*    color: black;*/
+/*    padding: 15px 41px;*/
+/*    width: 150px;*/
+/*    text-align: center;*/
+/*    background: linear-gradient(to left, rgba(255,255,255,0) 50%, black 50%);*/
+/*    background-size: 200% 100%;*/
+/*    background-position:right bottom;*/
+/*    vertical-align: middle;*/
+/*  transition:all 1s ease;*/
+/*}*/
+/*.btn-twt:hover:before {*/
+/*    content: 'JAKE';*/
+/*    color: white;*/
+/*    text-align: center;*/
+/*    background-position:left bottom;*/
+/*    transition:all 2s ease;*/
+/*}*/
 </style>
 
 <script type='text/javascript' src='https://rawgit.com/greensock/GreenSock-JS/master/src/minified/TweenMax.min.js'></script>
@@ -228,8 +238,18 @@
 			return Math.floor((Math.random()*$n)+1);	
 		}
 </script>
+<br>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<br>
+<br>
+  <div id="main">
+        <a class='btn-twt' href="JAKE"></a>
+    </div>
+<br>
 
-<div id="contentContainer" class="trans3d"> 
+<br>
+<div id="contentContainer" class="trans3d;"> 
+   
 	<section id="carouselContainer" class="trans3d">
 		<%= for project <- @projects do %>
 			<% s = to_string(Microflow.Avatar.url({project.picture, project})) %>
@@ -255,18 +275,15 @@
 	<br>
 	<br>
 	<br>
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
-   
+  
     
         <link rel="stylesheet" type="text/css" href="styles.css" />
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
    
     
     
-    <div id="main">
-        <a class='btn-twt' href="http://twitter.com/igeorgetaylor"></a>
-    </div>
+  
    
   
   
