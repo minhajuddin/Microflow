@@ -54,7 +54,7 @@
     <div class="panel panel-default box6"  style="height: 1500px;width: auto;"> 
      <div class="panel-heading text-center" style="padding:0;background:#fff">
        <!--<div class="panel panel-default"  style="height: 1200px; margin-bottom:50px;">-->
-     <%=project.id  %>
+     
        <!-- for obtaining image url -->
        <% s = to_string(Microflow.Avatar.url({project.picture, project})) %>
        <% img_url = String.slice(s, 11, String.length(s)) %>

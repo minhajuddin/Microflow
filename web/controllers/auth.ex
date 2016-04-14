@@ -21,7 +21,6 @@ defmodule Microflow.Auth do
     |> put_session(:user_id, user.id)
     |> configure_session(renew: true)
   end
-
   
   
   def login_by_username_and_pass(conn, username, given_pass, opts) do

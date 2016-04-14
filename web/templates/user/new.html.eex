@@ -5,18 +5,17 @@
 
 <h1 style="font-family: 'Raleway', sans-serif;">New User</h1>
 
+<%= if @changeset.action do %>
+  <div class="alert alert-danger">
+    <p>Oops :) something went wrong! Please check the errors below.</p>
+  </div>
+<% end %>
+
 <%= form_for @changeset, user_path(@conn, :create), fn f -> %>
     <div class="form-group">
 
-<%= if @changeset.action do %>
-  <div class="alert alert-danger">
-    <p>Oops, something went wrong! Please check the errors below.</p>
-  </div>
-<% end %>
-  
 <%#= text_input f, :name, placeholder: "Your Name Here", class: "form-control" %>
-  </div>
-
+  
 <div class="form-group">
   <%= text_input f, :username, placeholder: "Username", class: "form-control" %>
     </div>

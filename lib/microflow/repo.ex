@@ -16,10 +16,10 @@ use Ecto.Repo, otp_app: :microflow
     end
   end
 
-  def all(Microflow.User, _empty) do #jnote: changed all to alltest
-    [%Microflow.User{id: "1", name: "admin", username: "admin", password: "elixir"},
-     %Microflow.User{id: "2", name: "Bruce", username: "redrapids", password: "7langs"},
-     %Microflow.User{id: "3", name: "Chris", username: "chrismccord", password: "phx"}]
-  end
+  # def all(Microflow.User, _empty) do #jnote: changed all to alltest
+  #   [%Microflow.User{id: "1", name: "admin", username: "admin", password: "elixir"},
+  #   %Microflow.User{id: "2", name: "Bruce", username: "redrapids", password: "7langs"},
+  #   %Microflow.User{id: "3", name: "Chris", username: "chrismccord", password: "phx"}]
+  # end
   def all(_module, _empty), do: []
 end

@@ -6,14 +6,9 @@ defmodule Microflow.UserController do
  alias Microflow.User #From page 62. Phoenix PDF.
   
   def index(conn, _params) do
-    users = Repo.all(Microflow.User) #jnote: changed all to alltest. 2. Changed it back again. 
-    render conn, "index.html", users: users
+     users = Repo.all(Microflow.User) #jnote: changed all to alltest. 2. Changed it back again. 
+     render conn, "index.html", users: users
   end
-  
-  # def index(conn, _params) do
-  #   users = Repo.all(Rumbl.User)
-  #   render conn, "index.html", users: users
-  # end
   
   # def index(conn, _params) do
   #   case authenticate(conn) do
@@ -45,14 +40,14 @@ defmodule Microflow.UserController do
     case Repo.insert(changeset) do
       {:ok, user} ->
         conn
-        |> Microflow.Auth.login(user)
+      # |> Microflow.Auth.login(user)
         |> put_flash(:info, "#{user.name} created!")
         |> redirect(to: user_path(conn, :index))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
   end
-
+  
   def delete(conn, %{"id" => id}) do
     user = Repo.get!(User, id)
     Repo.delete!(user)
@@ -66,7 +61,7 @@ defmodule Microflow.UserController do
       conn
     else
       conn
-      |> put_flash(:error, "Sorry Bub, you must be logged in to access that page")
+      |> put_flash(:error, "Sorry, you must be logged in to access that page")
       |> redirect(to: home_path(conn, :index))
       |> halt()
       end

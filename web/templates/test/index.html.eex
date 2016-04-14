@@ -1,116 +1,338 @@
-<!--TEST PAGE-->
+<style>
+  /* hardware accelatator class */	
+	.trans3d
+	{
+		-webkit-transform-style: preserve-3d;
+		-webkit-transform: translate3d(0, 0, 0);
+		-moz-transform-style: preserve-3d;
+		-moz-transform: translate3d(0, 0, 0);
+		-ms-transform-style:preserve-3d;
+		-ms-transform: translate3d(0, 0, 0);
+		transform-style:preserve-3d;
+		transform: translate3d(0, 0, 0);
 
+		/*-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+		-ms-backface-visibility:hidden;
+		backface-visibility:hidden;*/
+	}
+	
+	#contentContainer
+	{
+		position:absolute;
+		margin-left:-500px;
+		margin-top:-500px;
+		left:50%;
+		top:50%;
+		width:1000px;
+		height:1000px;
+		border-radius: 20px;
+	}
+	
+	#carouselContainer
+	{
+		position:absolute;
+		margin-left:-500px;
+		margin-top:-500px;
+		left:50%;
+		top:50%;
+		width:1000px;
+		height:1000px;
+		border-radius: 20px;
+	}
+	
+	.carouselItem
+	{
+		width:320px;
+		height:200px;
+		position:absolute;
+		left:50%;
+		top:50%;
+		margin-left:-160px;
+		margin-top:-90px;
+		border-radius: 20px;
+		visibility:hidden;
+	}
+	
+	.carouselItemInner
+	{
+		/*width:0px; was 320 */
+		/*height:0px; /* was 130 */
+		/*position:absolute;*/
+		/*background-color:rgba(255, 255, 255, .75);*/
+		/*border:10px solid rgba(255, 255, 255, .5);*/
+		/*color:black;*/
+		/*font-size:72px;*/
+		/*left:50%;*/
+		/*top:50%;*/
+		/*margin-left:-160px;*/
+		/*margin-top:-90px;*/
+		/*text-align:center;*/
+		/*padding-top:50px;*/
+		
+	}
+	
+	
+	/*CSS BUTTON:*/
+	
+	@import "bourbon";
 
-<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-<%# stylesheet_link_tag 'glowing-progress-bar.css', 'light-saber-handle.css' %>
-<%# stylesheet_link_tag 'medsectionbuttons' %>
-
-<link rel="stylesheet" href="/css/light-saber-handle.css">
-
-<style >
- /*START FONTS*/
- 
- .msrtsmallbox {
-  font-family: 'Montserrat'; sans-serif; font-size:26px;
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  background: url('https://static.pexels.com/photos/6883/art-desert-dunes-bw.jpg') no-repeat center center;
+  background-size: 140%;
+  
+  .btn-cont {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    .btn {
+      border: 1px solid black;
+      padding: 15px 41px;
+      color: black;
+      text-decoration: none;
+      
+      span {
+        position: relative;
+        z-index: 1;
+        
+        @include transition(all 300ms ease-in);
+      }
+      
+      &:hover {
+        span {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+      
+      &:after {
+        content: 'PROJECTS';
+        position: absolute;
+        z-index: 5;
+        background-color: black;
+        padding: 15px 12px;
+        top: -15px;
+        left: 1px;
+        width: 0%;
+        visibility: hidden;
+        opacity: 0;
+        color: #d3d3d3;
+        
+        @include transition(all 300ms ease-out);
+      }
+      
+      &:hover:after {
+        visibility: visible;
+        opacity: 5;
+        width: 81%;
+      }
+    }
+  }
 }
-
-.msrt2 {
-  font-family: 'Montserrat'; sans-serif; font-weight: 300px;
-}
-
-.ralewaysmallbox  {  font-family: 'Raleway', sans-serif; font-size:18px}
-
-.ralewaycustom  {  font-family: 'Raleway', sans-serif; line-height: 32px; font-size:24px; text-align: justify; letter-spacing: 0.2px;}
-
-.highlight {
-  background-color : #ffff00;
-
-}
-
-/*END FONTS*/
-
-.no-padding {
-  padding: 0px 0px; 
-}
-
-.rounded-corners {
-  border-radius: 100px;
-  padding: 10px; 
-}
-
-
-
 </style>
 
-     <h1 class="ralewaycustom" style="font-size:40px";>LIVE PROJECTS</h2>
+<script type='text/javascript' src='https://rawgit.com/greensock/GreenSock-JS/master/src/minified/TweenMax.min.js'></script>
 
-<div class="container">
-  <div class="row">
-   <%= for project <- @projects do %>
-   <div class="col-sm-5">
-    <!--position: static; -->
+<script>
+  // set and cache variables
+		var w, container, carousel, item, radius, itemLength, rY, ticker, fps; 
+		var mouseX = 0;
+		var mouseY = 0;
+		var mouseZ = 0;
+		var addX = 0;
+		
+		
+		// fps counter created by: https://gist.github.com/sharkbrainguy/1156092,
+		// no need to create my own :)
+		var fps_counter = {
+			
+			tick: function () 
+			{
+				// this has to clone the array every tick so that
+				// separate instances won't share state 
+				this.times = this.times.concat(+new Date());
+				var seconds, times = this.times;
+        
+				if (times.length > this.span + 1) 
+				{
+					times.shift(); // ditch the oldest time
+					seconds = (times[times.length - 1] - times[0]) / 1000;
+					return Math.round(this.span / seconds);
+				} 
+				else return null;
+			},
+ 
+			times: [],
+			span: 20
+		};
+		var counter = Object.create(fps_counter);
+		
+		
+		
+		$(document).ready(init);
+		
+		
+		function init()
+		{
+			w = $(window);
+			container = $( '#contentContainer' );
+			carousel = $( '#carouselContainer' );
+			item = $( '.carouselItem' );
+			itemLength = $( '.carouselItem' ).length;
+			fps = $('#fps');
+			rY = 360 / itemLength;
+			radius = Math.round( (250) / Math.tan( Math.PI / itemLength ) );
+			
+			// set container 3d props
+			TweenMax.set(container, {perspective:600})
+			TweenMax.set(carousel, {z:-(radius)})
+			
+			// create carousel item props
+			
+			for ( var i = 0; i < itemLength; i++ )
+			{
+				var $item = item.eq(i);
+				var $block = $item.find('.carouselItemInner');
+				
+        //thanks @chrisgannon!        
+        TweenMax.set($item, {rotationY:rY * i, z:radius, transformOrigin:"50% 50% " + -radius + "px"});
+				
+				animateIn( $item, $block )						
+			}
+			
+			// set mouse x and y props and looper ticker
+			window.addEventListener( "mousemove", onMouseMove, false );
+			ticker = setInterval( looper, 1000/60 );			
+		}
+		
+		function animateIn( $item, $block )
+		{
+			var $nrX = 360 * getRandomInt(2);
+			var $nrY = 360 * getRandomInt(2);
+				
+			var $nx = -(2000) + getRandomInt( 4000 )
+			var $ny = -(2000) + getRandomInt( 4000 )
+			var $nz = -4
+			000 +  getRandomInt( 4000 )
+				
+			var $s = 1.5 + (getRandomInt( 10 ) * .1)
+			var $d = 1 - (getRandomInt( 8 ) * .1)
+			
+			TweenMax.set( $item, { autoAlpha:1, delay:$d } )	
+			TweenMax.set( $block, { z:$nz, rotationY:$nrY, rotationX:$nrX, x:$nx, y:$ny, autoAlpha:0} )
+			TweenMax.to( $block, $s, { delay:$d, rotationY:0, rotationX:0, z:0,  ease:Expo.easeInOut} )
+			TweenMax.to( $block, $s-.5, { delay:$d, x:0, y:0, autoAlpha:1, ease:Expo.easeInOut} )
+		}
+		
+		function onMouseMove(event)
+		{
+			mouseX = -(-(window.innerWidth * .5) + event.pageX) * .0025;
+			mouseY = -(-(window.innerHeight * .5) + event.pageY ) * .01;
+			mouseZ = -(radius) - (Math.abs(-(window.innerHeight * .5) + event.pageY ) - 200);
+		}
+		
+		// loops and sets the carousel 3d properties
+		function looper()
+		{
+			addX += mouseX
+			TweenMax.to( carousel, 1, { rotationY:addX, rotationX:mouseY, ease:Quint.easeOut } )
+			TweenMax.set( carousel, {z:mouseZ } )
+			fps.text( 'Framerate: ' + counter.tick() + '/60 FPS' )	
+		}
+		
+		function getRandomInt( $n )
+		{
+			return Math.floor((Math.random()*$n)+1);	
+		}
+</script>
 
-    <div class="panel panel-default box6"  style="height: 1500px;width: auto;"> 
-     <div class="panel-heading text-center" style="padding:0;background:#fff">
-       <!--<div class="panel panel-default"  style="height: 1200px; margin-bottom:50px;">-->
-     <%=project.id  %>
-       <!-- for obtaining image url -->
-       <% s = to_string(Microflow.Avatar.url({project.picture, project})) %>
-       <% img_url = String.slice(s, 11, String.length(s)) %>
-       <img src="<%= img_url %>" width="100%" height="240px"/>
-     </div>
+<div id="contentContainer" class="trans3d"> 
+	<section id="carouselContainer" class="trans3d">
+		<%= for project <- @projects do %>
+			<% s = to_string(Microflow.Avatar.url({project.picture, project})) %>
+       		<% img_url = String.slice(s, 11, String.length(s)) %>
+       		
+			<figure id="item1" class="carouselItem trans3d"><div class="carouselItemInner trans3d"><img src="<%= img_url %>" width="200" height="200"/></div></figure>
+		<!--<figure id="item2" class="carouselItem trans3d"><div class="carouselItemInner trans3d">2</div></figure>-->
+		<!--<figure id="item3" class="carouselItem trans3d"><div class="carouselItemInner trans3d">3</div></figure>-->
+		<!--<figure id="item4" class="carouselItem trans3d"><div class="carouselItemInner trans3d">4</div></figure>-->
+		<!--<figure id="item5" class="carouselItem trans3d"><div class="carouselItemInner trans3d">5</div></figure>-->
+		<!--<figure id="item6" class="carouselItem trans3d"><div class="carouselItemInner trans3d">6</div></figure>-->
+		<!--<figure id="item7" class="carouselItem trans3d"><div class="carouselItemInner trans3d">7</div></figure>-->
+		<!--<figure id="item8" class="carouselItem trans3d"><div class="carouselItemInner trans3d">8</div></figure>-->
+		<!--<figure id="item9" class="carouselItem trans3d"><div class="carouselItemInner trans3d">9</div></figure>-->
+		<!--<figure id="item10" class="carouselItem trans3d"><div class="carouselItemInner trans3d">10</div></figure>-->
+		<!--<figure id="item11" class="carouselItem trans3d"><div class="carouselItemInner trans3d">11</div></figure>-->
+		<!--<figure id="item12" class="carouselItem trans3d"><div class="carouselItemInner trans3d">12</div></figure>	-->
+		<% end %>
+	</section>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
-     <!--jonote, removed alt '"-->
-
-
-   
-     <div class="panel-body" style="height: 280px">
-      <h2 style="font-family: 'Montserrat', sans-serif;"><%= project.name %></h2>
-      <h3 class="ralewaycustom" style="font-size:22px; height: 700px"><%= raw(project.description) %></h3>
-     </div>
-
-    
-      <!--TTD. Need to add a progress bar and percentages-->
-<div id="lightsaber" class="purple" style= "margin-top: 500px;margin-left:0px;">
-  <div id="handle">
-    <div id="handle-top"></div>
-    <div id="handle-button"><a href="#" class="show_hide"></a></div>
-    <div id="handle-middle"></div>
-    <div id="handle-bottom"></div>
+<body>
+  <div class="btn-cont">
+    <a href="javascript:void(0)" class="btn"><span>MICROFLOW</span></a>
   </div>
-  <div class="slidingDiv"  style="height:220px">
-    <div id="light"  style="height:250px">
-      <div id="lightcap"></div>
-      <div id="lightmain" style="height:220px;width:19px"></div> <!--Change this to adjust beam.-->
-    </div>
-  </div>
-</div>
-
-    <!--TTD. Need to put a maximum total amount. See Selfstarter-->
-
-    <div class="panel-footer" style= "margin-top: 40px">
-
-      <h2 style="font-family: 'Raleway', sans-serif;">Help us raise $<%= project.raise_amount %></h2>
-
- <% video_string = to_string(project.video_url) %>
-      <% video = String.slice(video_string,32,String.length(video_string)) %>
-      <iframe width="100%" height="120%" position= "absolute" src= "https://www.youtube.com/embed/<%=video%>"></iframe> 
-
+</body>
+  
+  
+  
+  <!--START OLD CAROUSEL PROJECT PRESENTATION
+  <div style="text-align: center;">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style="background:white;">
+     Indicators 
+     Wrapper for slides 
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+          <section class="col-lg-1"></section>
+          <section class="col-lg-4">
+            <%# project = Project.get!(%Project{id: 32})  %>
+            <h1 class="msrt"><%#= project.name %></h1>
+            <h3 class="raleway"><%#= Repo.get!(Project, 25).description  %></h3>
+          </section>    
+          <section class="col-lg-5">
+            <div class="col-lg-1"></div>
+            <div>
+               
+              <%# s = to_string(Repo.get!(Project, 25).image) %>
+             <%# img_url = String.slice(s, 11, String.length(s)) %>
+             <img src="<%#= img_url %>" width="100%" height="240px"/>
+            </div>
+            <div class="col-lg-1"></div>
+          </section>
+          <section class="col-lg-2"></section>
+      </div>
       
-
-
-
-
-      <!--h2 style="font-family: 'Montserrat', sans-serif;"--><%#= project.video_url %></h2>        
-      <br>
-      <br>
-
-      <div>
-       <%= link "Admin Delete Project", to: project_path(@conn, :delete, project), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-default btn-large rounded-corners ralewaycustom", style: "float: center;" %>
-       <%= link "Start Your Own Project", to: project_path(@conn, :new), class: "btn btn-default btn-large rounded-corners ralewaycustom", style: "float: center;" %>
-     </div>
-   </div>
- </div>
+         
+ 
+   
+ 
+    
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    <ol class="carousel-indicators" style="background:green;"> 
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>
 </div>
-<% end %>
+<br>
+
+<!--END CAROUSEL-->

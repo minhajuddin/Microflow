@@ -18,11 +18,12 @@ defmodule Microflow.Router do
     pipe_through :browser # Use the default browser stack
     get "/", Microflow.HomeController, :index # NOTE "Microflow" must be explicitly added to the controller name, otherwise it raises an error. 
     get "/test", Microflow.TestController, :index
-    # get "/users/:id", Microflow.UserController, :show - THIS LINE RAISED THE ERROR. UNCOMMENT AT YE PERIL.
+    # get "/users/:id", Microflow.UserController, :show #- THIS LINE RAISED THE ERROR. UNCOMMENT AT YE PERIL.
+    # get "users/new", Microflow.UserController, :new
     # get "/home/:messenger", Microflow.HomeController, :show 
     #get "/project/create", NewprojectController, :create
     resources "/projects", Microflow.ProjectController # NOTE "Microflow" must be explicitly added to the controller name, otherwise it raises an error. 
-    
+    get "/users", Microflow.UserController, :index
     resources "/users", Microflow.UserController 
     resources "/sessions", Microflow.SessionController#, only: [:new, :create, :delete]
     # get "/users", Microflow.UserController, :index # Added Microflow to both these routes.

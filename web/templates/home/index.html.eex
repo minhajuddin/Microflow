@@ -6,13 +6,14 @@
 
 <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'><link>
       <link href='https://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'><link>
-      <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'><link>
+   <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
      
      <!--HOVER STYLESHEET. NECESSARY?-->
      
        <link rel="stylesheet" href="<%= static_path(@conn, "/css/fonts.css") %>">
        <link rel="stylesheet" href="<%= static_path(@conn, "/css/largesectionbuttons.css") %>" />
        <link rel="stylesheet" href="<%= static_path(@conn, "/css/picbutton.css") %>" />    
+        <link rel="stylesheet" href="<%= static_path(@conn,"/css/transition_button.css") %>" />
           
 <style>     
      
@@ -63,27 +64,6 @@
 }
 
 
-/* Hover Skew Forward */
-.hvr-skew-forward {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transform-origin: 0 100%;
-  transform-origin: 0 100%;
-}
-.hvr-skew-forward: hover, .hvr-skew-forward: focus, .hvr-skew-forward: active {
-  -webkit-transform: skew(-10deg);
-  transform: skew(-10deg);
-}
 
 /* Hover Bob */
 @-webkit-keyframes hvr-bob {
@@ -162,25 +142,6 @@
   animation-direction: normal, alternate;
 }
   
-/* Grow Rotate */
-.hvr-grow-rotate {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-}
-.hvr-grow-rotate:hover, .hvr-grow-rotate:focus, .hvr-grow-rotate:active {
-  -webkit-transform: scale(1.1) rotate(4deg);
-  transform: scale(1.1) rotate(4deg);
-}
 
 /* Float */
 .hvr-float {
@@ -204,25 +165,7 @@
   transform: translateY(-8px);
 }
 
-/* Skew */
-.hvr-skew {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-}
-.hvr-skew:hover, .hvr-skew:focus, .hvr-skew:active {
-  -webkit-transform: skew(-10deg);
-  transform: skew(-10deg);
-}
+
 
 .low-align {
     display: inline-block;
@@ -248,10 +191,216 @@
     margin: 4px 8px 4px 0;
 }
   
+/*CODEPEN CAROUSEL   */
+  
+  /* hardware accelatator class */	
+	.trans3d
+	{
+		-webkit-transform-style: preserve-3d;
+		-webkit-transform: translate3d(0, 0, 0);
+		-moz-transform-style: preserve-3d;
+		-moz-transform: translate3d(0, 0, 0);
+		-ms-transform-style:preserve-3d;
+		-ms-transform: translate3d(0, 0, 0);
+		transform-style:preserve-3d;
+		transform: translate3d(0, 0, 0);
+
+		/*-webkit-backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+		-ms-backface-visibility:hidden;
+		backface-visibility:hidden;*/
+	}
+	
+	#contentContainer
+	{
+		position:absolute;
+		margin-left:-500px;
+		margin-top:-500px;
+		left:50%;
+		top:50%;
+		width:1000px;
+		height:1000px;
+	}
+	
+	#carouselContainer
+	{
+		position:absolute;
+		margin-left:-500px;
+		margin-top:-500px;
+		left:50%;
+		top:50%;
+		width:1000px;
+		height:1000px;
+	}
+	
+	.carouselItem
+	{
+		width:320px;
+		height:130px;
+		position:absolute;
+		left:50%;
+		top:50%;
+		margin-left:-160px;
+		margin-top:-90px;
+		visibility:hidden;
+	}
+	
+	.carouselItemInner
+	{
+		width:320px;
+		height:130px;
+		position:absolute;
+		background-color:rgba(255, 255, 255, .75);
+		border:10px solid rgba(255, 255, 255, .5);
+		color:aqua;
+		font-size:72px;
+		left:50%;
+		top:50%;
+		margin-left:-160px;
+		margin-top:-90px;
+		text-align:center;
+		padding-top:50px;
+		
+	}
+	
+
   </style>
   
+ <!-- <header>-->
+	<!--	<h1>3D Carousel Using TweenMax.js & jQuery</h1>-->
+	<!--	<h3>A pen by <a href="http://www.twitter.com/johnblazek" target="_blank">@johnblazek</a></h3>-->
+	<!--	<div id="fps">Framerate: 0/60 FPS</div>-->
+	<!--</header>-->
+	
+	<!--<div id="contentContainer" class="trans3d"> -->
+	<!--<section id="carouselContainer" class="trans3d">-->
+	<!--	<figure id="item1" class="carouselItem trans3d"><div class="carouselItemInner trans3d">1</div></figure>-->
+	<!--	<figure id="item2" class="carouselItem trans3d"><div class="carouselItemInner trans3d">2</div></figure>-->
+	<!--	<figure id="item3" class="carouselItem trans3d"><div class="carouselItemInner trans3d">3</div></figure>-->
+	<!--	<figure id="item4" class="carouselItem trans3d"><div class="carouselItemInner trans3d">4</div></figure>-->
+	<!--	<figure id="item5" class="carouselItem trans3d"><div class="carouselItemInner trans3d">5</div></figure>-->
+	<!--	<figure id="item6" class="carouselItem trans3d"><div class="carouselItemInner trans3d">6</div></figure>-->
+	<!--	<figure id="item7" class="carouselItem trans3d"><div class="carouselItemInner trans3d">7</div></figure>-->
+	<!--	<figure id="item8" class="carouselItem trans3d"><div class="carouselItemInner trans3d">8</div></figure>-->
+	<!--	<figure id="item9" class="carouselItem trans3d"><div class="carouselItemInner trans3d">9</div></figure>-->
+	<!--	<figure id="item10" class="carouselItem trans3d"><div class="carouselItemInner trans3d">10</div></figure>-->
+	<!--	<figure id="item11" class="carouselItem trans3d"><div class="carouselItemInner trans3d">11</div></figure>-->
+	<!--	<figure id="item12" class="carouselItem trans3d"><div class="carouselItemInner trans3d">12</div></figure>	-->
+	<!--</section>-->
+	<!--</div>-->
        
-       
+   <script>
+     
+     // set and cache variables
+		var w, container, carousel, item, radius, itemLength, rY, ticker, fps; 
+		var mouseX = 0;
+		var mouseY = 0;
+		var mouseZ = 0;
+		var addX = 0;
+		
+		
+		// fps counter created by: https://gist.github.com/sharkbrainguy/1156092,
+		// no need to create my own :)
+		var fps_counter = {
+			
+			tick: function () 
+			{
+				// this has to clone the array every tick so that
+				// separate instances won't share state 
+				this.times = this.times.concat(+new Date());
+				var seconds, times = this.times;
+        
+				if (times.length > this.span + 1) 
+				{
+					times.shift(); // ditch the oldest time
+					seconds = (times[times.length - 1] - times[0]) / 1000;
+					return Math.round(this.span / seconds);
+				} 
+				else return null;
+			},
+ 
+			times: [],
+			span: 20
+		};
+		var counter = Object.create(fps_counter);
+		
+		
+		
+		$(document).ready( init )
+		
+		function init()
+		{
+			w = $(window);
+			container = $( '#contentContainer' );
+			carousel = $( '#carouselContainer' );
+			item = $( '.carouselItem' );
+			itemLength = $( '.carouselItem' ).length;
+			fps = $('#fps');
+			rY = 360 / itemLength;
+			radius = Math.round( (250) / Math.tan( Math.PI / itemLength ) );
+			
+			// set container 3d props
+			TweenMax.set(container, {perspective:600})
+			TweenMax.set(carousel, {z:-(radius)})
+			
+			// create carousel item props
+			
+			for ( var i = 0; i < itemLength; i++ )
+			{
+				var $item = item.eq(i);
+				var $block = $item.find('.carouselItemInner');
+				
+        //thanks @chrisgannon!        
+        TweenMax.set($item, {rotationY:rY * i, z:radius, transformOrigin:"50% 50% " + -radius + "px"});
+				
+				animateIn( $item, $block )						
+			}
+			
+			// set mouse x and y props and looper ticker
+			window.addEventListener( "mousemove", onMouseMove, false );
+			ticker = setInterval( looper, 1000/60 );			
+		}
+		
+		function animateIn( $item, $block )
+		{
+			var $nrX = 360 * getRandomInt(2);
+			var $nrY = 360 * getRandomInt(2);
+				
+			var $nx = -(2000) + getRandomInt( 4000 )
+			var $ny = -(2000) + getRandomInt( 4000 )
+			var $nz = -4
+			000 +  getRandomInt( 4000 )
+				
+			var $s = 1.5 + (getRandomInt( 10 ) * .1)
+			var $d = 1 - (getRandomInt( 8 ) * .1)
+			
+			TweenMax.set( $item, { autoAlpha:1, delay:$d } )	
+			TweenMax.set( $block, { z:$nz, rotationY:$nrY, rotationX:$nrX, x:$nx, y:$ny, autoAlpha:0} )
+			TweenMax.to( $block, $s, { delay:$d, rotationY:0, rotationX:0, z:0,  ease:Expo.easeInOut} )
+			TweenMax.to( $block, $s-.5, { delay:$d, x:0, y:0, autoAlpha:1, ease:Expo.easeInOut} )
+		}
+		
+		function onMouseMove(event)
+		{
+			mouseX = -(-(window.innerWidth * .5) + event.pageX) * .0025;
+			mouseY = -(-(window.innerHeight * .5) + event.pageY ) * .01;
+			mouseZ = -(radius) - (Math.abs(-(window.innerHeight * .5) + event.pageY ) - 200);
+		}
+		
+		// loops and sets the carousel 3d properties
+		function looper()
+		{
+			addX += mouseX
+			TweenMax.to( carousel, 1, { rotationY:addX, rotationX:mouseY, ease:Quint.easeOut } )
+			TweenMax.set( carousel, {z:mouseZ } )
+			fps.text( 'Framerate: ' + counter.tick() + '/60 FPS' )	
+		}
+		
+		function getRandomInt( $n )
+		{
+			return Math.floor((Math.random()*$n)+1);	
+		}
+   </script>    
        
        
        
@@ -373,93 +522,127 @@
 
 <!--END CAROUSEL-->
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+/*<style>*/
+/*  .img-button{*/
+/*    width: 150px;*/
+/*    height: 150px;*/
+/*  }*/
+/*</style>*/
+
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
   
+<!--<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>-->
+
+
+<!--  <div class="btn-cont">-->
+<!--    <a href="javascript:void(0)" class="btn transition_button"><span>Microflow</span></a>-->
+<!--  </div>-->
+
+   
+   <!--TWO MAIN SECTION BUTTONS-->
+   
+<!--<div>-->
+<!--  <div style="text-align: center;">-->
+<!--    <button class="largesectionbuttons hvr-bob">-->
+<!--      <img width="350px" height="250px" src="http://www.arthistoryarchive.com/arthistory/impressionism/images/ClaudeMonet-Impression-Sunrise-1872.jpg">-->
+<!--      <h4 style="font-family:Raleway font-weight:700">BROWSE WATER, FOOD + FARMING</h4>-->
+<!--      </button>-->
    
    
-<div>
-  <div style="text-align: center;">
-      <a href class="largesectionbuttons hvr-bob"<h4 style="font-family:Raleway">WATER, FOOD + FARMING</h4></a>
-    <br>
-    <br>
-    <br>
-     <button id="close-image"><img src="https://s-media-cache-ak0.pinimg.com/236x/08/61/54/08615465aa8a58a739d44621fca24925.jpg"><a href class="largesectionbuttons hvr-buzz"<h4 style="font-family:Raleway">ENERGY, HOMES + EDUCATION </h4></a>
-    </button>
-    <br>
-     <br>
-    <br>
+<!--    <br>-->
+<!--    <br>-->
+<!--    <br>-->
+    <!-- <button id="close-image"><img src="https://s-media-cache-ak0.pinimg.com/236x/08/61/54/08615465aa8a58a739d44621fca24925.jpg"><a href class="largesectionbuttons hvr-buzz"<h4 style="font-family:Raleway">ENERGY, HOMES + EDUCATION </h4></a>-->
+    <!--</button>-->
+<!--    <button class="largesectionbuttons hvr-bob border-radius:100px">-->
+<!--      <img width="350px" height="250px" src="https://s-media-cache-ak0.pinimg.com/236x/08/61/54/08615465aa8a58a739d44621fca24925.jpg">-->
+<!--      <h4 style="font-family:Raleway font-weight:700">BROWSE ENERGY, HOMES + EDUCATION</h4>-->
+<!--      </button>-->
+<!--    <br>-->
+<!--     <br>-->
+<!--    <br>-->
   
- </div>
- </div>
-   <br>
-  <br>
- <button id="close-image"><img src="https://s-media-cache-ak0.pinimg.com/236x/08/61/54/08615465aa8a58a739d44621fca24925.jpg"></button>
-<button id="close-CSS"></button>
-   <br>
-  <br>
-   <br>
-  <br>
-    <br>
-   <br>
-  <br>
-   <br>
-  <br>
-   <br>
-  <br>
-  <br>
-    <a href="#myModal7" role="button" class="largesectionbuttons" data-toggle="modal"><h2 style="font-family: Montserrat">Is Earth Poor?</h2></a>
-      <div id="myModal7" class="modal" data-easein="whirlIn"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="text-align:center" > 
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-              <h1 style="font-family: Montserrat; text-shadow:1px 1px #786689">Is Earth Poor???</h1>
-            </div>
-            <div class="modal-body">
-              <h4 class="msrt2"> Every day, Earth spends an estimated:</h4>
+<!-- </div>-->
+<!-- </div>-->
+<!--   <br>-->
+<!--  <br>-->
+<!--   <br>-->
+<!--  <br>-->
+<!--    <br>-->
+<!--   <br>-->
+<!--  <br>-->
+<!--   <br>-->
+<!--  <br>-->
+<!--   <br>-->
+<!--     <br>-->
+<!--    <br>-->
+<!--   <br>-->
+<!--  <br>-->
+<!--   <br>-->
+<!--  <br>-->
+<!--   <br>-->
+<!--     <br>-->
+<!--    <br>-->
+<!--   <br>-->
+<!--  <br>-->
+<!--  <div>-->
+<!--<div style="text-align: center;">-->
+<!--    <a href="#myModal7" role="button" class="largesectionbuttons" data-toggle="modal"><h2 style="font-family: Montserrat">Is Earth Poor?</h2></a>-->
+<!--      <div id="myModal7" class="modal" data-easein="whirlIn"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="text-align:center" > -->
+<!--        <div class="modal-dialog">-->
+<!--          <div class="modal-content">-->
+<!--            <div class="modal-header">-->
+<!--              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>-->
+<!--              <h1 style="font-family: Montserrat; text-shadow:1px 1px #786689">Is Earth Poor???</h1>-->
+<!--            </div>-->
+<!--            <div class="modal-body">-->
+<!--              <h4 class="msrt2"> Every day, Earth spends an estimated:</h4>-->
         
-        <h4 class="msrt2">2 billion dollars on cigarrettes. <a href="http://global.tobaccofreekids.org/files/pdfs/en/Global_Cigarette_Industry_pdf.pdf">Global Tobacco Industry</a></h4>
+<!--        <h4 class="msrt2">2 billion dollars on cigarrettes. <a href="http://global.tobaccofreekids.org/files/pdfs/en/Global_Cigarette_Industry_pdf.pdf">Global Tobacco Industry</a></h4>-->
         
-        <h4 class="msrt2">1 billion dollars on alcohol. </h4>
+<!--        <h4 class="msrt2">1 billion dollars on alcohol. </h4>-->
         
-        <h4 class="msrt2">1 billion dollars on plastic toys. </h4>
+<!--        <h4 class="msrt2">1 billion dollars on plastic toys. </h4>-->
         
-       <h4 class="msrt2"> So, at least 3 billion USD are spent per day on useless luxuries. </h4>
+<!--       <h4 class="msrt2"> So, at least 3 billion USD are spent per day on useless luxuries. </h4>-->
         
-        <h4 class="msrt2">Just 5 percent of this, diverted to good causes, would equal 400million USD per day.</h4>
+<!--        <h4 class="msrt2">Just 5 percent of this, diverted to good causes, would equal 400million USD per day.</h4>-->
             
-            </div>
-            <div class="modal-footer">
-              <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
-            </div>
-        </div>
-      </div>
-      </div>
+<!--            </div>-->
+<!--            <div class="modal-footer">-->
+<!--              <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      </div>-->
+      
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>-->
     
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.ui.min.js"></script>
-    <script>
-        $( ".modal" ).each(function(index) {
-           $(this).on('show.bs.modal', function (e) {
-         var open = $(this).attr('data-easein');
-             if(open == 'shake') {
-                         $('.modal-dialog').velocity('callout.' + open);
-                    } else if(open == 'pulse') {
-                         $('.modal-dialog').velocity('callout.' + open);
-                    } else if(open == 'tada') {
-                         $('.modal-dialog').velocity('callout.' + open);
-                    } else if(open == 'flash') {
-                         $('.modal-dialog').velocity('callout.' + open);
-                    }  else if(open == 'bounce') {
-                         $('.modal-dialog').velocity('callout.' + open);
-                    } else if(open == 'swing') {
-                         $('.modal-dialog').velocity('callout.' + open);
-                    }else {
-                      $('.modal-dialog').velocity('transition.' + open);
-                    }
+<!--       <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.min.js"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.ui.min.js"></script>-->
+<!--    <script>-->
+<!--        $( ".modal" ).each(function(index) {-->
+<!--           $(this).on('show.bs.modal', function (e) {-->
+<!--         var open = $(this).attr('data-easein');-->
+<!--             if(open == 'shake') {-->
+<!--                         $('.modal-dialog').velocity('callout.' + open);-->
+<!--                    } else if(open == 'pulse') {-->
+<!--                         $('.modal-dialog').velocity('callout.' + open);-->
+<!--                    } else if(open == 'tada') {-->
+<!--                         $('.modal-dialog').velocity('callout.' + open);-->
+<!--                    } else if(open == 'flash') {-->
+<!--                         $('.modal-dialog').velocity('callout.' + open);-->
+<!--                    }  else if(open == 'bounce') {-->
+<!--                         $('.modal-dialog').velocity('callout.' + open);-->
+<!--                    } else if(open == 'swing') {-->
+<!--                         $('.modal-dialog').velocity('callout.' + open);-->
+<!--                    }else {-->
+<!--                      $('.modal-dialog').velocity('transition.' + open);-->
+<!--                    }-->
                      
-        }); 
-        });
-    </script>
+<!--        }); -->
+<!--        });-->
+<!--    </script>-->
+
+
