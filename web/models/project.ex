@@ -29,7 +29,7 @@ defmodule Microflow.Project do
     |> cast(params, @required_fields, @optional_fields)
     # |> cast_attachments(params, @required_file_fields, @optional_file_fields)
     |> validate_length(:description, min: 5)
-    |> validate_length(:description, max: 555) 
+    |> validate_length(:description, max: 700) 
     
   end
   

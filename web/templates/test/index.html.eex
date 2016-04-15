@@ -57,7 +57,7 @@
   {
    	position:absolute;
 		margin-left:-500px;
-		margin-top: -500px; /*Affects the angle in weird ways */
+		margin-top: -850px; /*Affects the angle in weird ways */
 		left:50%;
 		top:50%;
 		width:1000px;
@@ -151,7 +151,7 @@
   transition:all 1s ease;
   }
   .btn-twt:hover:before {
-    content: 'SEARCH';
+    content: 'EXPLORE';
     color: white;
     text-align: center;
     background-position:left bottom;
@@ -357,6 +357,7 @@
 <br>
 <br>
 <br>
+<img src="http://www.myscbc.org/wp-content/uploads/2015/06/157383-cool-blue-website-background-textures-1024x640.jpg" width="100%" height="540px"/>
 <br>
 <br>
 <br>
