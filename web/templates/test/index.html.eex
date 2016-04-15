@@ -18,30 +18,48 @@
   }
 
   .carousel-control {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 15%;
-    opacity: .5;
-    filter: alpha(opacity=50);
-    font-size: 20px;
-    color: #fff;
-    border-radius: 85px 85px 85px 85px; /*Rounded corners */
-		margin-top:400px;
+    
+    position:absolute;
+		margin-left:-500px;
+		margin-top:-500px;
+		left:50%;
+		top:50%;
+		width:1000px;
+		height:1000px;
+    
+  /*  position: absolute;*/
+  /*  top: 0;*/
+  /*  left: 0;*/
+  /*  bottom: 0;*/
+  /*  width: 15%;*/
+  /*  opacity: .5;*/
+  /*  filter: alpha(opacity=50);*/
+  /*  font-size: 20px;*/
+  /*  color: #fff;*/
+   /* border-radius: 85px 85px 85px 85px; */ /*Rounded corners 
+		/*margin-top:400px;*/
   }
 
 
   #contentContainer
   {
-    position:absolute;
-    margin-left:-300px;
-    margin-top: 500px;     /*Change height with this number */
-    left:50%;
-    top:50%;
-    width:100px;
-    height:100px;
-		margin-top:400px;
+  	
+  			position:absolute;
+		margin-left:-500px;
+		margin-top:-500px;
+		left:50%;
+		top:50%;
+		width:1000px;
+		height:1000px;
+  	margin-top:500px;
+  /*  position:absolute;*/
+  /*  margin-left:-300px;*/
+   /* margin-top: 500px; */    /*Change height with this number */
+  /*  left:50%;*/
+  /*  top:50%;*/
+  /*  width:100px;*/
+  /*  height:100px;*/
+		/*margin-top:400px;*/
   }
 
   #carouselContainer
@@ -116,7 +134,7 @@
   }
 
   .btn-twt:before, .btn-twt2:before {
-    content: 'MICROFLOW';
+    content: 'PROJECTS';
     display: inline-block;
     border: 1px solid black;
     color: black;
@@ -131,7 +149,7 @@
   }
 
   .btn-twt2:before {
-  content: 'PAY NOW';
+  content: 'START';
   display: inline-block;
   border: 1px solid black;
   color: black;
@@ -145,14 +163,14 @@
   transition:all 1s ease;
   }
   .btn-twt:hover:before {
-    content: 'JAKE';
+    content: 'SEARCH';
     color: white;
     text-align: center;
     background-position:left bottom;
     transition:all 2s ease;
   }
   .btn-twt2:hover:before {
-  content: 'JAKE';
+  content: 'MY PROJECT';
   color: white;
   text-align: center;
   background-position:left bottom;
