@@ -19,13 +19,13 @@
 
   .carousel-control {
     
-    position:absolute;
-		margin-left:-500px;
-		margin-top:-500px;
-		left:50%;
-		top:50%;
-		width:1000px;
-		height:1000px;
+  /*  position:absolute;*/
+		/*margin-left:-500px;*/
+		/*margin-top:300px;*/
+		/*left:50%;*/
+		/*top:50%;*/
+		/*width:1000px;*/
+		/*height:1000px;*/
     
   /*  position: absolute;*/
   /*  top: 0;*/
@@ -43,52 +43,40 @@
 
   #contentContainer
   {
-  	
-  			position:absolute;
-		margin-left:-500px;
-		margin-top:-500px;
+  position:absolute;
+		margin-left:-500px; /* Original value -500 */
+		margin-top: 0px; /* Original value -500 */
 		left:50%;
 		top:50%;
 		width:1000px;
-		height:1000px;
-  	margin-top:500px;
-  /*  position:absolute;*/
-  /*  margin-left:-300px;*/
-   /* margin-top: 500px; */    /*Change height with this number */
-  /*  left:50%;*/
-  /*  top:50%;*/
-  /*  width:100px;*/
-  /*  height:100px;*/
-		/*margin-top:400px;*/
+		height:1000px;	
+  
   }
 
   #carouselContainer
   {
-    position:absolute;
-    margin-left:500px;
-    /*margin-top:-500px;*/
-    left:50%;
-    top:50%;
-    width:100px;
-    height:100px;
-    /*border-radius: 85px 85px 85px 85px;*/
-    /*overflow: hidden;*/
+   	position:absolute;
+		margin-left:-500px;
+		margin-top: -500px; /*Affects the angle in weird ways */
+		left:50%;
+		top:50%;
+		width:1000px;
+		height:1000px;
   }
 
   .carouselItem
   {
-    border-radius: 50%;
-    overflow: hidden;
-    width:320px;
-    height:175px;
-    position:absolute;
-    left:50%;
-    top:50%;
-    margin-left:-160px;
-    /*margin-top:-90px;*/
-    visibility:hidden;
-  }
-
+		width:320px;
+		height:130px;
+		position:absolute;
+		left:50%;
+		top:50%;
+		margin-left:-160px;
+		margin-top:-90px;
+		visibility:hidden;
+	}
+    
+    
   .carouselItemInner
   {
     /*width:0px; was 320 */
@@ -226,6 +214,12 @@
   /*    background-position:left bottom;*/
   /*    transition:all 2s ease;*/
   /*}*/
+  
+  #positionlow {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
 </style>
 
 <script type='text/javascript' src='https://rawgit.com/greensock/GreenSock-JS/master/src/minified/TweenMax.min.js'></script>
@@ -369,9 +363,8 @@
 <br>
 <br>
 
-<div id="contentContainer" class="trans3d">
-
-  <section id="carouselContainer" class="trans3d">
+<div id="contentContainer positionlow" class="trans3d">
+ <section id="carouselContainer" class="trans3d">
     <%= for project <- @projects do %>
         <% s = to_string(Microflow.Avatar.url({project.picture, project})) %>
         <% img_url = String.slice(s, 11, String.length(s)) %>

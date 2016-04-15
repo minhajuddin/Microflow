@@ -187,9 +187,10 @@ textshadow {
  </style>
 
   <!--<link href='/css/ckeditor/contents.css' rel='stylesheet' type='text/css'>-->
-  
- <a><image src="/images/black-and-white-forest.jpg" height="450" width="720"</image></a>
 
+<div class= "pictureframe" style= "margin-top: 10%">
+ <a><image src="/images/black-and-white-forest.jpg" height="450" width="720"</image></a>
+</div>  
 <div class="Montserrat-700 textshadow">
   <h1 style ="font-size: 52px;">What's your gift to Earth?</h1>
     </div>
