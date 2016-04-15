@@ -93,10 +93,6 @@
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
       </nav>
-    <br>
-    <br>
-    <br>
-    <br>
     </div>
     <!--jnote: Added the below 5 lines, this now doubles the view. -->
 
@@ -121,8 +117,6 @@
 
     
     
-    <br><br><br>
-      <br>
       <div style="margin-top:15px;">
         
       <!--<p class="alert alert-info" role="alert"><%#= get_flash(@conn, :info) %></p>-->
