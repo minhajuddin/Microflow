@@ -185,7 +185,7 @@ textshadow {
     z-index: 10000;
 }
 
-  @import url(http://fonts.googleapis.com/css?family=Raleway:400,700);
+/*Picture Hover CSS */
   
   a.hovertext {
     position: relative;
@@ -197,7 +197,7 @@ textshadow {
     content: attr(title);
     position: absolute;
     left: 15px;
-    bottom: 30px;
+    bottom: 54px;
     padding: 0.oem 0px;
     width: 460px;
     background: rgba(255,255,255,0.0);
@@ -228,12 +228,12 @@ textbody {
 .p4 { font-size: 11px; }
 
 .blur-edge
-{
+     {
      box-shadow: 0 0 18px 18px white inset;
-}
+     }
 
 .textboxlarger
-{
+   {
     height:100px; 
     /*length: 450px;*/
    }
@@ -289,7 +289,7 @@ textbody {
       <label class="Raleway">What's your plan?</label>
       <br>
       <br>
-        <textarea name= "project[description]" maxlength="10" placeholder="Describe your project in less than 800 characters" class= "raleway" id="ckeditor"  /></textarea>
+        <textarea name= "project[description]" input type="text" maxlength="5" placeholder="Describe your project in less than 800 characters" class= "raleway" id="ckeditor"  /></textarea>
           </div>             
 
 <!--Jnote: add a text limit here^^^-->
@@ -317,7 +317,7 @@ textbody {
 <br>
 <br>
 
-<p1><a class="hovertext textbody p1 blur-edge font-size: 20px" href="#" title="Link your video; 40 seconds max. Plz plan it first.....    ^"><img src="https://static.pexels.com/photos/64769/pexels-photo-64769.jpeg" width="500" height="309" border="20" alt=""></a></p1>
+<p1><a class="hovertext textbody p1 blur-edge font-size: 20px" href="#" title="Link your video; 40 seconds max. Plz plan it first...    ^"><img src="https://static.pexels.com/photos/64769/pexels-photo-64769.jpeg" width="500" height="309" border="20" alt=""></a></p1>
 <br>
 <br>
 <div class="form-group">
