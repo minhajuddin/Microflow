@@ -1,6 +1,7 @@
 <!--NEW PROJECT FORM!!!-->
 
   <!--<link href='/css/ckeditor/contents.css' rel='stylesheet' type='text/css'>-->
+<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   
 <div style="text-align: center;">
 
@@ -184,6 +185,59 @@ textshadow {
     z-index: 10000;
 }
 
+  @import url(http://fonts.googleapis.com/css?family=Raleway:400,700);
+  
+  a.hovertext {
+    position: relative;
+    width: 900px;
+    text-decoration: none !important;
+    text-align: left;
+  }
+  a.hovertext:after {
+    content: attr(title);
+    position: absolute;
+    left: 15px;
+    bottom: 30px;
+    padding: 0.oem 0px;
+    width: 460px;
+    background: rgba(255,255,255,0.0);
+    text-decoration: none !important;
+    color: #fff;
+    opacity: 0;
+    -webkit-transition: 4.5s;
+    -moz-transition: 4.5s;
+    -o-transition: 4.5s;
+    -ms-transition: 4.5s;
+     }
+  a.hovertext:hover:after, a.hovertext:focus:after {
+    opacity: 1;
+  }
+
+
+
+textbody {
+    font-family: 'Raleway', sans-serif;
+    font-style: bold;
+    font-weight: 700;
+      }
+
+
+.p1 { font-size: 34px; }
+.p2 { font-size: 13px; }
+.p3 { font-size: 12px; }
+.p4 { font-size: 11px; }
+
+.blur-edge
+{
+     box-shadow: 0 0 18px 18px white inset;
+}
+
+.textboxlarger
+{
+    height:100px; 
+    /*length: 450px;*/
+   }
+
  </style>
 
   <!--<link href='/css/ckeditor/contents.css' rel='stylesheet' type='text/css'>-->
@@ -220,8 +274,8 @@ textshadow {
    <label for="project[name]" class= "Raleway" >Project Name</label>
    <br>
    <br>
-     <input type="text" name="project[name]" placeholder="Project Name Here..." class="form-control" data-toggle="tooltip", title ="Make an eye-catching title!"
-      style= 'float: left; width: 100%; display: block;' class='Raleway' data-placement='right'/> <!--TTD. Increase size of Tooltip + Change Font--> 
+     <input type="text" name="project[name]" placeholder="Project name here..." class="form-control raleway" data-toggle="tooltip", title ="Make an eye-catching title!"
+      style= 'width: 160%; display: block; raleway' class='Raleway' data-placement='right'/> <!--TTD. Increase size of Tooltip + Change Font--> 
 
 <br>
 <br>
@@ -235,13 +289,17 @@ textshadow {
       <label class="Raleway">What's your plan?</label>
       <br>
       <br>
-        <textarea name= "project[description]" placeholder="Describe your project in less than 100 words" id="ckeditor" /></textarea>
+        <textarea name= "project[description]" maxlength="10" placeholder="Describe your project in less than 800 characters" class= "raleway" id="ckeditor"  /></textarea>
           </div>             
+
+<!--Jnote: add a text limit here^^^-->
 
 <br>
 <br>
 <br>
 <br>
+
+
    
     <div class="form-group">
      <a><image src="/images/brass-camera.jpg" height="100" width="170"></image></a>
@@ -259,20 +317,28 @@ textshadow {
 <br>
 <br>
 
-  <div class="form-group">
-      <a><image src="/images/youtube-classy.jpg" height="100" width="170"></image></a>
-    <input type="text" name="project[video_url]" placeholder="Paste your Youtube clip here" class="form-control" />
+<p1><a class="hovertext textbody p1 blur-edge font-size: 20px" href="#" title="Link your video; 40 seconds max. Plz plan it first.....    ^"><img src="https://static.pexels.com/photos/64769/pexels-photo-64769.jpeg" width="500" height="309" border="20" alt=""></a></p1>
+<br>
+<br>
+<div class="form-group">
+    <input type="text-area" name="project[video_url]" placeholder="Paste yr Youtube vid here" class="form-control raleway textboxlarger" />
      </div>
+       <!--<div>-->
+       <!--<a><image src="/images/youtube-classy.jpg" height="50" width="100"></image></a>-->
+       <!--</div>-->
 
 <br>
 <br>
-
+<br>
+<br>
+<br>
+<br>
 
     <div class="form-group">
-     <a><image src="/images/gold-buddha.jpg"></image></a>
+     <a><image src="/images/gold-buddha.jpg" height="100" width="100"></image></a>
 <br>
 <br>
-      <input type="number" name="project[raise_amount]" placeholder="Cash on the barrelhead.."  class="form-control" />
+      <input type="number" name="project[raise_amount]" placeholder="How many USD do you need?"  class="form-control raleway textboxlarger" />
 <br>
 <br>
 </div>

@@ -122,6 +122,7 @@
   }
 
   .btn-twt:before, .btn-twt2:before {
+    -webkit-filter: blur(1px);
     content: 'PROJECTS';
     display: inline-block;
     border: 1px solid black;
@@ -155,18 +156,21 @@
     color: white;
     text-align: center;
     background-position:left bottom;
-    transition:all 2s ease;
+    transition:all 1.5s ease-out;
   }
   .btn-twt2:hover:before {
   content: 'MY PROJECT';
-  color: white;
+  color: grey;
   text-align: center;
   background-position:left bottom;
-  transition:all 2s ease;
+  transition:all 1.5s ease-out;
   } 
   .cent{
     text-align:center;
   }
+  
+  .text-outline {text-shadow: -1px 0 black, 0 1px black,
+      1px 0 black, 0 -1px black}
   /*	body {*/
   /*  height: 100%;*/
   /*  width: 100%;*/
@@ -415,6 +419,65 @@
 <!--<!--<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>-->-->
 
 
+<div>
+<div style="text-align: center;">
+    <a href="#myModal7" role="button" class="largesectionbuttons" data-toggle="modal"><h2 style="font-family: Montserrat">Is Earth Poor?</h2></a>
+      <div id="myModal7" class="modal" data-easein="whirlIn"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="text-align:center" > 
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h1 style="font-family: Montserrat; text-shadow:1px 1px #786689">Is Earth Poor???</h1>
+            </div>
+            <div class="modal-body">
+              <h4 class="msrt2"> Every day, Earth spends an estimated:</h4>
+        
+        <h4 class="msrt2">2 billion dollars on cigarrettes. <a href="http://global.tobaccofreekids.org/files/pdfs/en/Global_Cigarette_Industry_pdf.pdf">Global Tobacco Industry</a></h4>
+        
+        <h4 class="msrt2">1 billion dollars on alcohol. </h4>
+        
+        <h4 class="msrt2">1 billion dollars on plastic toys. </h4>
+        
+       <h4 class="msrt2"> So, at least 3 billion USD are spent per day on useless luxuries. </h4>
+      
+        <h4 class="msrt2">Just 5 percent of this, diverted to good causes, would equal 400million USD per day.</h4>
+            
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+        </div>
+      </div>-->
+      </div>-->
+      
+     <!--jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.ui.min.js"></script>
+    <script>
+        $( ".modal" ).each(function(index) {
+           $(this).on('show.bs.modal', function (e) {
+         var open = $(this).attr('data-easein');
+             if(open == 'shake') {
+                         $('.modal-dialog').velocity('callout.' + open);
+                    } else if(open == 'pulse') {
+                         $('.modal-dialog').velocity('callout.' + open);
+                    } else if(open == 'tada') {
+                         $('.modal-dialog').velocity('callout.' + open);
+                    } else if(open == 'flash') {
+                         $('.modal-dialog').velocity('callout.' + open);
+                    }  else if(open == 'bounce') {
+                         $('.modal-dialog').velocity('callout.' + open);
+                    } else if(open == 'swing') {
+                         $('.modal-dialog').velocity('callout.' + open);
+                  }else {
+                      $('.modal-dialog').velocity('transition.' + open);
+                    }
+                     
+        }); 
+        });
+   </script>
 
 
 

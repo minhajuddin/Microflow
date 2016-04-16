@@ -76,7 +76,8 @@
               <li style="font-family: Roboto Slab; font-size: 17px;"><%= link "Search Projects", to: project_path(@conn, :index) %></li>
               <li style="font-family: Roboto Slab; font-size: 17px;"><%= link "Create New Project", to: project_path(@conn, :new) %></li>
               <li style="font-family: Roboto Slab; font-size: 17px;"><%= link "Home", to: home_path(@conn, :index) %></li> 
-              
+              <!--<li style="font-family: Roboto Slab; font-size: 17px;"><%#= link "Cowboy Bebop?", url="https://youtu.be/N82fP5hKZPY?t=1303"  %></li> -->
+              <!--(Broken navbar link)-->
               
           </ul>
             <ul class="nav navbar-nav navbar-right">
