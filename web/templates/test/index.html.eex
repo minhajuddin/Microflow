@@ -1,3 +1,5 @@
+
+
 <style>
   /* hardware accelatator class */
   .trans3d
@@ -57,7 +59,7 @@
   {
    	position:absolute;
 		margin-left:-500px;
-		margin-top: -850px; /*Affects the angle in weird ways */
+		margin-top: -200px; /*Affects the angle in weird ways. But can still fix height like this.*/
 		left:50%;
 		top:50%;
 		width:1000px;
@@ -149,25 +151,27 @@
   background-size: 200% 100%;
   background-position:right bottom;
   vertical-align: middle;
-  transition:all 1s ease;
+  transition:all 1s ease-in-out;
   }
   .btn-twt:hover:before {
     content: 'EXPLORE';
     color: white;
     text-align: center;
     background-position:left bottom;
-    transition:all 1.5s ease-out;
+    transition:all 1s ease-in-out;
   }
   .btn-twt2:hover:before {
   content: 'MY PROJECT';
   color: grey;
   text-align: center;
   background-position:left bottom;
-  transition:all 1.5s ease-out;
+  transition:all 1s ease-in-out;
   } 
   .cent{
     text-align:center;
   }
+  
+  /*END SLIDE HOVER BUTTON OVERLAY*/
   
   .text-outline {text-shadow: -1px 0 black, 0 1px black,
       1px 0 black, 0 -1px black}
@@ -220,8 +224,8 @@
   /*}*/
   
   #positionlow {
-    position: fixed;
-    bottom: 0;
+    position: absolute;
+    bottom: 1000px;
     width: 100%;
 }
 
@@ -245,11 +249,95 @@
      box-shadow: 0 0 18px 18px white inset;
 }
 
+/*SCSS. MAIN MENU STYLE-SHEET*/
 
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300);
+::selection {
+  background-color: #b3d4fc;
+}
+
+::-moz-selection {
+  background-color: #b3d4fc;
+}
+
+bodymenu {
+  background-color: #FFF;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  color: #667;
+}
+
+.container {
+  position: auto; /*Changed from fixed*/
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+
+.container-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+h1 {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 300;
+  letter-spacing: 0.1618em;
+  line-height: 2.618em;
+}
+h1:hover {
+  cursor: default;
+}
+h1 span {
+  color: #2ecc71;
+}
+
+nav {
+  text-align: center;
+}
+
+ul, li, .a2 {
+  display: inline-block;
+}
+
+li {
+  border-right: 1px solid #DDD;
+  padding: 5px 7px 5px 5px;
+}
+li:last-child {
+  border-right-color: transparent;
+}
+
+/*BEWARE CLASS CONFLICTS WITH THIS */
+
+.a2 {
+  width: 84px;
+  height: 84px;
+  line-height: 64px;
+  text-decoration: none;
+  color: #111;
+  font-family: "zocial", sans-serif;
+  font-size: 24px;
+  -moz-transition: background-color 0.25s ease-in-out;
+  -o-transition: background-color 0.25s ease-in-out;
+  -webkit-transition: background-color 0.25s ease-in-out;
+  transition: background-color 0.25s ease-in-out;
+  blur: 1px
+}
+.a2:hover {
+  background-color: #2ecc71;
+  text-decoration: none;
+}
+.a2:active {
+  background-color: #25a25a;
+  text-decoration: none;
+}
 
 </style>
 
 <script type='text/javascript' src='https://rawgit.com/greensock/GreenSock-JS/master/src/minified/TweenMax.min.js'></script>
+
 
 <script>
   // set and cache variables
@@ -380,17 +468,43 @@
     <a class='btn-twt2' href="JAKE"></a>
   </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+  <div class="container-inner">
+    <h1>{microflow} <span>*fun#raise*</span></h1>
+    <nav>
+      <ul>
+        <li><a class="a2" href="#">mission</a></li>
+        <li><a class="a2" href="#">contact</a></li>
+        <li><a class="a2" href="#">fcbk</a></li>
+        <li><a class="a2" href="#">articles</a></li>
+        <li><a class="a2" href="https://youtu.be/N82fP5hKZPY?t=1303" target="_blank">bebop</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <br>
-<br>
-<br>
-<img src="https://static.pexels.com/photos/65777/pexels-photo-65777-large.jpeg" width="100%" height="540px"/>  <!--Lower background pic --> 
-<br>
-<br>
-<br>
-<br>
-<br>
-
 <div id="contentContainer positionlow" class="trans3d">
  <section id="carouselContainer" class="trans3d">
     <%= for project <- @projects do %>
@@ -413,42 +527,56 @@
   </section>
 </div>
 
+<br>
+<br>
+<img src="https://static.pexels.com/photos/65777/pexels-photo-65777-large.jpeg" width="100%" height="540px"/>  <!--Lower background pic --> 
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+
+
 
 
 <!--<!--<link rel="stylesheet" type="text/css" href="styles.css" />-->
-<!--<!--<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>-->-->
+<!--<!--<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>-->
 
 
-<div>
-<div style="text-align: center;">
-    <a href="#myModal7" role="button" class="largesectionbuttons" data-toggle="modal"><h2 style="font-family: Montserrat">Is Earth Poor?</h2></a>
-      <div id="myModal7" class="modal" data-easein="whirlIn"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="text-align:center" > 
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-              <h1 style="font-family: Montserrat; text-shadow:1px 1px #786689">Is Earth Poor???</h1>
-            </div>
-            <div class="modal-body">
-              <h4 class="msrt2"> Every day, Earth spends an estimated:</h4>
+<!--<div>-->
+<!--<div style="text-align: center;">-->
+<!--    <a href="#myModal7" role="button" class="largesectionbuttons" data-toggle="modal"><h2 style="font-family: Montserrat">Is Earth Poor?</h2></a>-->
+<!--      <div id="myModal7" class="modal" data-easein="whirlIn"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="text-align:center" > -->
+<!--        <div class="modal-dialog">-->
+<!--          <div class="modal-content">-->
+<!--            <div class="modal-header">-->
+<!--              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>-->
+<!--              <h1 style="font-family: Montserrat; text-shadow:1px 1px #786689">Is Earth Poor???</h1>-->
+<!--            </div>-->
+<!--            <div class="modal-body">-->
+<!--              <h4 class="msrt2"> Every day, Earth spends an estimated:</h4>-->
         
-        <h4 class="msrt2">2 billion dollars on cigarrettes. <a href="http://global.tobaccofreekids.org/files/pdfs/en/Global_Cigarette_Industry_pdf.pdf">Global Tobacco Industry</a></h4>
+<!--        <h4 class="msrt2">2 billion dollars on cigarrettes. <a href="http://global.tobaccofreekids.org/files/pdfs/en/Global_Cigarette_Industry_pdf.pdf">Global Tobacco Industry</a></h4>-->
         
-        <h4 class="msrt2">1 billion dollars on alcohol. </h4>
+<!--        <h4 class="msrt2">1 billion dollars on alcohol. </h4>-->
         
-        <h4 class="msrt2">1 billion dollars on plastic toys. </h4>
+<!--        <h4 class="msrt2">1 billion dollars on plastic toys. </h4>-->
         
-       <h4 class="msrt2"> So, at least 3 billion USD are spent per day on useless luxuries. </h4>
+<!--       <h4 class="msrt2"> So, at least 3 billion USD are spent per day on useless luxuries. </h4>-->
       
-        <h4 class="msrt2">Just 5 percent of this, diverted to good causes, would equal 400million USD per day.</h4>
+<!--        <h4 class="msrt2">Just 5 percent of this, diverted to good causes, would equal 400million USD per day.</h4>-->
             
-            </div>
-            <div class="modal-footer">
-              <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
-            </div>
-        </div>
-      </div>-->
-      </div>-->
+<!--            </div>-->
+<!--            <div class="modal-footer">-->
+<!--              <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      </div>-->
       
      <!--jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>

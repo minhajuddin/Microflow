@@ -1,268 +1,35 @@
 <!--NEW PROJECT FORM!!!-->
 
   <!--<link href='/css/ckeditor/contents.css' rel='stylesheet' type='text/css'>-->
-<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-  
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet" href="/css/new_project.css">
+
+
 <div style="text-align: center;">
-
-
-  <style>
-  .Montserrat-700{
-    font-family: 'Montserrat';
-      font-size: 32px;
-    }
-    
-     .Montserrat-400{
-    font-family: 'Montserrat';
-      font-size: 32px;
-    }
-    
-       .Raleway {
-    font-family: 'Raleway';
-      font-size: 32px;
-    }
-    
- 
-  form{
-    width: 400px;
-       }
-       
-.btn-file {
-    position: relative;
-    overflow: hidden;
-}
-.btn-file input[type=file] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    font-size: 100px;
-    text-align: right;
-    filter: alpha(opacity=0);
-    opacity: 0;
-    outline: none;
-    background: white;
-    cursor: inherit;
-    display: block;
-}
-
-textshadow {
-    text-shadow: 2px 2px #ff0000;
-}
-
-.btn-xlarge {
-    padding: 35px 58px;
-    font-size: 32px;
-    line-height: normal;
-    -webkit-border-radius: 95px;
-       -moz-border-radius: 95px;
-            border-radius: 95px;
-                }
-    
-   .btn-custom-colour {
-    background-color: hsl(108, 27%, 47%) !important;
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f6f9f5", endColorstr="#649857");
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#f6f9f5), to(#649857));
-  background-image: -moz-linear-gradient(top, #f6f9f5, #649857);
-  background-image: -ms-linear-gradient(top, #f6f9f5, #649857);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f6f9f5), color-stop(100%, #649857));
-  background-image: -webkit-linear-gradient(top, #f6f9f5, #649857);
-  background-image: -o-linear-gradient(top, #f6f9f5, #649857);
-  background-image: linear-gradient(#f6f9f5, #649857);
-  border-color: #649857 #649857 hsl(108, 27%, 34.5%);
-  color: #333 !important;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.82);
-  -webkit-font-smoothing: antialiased;
-}
-  /*ButtonFrom Charlie Park ^^^^*/
-  
-  /*SPINNER LOADER*/
-
-.spinner {
-  margin: 100px auto;
-  width: 40px;
-  height: 40px;
-  position: relative;
-  text-align: center;
-  
-  -webkit-animation: sk-rotate 2.0s infinite linear;
-  animation: sk-rotate 2.0s infinite linear;
-}
-
-.dot1, .dot2 {
-  width: 60%;
-  height: 60%;
-  /*display: inline-block;*/
-  position: absolute;
-  top: 0;
-  background-color: #333;
-  border-radius: 100%;
-  
-  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
-  animation: sk-bounce 2.0s infinite ease-in-out;
-}
-
-.dot2 {
-  top: auto;
-  bottom: 0;
-  -webkit-animation-delay: -1.0s;
-  animation-delay: -1.0s;
-}
-
-@-webkit-keyframes sk-rotate { 100% { -webkit-transform: rotate(360deg) }}
-@keyframes sk-rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
-
-@-webkit-keyframes sk-bounce {
-  0%, 100% { -webkit-transform: scale(0.0) }
-  50% { -webkit-transform: scale(1.0) }
-}
-
-@keyframes sk-bounce {
-  0%, 100% { 
-    transform: scale(0.0);
-    -webkit-transform: scale(0.0);
-  } 50% { 
-    transform: scale(1.0);
-    -webkit-transform: scale(1.0);
-  }
-}
-
-  
-  .loading {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: -28px 0 0 -25px;
-}
-.loading-bar {
-  display: inline-block;
-  width: 6px;
-  height: 100px;
-  border-radius: 4px;
-  animation: loading 1s ease-in-out infinite;
-}
-.loading-bar:nth-child(1) {
-  background-color: #3498db;
-  animation-delay: 0;
-}
-.loading-bar:nth-child(2) {
-  background-color: #c0392b;
-  animation-delay: 0.09s;
-}
-.loading-bar:nth-child(3) {
-  background-color: #f1c40f;
-  animation-delay: .18s;
-}
-.loading-bar:nth-child(4) {
-  background-color: #27ae60;
-  animation-delay: .27s;
-}
-
-@keyframes loading {
-  0% {
-    transform: scale(1);
-  }
-  20% {
-    transform: scale(1, 2.2);
-  }
-  40% {
-    transform: scale(1);
-  }
-}
-
-#overlay {
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    background: #000;
-    opacity: 0.8;
-    filter: alpha(opacity=80);
-    height: auto;
-    z-index: 10000;
-}
-
-/*Picture Hover CSS */
-  
-  a.hovertext {
-    position: relative;
-    width: 900px;
-    text-decoration: none !important;
-    text-align: left;
-  }
-  a.hovertext:after {
-    content: attr(title);
-    position: absolute;
-    left: 15px;
-    bottom: 54px;
-    padding: 0.oem 0px;
-    width: 460px;
-    background: rgba(255,255,255,0.0);
-    text-decoration: none !important;
-    color: #fff;
-    opacity: 0;
-    -webkit-transition: 4.5s;
-    -moz-transition: 4.5s;
-    -o-transition: 4.5s;
-    -ms-transition: 4.5s;
-     }
-  a.hovertext:hover:after, a.hovertext:focus:after {
-    opacity: 1;
-  }
-
-
-
-textbody {
-    font-family: 'Raleway', sans-serif;
-    font-style: bold;
-    font-weight: 700;
-      }
-
-
-.p1 { font-size: 34px; }
-.p2 { font-size: 13px; }
-.p3 { font-size: 12px; }
-.p4 { font-size: 11px; }
-
-.blur-edge
-     {
-     box-shadow: 0 0 18px 18px white inset;
-     }
-
-.textboxlarger
-   {
-    height:100px; 
-    /*length: 450px;*/
-   }
-
- </style>
-
   <!--<link href='/css/ckeditor/contents.css' rel='stylesheet' type='text/css'>-->
 
 <div class= "pictureframe" style= "margin-top: 10%">
  <a><image src="/images/black-and-white-forest.jpg" height="450" width="720"</image></a>
 </div>  
-<div class="Montserrat-700 textshadow">
-  <h1 style ="font-size: 52px;">What's your gift to Earth?</h1>
+<div class="Raleway textshadow blur-subtle">
+  <h1 style ="font-size: 52px;">What's Your Gift to Earth?</h1>
     </div>
 <!--NEW CODE:-->
 <br>
 
 
 
-<div class="row">
-    <div class="col-md-10 col-md-offset-3">
-      <%= form_for @changeset, project_path(@conn, :create), [multipart: true, class: "new-project-form"], fn f -> %> 
-        <div class="form-group">
+<div class="row ">
+    <div class="col-md-6 col-md-offset-3">   <!-- OLD VALUE: Shaky and misaligned <div class="col-md-10 col-md-offset-4"> -->     
+    <%= form_for @changeset, project_path(@conn, :create), [multipart: true, class: "new-project-form col-md-12"], fn f -> %> 
+        <div class="form-group col-md-12">
 <br>
 <br>
 <br>
 <%= if f.errors != [] do %>
     <div class="alert alert-danger">
-      <p>Oops, something went wrong! Please check the errors below:</p>
+      <p class="Raleway font-weight:700">Oops, something went wrong! Please check the errors below:</p>
       <ul>
         <%= for {attr, message} <- f.errors do %>
           <li><%= humanize(attr) %> <%= message %></li>
@@ -271,11 +38,13 @@ textbody {
     </div>
   <% end %>
   
+  <!--jnote: Need to add pic and better fonts to this error, and move it to the base of the screen-->
+  
    <label for="project[name]" class= "Raleway" >Project Name</label>
    <br>
    <br>
      <input type="text" name="project[name]" placeholder="Project name here..." class="form-control raleway" data-toggle="tooltip", title ="Make an eye-catching title!"
-      style= 'width: 160%; display: block; raleway' class='Raleway' data-placement='right'/> <!--TTD. Increase size of Tooltip + Change Font--> 
+      style= 'width: 100%; display: block; raleway' class='Raleway' data-placement='right'/> <!--TTD. Increase size of Tooltip + Change Font--> 
 
 <br>
 <br>
@@ -302,8 +71,8 @@ textbody {
 
    
     <div class="form-group">
-     <a><image src="/images/brass-camera.jpg" height="100" width="170"></image></a>
-     <button class="btn-xlarge btn-file btn-custom-colour upload-button">Select Photo<input type="file" name="project[picture]" class="file-upload">
+     <a><image src="/images/brass-camera.jpg" height="120" width="185"></image></a>
+     <button class="btn btn-file upload-button">Select Photo<input type="file" name="project[picture]" class="file-upload">
        </button>
        <img class="prev-pic"/>
 
@@ -321,12 +90,11 @@ textbody {
 <br>
 <br>
 <div class="form-group">
-    <input type="text-area" name="project[video_url]" placeholder="Paste yr Youtube vid here" class="form-control raleway textboxlarger" />
+    <input type="text-area" name="project[video_url]" placeholder="Paste yr Youtube vid here   :)" class="form-control raleway textboxlarger youtubetxt" /> 
+     <br>
+     <a><image src="/images/youtube-classy.jpg" height="50" width="100" class= "blur-subtle rotate90degreeImg" ></image></a>
      </div>
-       <!--<div>-->
-       <!--<a><image src="/images/youtube-classy.jpg" height="50" width="100"></image></a>-->
-       <!--</div>-->
-
+     <div style="clear:both"></div>
 <br>
 <br>
 <br>
@@ -342,7 +110,7 @@ textbody {
 <br>
 <br>
 </div>
-  <button type="submit" class="btn-xlarge btn-custom-colour">Save Project</button>
+  <button type="submit" class="btn btn-file upload-button">SAVE PROJECT</button>
 </div>
   <br>
   
@@ -353,6 +121,9 @@ textbody {
 <br>
 <br>
 <br>
+
+
+
 
 <script>
   $(document).ready(function(){
