@@ -40,7 +40,7 @@
   
   <!--jnote: Need to add pic and better fonts to this error, and move it to the base of the screen-->
   
-   <label for="project[name]" class= "Raleway" >Project Name</label>
+   <label for="project[name]" class= "Raleway" >Project Name ww</label>
    <br>
    <br>
      <input type="text" name="project[name]" placeholder="Project name here..." class="form-control raleway" data-toggle="tooltip", title ="Make an eye-catching title!"

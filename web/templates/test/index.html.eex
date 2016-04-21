@@ -128,7 +128,7 @@
     content: 'PROJECTS';
     display: inline-block;
     border: 1px solid black;
-    color: black;
+    color: #100000; /*Colour text */
     padding: 15px 41px;
     width: 150px;
     text-align: center;
@@ -143,7 +143,7 @@
   content: 'START';
   display: inline-block;
   border: 1px solid black;
-  color: black;
+  color: #black;
   padding: 15px 41px;
   width: 150px;
   text-align: center;
@@ -155,14 +155,14 @@
   }
   .btn-twt:hover:before {
     content: 'EXPLORE';
-    color: white;
+    color: #ffffea; /*After Hovering Text Colour*/
     text-align: center;
     background-position:left bottom;
     transition:all 1s ease-in-out;
   }
   .btn-twt2:hover:before {
   content: 'MY PROJECT';
-  color: grey;
+  color: #ffffea; /*After Hovering Text Colour*/
   text-align: center;
   background-position:left bottom;
   transition:all 1s ease-in-out;
@@ -290,7 +290,18 @@ h1:hover {
   cursor: default;
 }
 h1 span {
-  color: #2ecc71;
+  color: #2d499d;  /* Old colour: #2ecc71;  
+  
+Deeper shades of Royal blue:
+
+#4169e1
+#3a5eca
+#3454b4
+#2d499d
+#273f87
+#203470
+#1a2a5a
+#131f43         */ 
 }
 
 nav {
@@ -316,17 +327,17 @@ li:last-child {
   height: 84px;
   line-height: 64px;
   text-decoration: none;
-  color: #111;
+  color: #040404;
   font-family: "zocial", sans-serif;
   font-size: 24px;
-  -moz-transition: background-color 0.25s ease-in-out;
-  -o-transition: background-color 0.25s ease-in-out;
-  -webkit-transition: background-color 0.25s ease-in-out;
-  transition: background-color 0.25s ease-in-out;
+  -moz-transition: background-color 0.20s ease-in-out;
+  -o-transition: background-color 0.20s ease-in-out;
+  -webkit-transition: background-color 0.20s ease-in-out;
+  transition: background-color 0.20s ease-in-out;
   blur: 1px
 }
 .a2:hover {
-  background-color: #2ecc71;
+  background-color: #3a5eca; /*A little darker: #3454b4; */
   text-decoration: none;
 }
 .a2:active {
@@ -455,6 +466,8 @@ li:last-child {
 <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
 
+<!--FRONT PAGE LINKS-->
+
 <div class="buttonslide">
   <div class="main">
     <a class='btn-twt' href="JAKE"></a>
@@ -468,16 +481,6 @@ li:last-child {
     <a class='btn-twt2' href="JAKE"></a>
   </div>
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <br>
 <br>
 <br>
@@ -498,6 +501,11 @@ li:last-child {
     </nav>
   </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
 <br>
 <br>
 <br>
