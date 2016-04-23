@@ -1,34 +1,34 @@
 
 
 <style>
-  /* hardware accelatator class */
-  .trans3d
-  {
-    -webkit-transform-style: preserve-3d;
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform-style: preserve-3d;
-    -moz-transform: translate3d(0, 0, 0);
-    -ms-transform-style:preserve-3d;
-    -ms-transform: translate3d(0, 0, 0);
-    transform-style:preserve-3d;
-    transform: translate3d(0, 0, 0);
+/* hardware accelatator class */
+.trans3d
+{
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform-style: preserve-3d;
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform-style:preserve-3d;
+  -ms-transform: translate3d(0, 0, 0);
+  transform-style:preserve-3d;
+  transform: translate3d(0, 0, 0);
 
-    /*-webkit-backface-visibility: hidden;*/
-    /*-moz-backface-visibility: hidden;*/
-    /*-ms-backface-visibility:hidden;*/
-    /*backface-visibility:hidden;*/
-  }
+  /*-webkit-backface-visibility: hidden;*/
+  /*-moz-backface-visibility: hidden;*/
+  /*-ms-backface-visibility:hidden;*/
+  /*backface-visibility:hidden;*/
+}
 
-  .carousel-control {
-    
+.carousel-control {
+  
   /*  position:absolute;*/
-		/*margin-left:-500px;*/
-		/*margin-top:300px;*/
-		/*left:50%;*/
-		/*top:50%;*/
-		/*width:1000px;*/
-		/*height:1000px;*/
-    
+  /*margin-left:-500px;*/
+  /*margin-top:300px;*/
+  /*left:50%;*/
+  /*top:50%;*/
+  /*width:1000px;*/
+  /*height:1000px;*/
+  
   /*  position: absolute;*/
   /*  top: 0;*/
   /*  left: 0;*/
@@ -38,47 +38,47 @@
   /*  filter: alpha(opacity=50);*/
   /*  font-size: 20px;*/
   /*  color: #fff;*/
-   /* border-radius: 85px 85px 85px 85px; */ /*Rounded corners 
-		/*margin-top:400px;*/
-  }
+  /* border-radius: 85px 85px 85px 85px; */ /*Rounded corners 
+  /*margin-top:400px;*/
+}
 
 
   #contentContainer
   {
-  position:absolute;
-		margin-left:-500px; /* Original value -500 */
-		margin-top: 0px; /* Original value -500 */
-		left:50%;
-		top:50%;
-		width:1000px;
-		height:1000px;	
-  
+    position:absolute;
+    margin-left:-500px; /* Original value -500 */
+    margin-top: 0px; /* Original value -500 */
+    left:50%;
+    top:50%;
+    width:1000px;
+    height:1000px;  
+    
   }
 
   #carouselContainer
   {
-   	position:absolute;
-		margin-left:-500px;
-		margin-top: -200px; /*Affects the angle in weird ways. But can still fix height like this.*/
-		left:50%;
-		top:50%;
-		width:1000px;
-		height:1000px;
+    position:absolute;
+    margin-left:-500px;
+    margin-top: -200px; /*Affects the angle in weird ways. But can still fix height like this.*/
+    left:50%;
+    top:50%;
+    width:1000px;
+    height:1000px;
   }
 
   .carouselItem
   {
-		width:220px; /*To change frame */
-		height:155px;
-		position:absolute;
-		left:50%;
-		top:50%;
-		margin-left:-160px;
-		margin-top:-90px;
-		visibility:hidden;
-	}
-    
-    
+    width:220px; /*To change frame */
+    height:155px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin-left:-160px;
+    margin-top:-90px;
+    visibility:hidden;
+  }
+  
+  
   .carouselItemInner
   {
     /*width:0px; was 320 */
@@ -140,18 +140,18 @@
   }
 
   .btn-twt2:before {
-  content: 'START';
-  display: inline-block;
-  border: 1px solid black;
-  color: #black;
-  padding: 15px 41px;
-  width: 150px;
-  text-align: center;
-  background: linear-gradient(to left, rgba(255,255,255,0) 50%, black 50%);
-  background-size: 200% 100%;
-  background-position:right bottom;
-  vertical-align: middle;
-  transition:all 1s ease-in-out;
+    content: 'START';
+    display: inline-block;
+    border: 1px solid black;
+    color: #black;
+    padding: 15px 41px;
+    width: 150px;
+    text-align: center;
+    background: linear-gradient(to left, rgba(255,255,255,0) 50%, black 50%);
+    background-size: 200% 100%;
+    background-position:right bottom;
+    vertical-align: middle;
+    transition:all 1s ease-in-out;
   }
   .btn-twt:hover:before {
     content: 'EXPLORE';
@@ -161,11 +161,11 @@
     transition:all 1s ease-in-out;
   }
   .btn-twt2:hover:before {
-  content: 'MY PROJECT';
-  color: #ffffea; /*After Hovering Text Colour*/
-  text-align: center;
-  background-position:left bottom;
-  transition:all 1s ease-in-out;
+    content: 'MY PROJECT';
+    color: #ffffea; /*After Hovering Text Colour*/
+    text-align: center;
+    background-position:left bottom;
+    transition:all 1s ease-in-out;
   } 
   .cent{
     text-align:center;
@@ -174,96 +174,96 @@
   /*END SLIDE HOVER BUTTON OVERLAY*/
   
   .text-outline {text-shadow: -1px 0 black, 0 1px black,
-      1px 0 black, 0 -1px black}
-  /*	body {*/
-  /*  height: 100%;*/
-  /*  width: 100%;*/
-  /*  margin: 0;*/
-  /*  padding: 0;*/
-  /*  font-family: 'Open Sans', sans-serif;*/
-  /*  background: url('https://static.pexels.com/photos/471/nature-flowers-plant-blur.jpg') no-repeat center center;*/
-  /*  background-size: 100%;*/
-  /*}*/
+    1px 0 black, 0 -1px black}
+    /*  body {*/
+      /*  height: 100%;*/
+      /*  width: 100%;*/
+      /*  margin: 0;*/
+      /*  padding: 0;*/
+      /*  font-family: 'Open Sans', sans-serif;*/
+      /*  background: url('https://static.pexels.com/photos/471/nature-flowers-plant-blur.jpg') no-repeat center center;*/
+      /*  background-size: 100%;*/
+      /*}*/
 
-  /*	bodylow {*/
-  /*  height: 50%;*/
-  /*  width: 100%;*/
-  /*  margin: 0;*/
-  /*  padding: 0;*/
-  /*  font-family: 'Open Sans', sans-serif;*/
-  /*  background: url('https://static.pexels.com/photos/28026/pexels-photo-28026-large.jpg') no-repeat center center;*/
-  /*  background-size: 100%;*/
-  /*}*/
+      /*  bodylow {*/
+        /*  height: 50%;*/
+        /*  width: 100%;*/
+        /*  margin: 0;*/
+        /*  padding: 0;*/
+        /*  font-family: 'Open Sans', sans-serif;*/
+        /*  background: url('https://static.pexels.com/photos/28026/pexels-photo-28026-large.jpg') no-repeat center center;*/
+        /*  background-size: 100%;*/
+        /*}*/
 
-  /*#main {*/
-  /*    padding-top:100px;*/
-  /*    margin: auto;*/
-  /*    width:284px;*/
-  /*}*/
+        /*#main {*/
+        /*    padding-top:100px;*/
+        /*    margin: auto;*/
+        /*    width:284px;*/
+        /*}*/
 
-  /*.btn-twt:before {*/
-  /*    content: 'MICROFLOW';*/
-  /*    display: inline-block;*/
-  /*    border: 1px solid black;*/
-  /*    color: black;*/
-  /*    padding: 15px 41px;*/
-  /*    width: 150px;*/
-  /*    text-align: center;*/
-  /*    background: linear-gradient(to left, rgba(255,255,255,0) 50%, black 50%);*/
-  /*    background-size: 200% 100%;*/
-  /*    background-position:right bottom;*/
-  /*    vertical-align: middle;*/
-  /*  transition:all 1s ease;*/
-  /*}*/
-  /*.btn-twt:hover:before {*/
-  /*    content: 'JAKE';*/
-  /*    color: white;*/
-  /*    text-align: center;*/
-  /*    background-position:left bottom;*/
-  /*    transition:all 2s ease;*/
-  /*}*/
-  
-  #positionlow {
-    position: absolute;
-    bottom: 1000px;
-    width: 100%;
-}
+        /*.btn-twt:before {*/
+          /*    content: 'MICROFLOW';*/
+          /*    display: inline-block;*/
+          /*    border: 1px solid black;*/
+          /*    color: black;*/
+          /*    padding: 15px 41px;*/
+          /*    width: 150px;*/
+          /*    text-align: center;*/
+          /*    background: linear-gradient(to left, rgba(255,255,255,0) 50%, black 50%);*/
+          /*    background-size: 200% 100%;*/
+          /*    background-position:right bottom;*/
+          /*    vertical-align: middle;*/
+          /*  transition:all 1s ease;*/
+          /*}*/
+          /*.btn-twt:hover:before {*/
+            /*    content: 'JAKE';*/
+            /*    color: white;*/
+            /*    text-align: center;*/
+            /*    background-position:left bottom;*/
+            /*    transition:all 2s ease;*/
+            /*}*/
+            
+            #positionlow {
+            position: absolute;
+            bottom: 1000px;
+            width: 100%;
+          }
 
-.sepia {
--webkit-filter: sepia(0.6);
-}
+          .sepia {
+            -webkit-filter: sepia(0.6);
+          }
 
-.blur {
-  -webkit-filter: blur(20px);
-}
+          .blur {
+            -webkit-filter: blur(20px);
+          }
 
-.grayscale
+          .grayscale
 
-{
--webkit-filter: grayscale(0.5); 
-  
-}
+          {
+            -webkit-filter: grayscale(0.5); 
+            
+          }
 
-.blur-edge
-{
-     box-shadow: 0 0 18px 18px white inset;
-}
+          .blur-edge
+          {
+           box-shadow: 0 0 18px 18px white inset;
+         }
 
-/*SCSS. MAIN MENU STYLE-SHEET*/
+         /*SCSS. MAIN MENU STYLE-SHEET*/
 
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300);
-::selection {
-  background-color: #b3d4fc;
-}
+         @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300);
+         ::selection {
+          background-color: #b3d4fc;
+        }
 
-::-moz-selection {
-  background-color: #b3d4fc;
-}
+        ::-moz-selection {
+          background-color: #b3d4fc;
+        }
 
-bodymenu {
-  background-color: #FFF;
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 16px;
+        bodymenu {
+          background-color: #FFF;
+          font-family: "Source Sans Pro", sans-serif;
+          font-size: 16px;
   color: #667;
 }
 
@@ -292,7 +292,7 @@ h1:hover {
 h1 span {
   color: #2d499d;  /* Old colour: #2ecc71;  
   
-Deeper shades of Royal blue:
+  Deeper shades of Royal blue:
 
 #4169e1
 #3a5eca
@@ -345,53 +345,134 @@ li:last-child {
   text-decoration: none;
 }
 
+.biginput
+{
+ font-family: Raleway;  
+ font-weight: 22px;   
+}
+
+/*JS FORM CS BELOW:*/
+
+/* h1, code, p, form, h2 {
+  margin-bottom : 18px;
+}
+
+h1, h2 {
+  font-weight: bold;
+  font-family: arial, helvetica, sans-serif;
+}
+
+code {
+  display : block;
+}
+
+p code {
+  display : inline;
+}
+
+p {
+  width : 480px;
+}
+
+input, button {
+  margin : 0 0 5px 0;
+}
+
+body {
+  padding : 10px;
+}
+*/
+fieldset {
+  padding : 10px;
+  margin : 0 0 10px 0;
+  border : 1px solid black;
+  width: 480px;
+}
+
+label, input {
+  float : left;
+}
+
+label {
+  clear : left;
+  width : 480px;
+}
+
+.checkbox-label {
+  padding-left : 20px;
+}
+
+.checkbox {
+  position : relative;
+  left : -120px;
+}
+
+label.error {
+  clear : none;
+  width : auto;
+  margin-left : 10px;
+  color : red;
+}
+
+/*JS FORM CSS FINISHES HERE:*/
+
+/*ANGULAR JS CSS:*/
+
+.biginput
+{
+ font-family: Raleway;  
+ font-weight: 22px;   
+}
+
+
+
 </style>
 
 <script type='text/javascript' src='https://rawgit.com/greensock/GreenSock-JS/master/src/minified/TweenMax.min.js'></script>
-
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap-wizard/1.2/jquery.bootstrap.wizard.min.js'></script>
 
 <script>
-  // set and cache variables
-  var w, container, carousel, item, radius, itemLength, rY, ticker, fps;
-  var mouseX = 0;
-  var mouseY = 0;
-  var mouseZ = 0;
-  var addX = 0;
+// set and cache variables
+var w, container, carousel, item, radius, itemLength, rY, ticker, fps;
+var mouseX = 0;
+var mouseY = 0;
+var mouseZ = 0;
+var addX = 0;
 
 
-  // fps counter created by: https://gist.github.com/sharkbrainguy/1156092,
-  // no need to create my own :)
-  var fps_counter = {
+// fps counter created by: https://gist.github.com/sharkbrainguy/1156092,
+// no need to create my own :)
+var fps_counter = {
 
-    tick: function ()
-    {
-      // this has to clone the array every tick so that
-      // separate instances won't share state
-      this.times = this.times.concat(+new Date());
-      var seconds, times = this.times;
+  tick: function ()
+  {
+    // this has to clone the array every tick so that
+    // separate instances won't share state
+    this.times = this.times.concat(+new Date());
+    var seconds, times = this.times;
 
-      if (times.length > this.span + 1)
+    if (times.length > this.span + 1)
       {
         times.shift(); // ditch the oldest time
         seconds = (times[times.length - 1] - times[0]) / 1000;
         return Math.round(this.span / seconds);
       }
-      else return null;
-    },
+    else return null;
+      },
 
-    times: [],
-    span: 20
-  };
-  var counter = Object.create(fps_counter);
-
-
-
-  $(document).ready(init);
+      times: [],
+      span: 20
+      };
+      var counter = Object.create(fps_counter);
 
 
-  function init()
-  {
-    w = $(window);
+
+      $(document).ready(init);
+
+
+      function init()
+      {
+        w = $(window);
     container = $( '#contentContainer' );
     carousel = $( '#carouselContainer' );
     item = $( '.carouselItem' );
@@ -407,213 +488,209 @@ li:last-child {
     // create carousel item props
 
     for ( var i = 0; i < itemLength; i++ )
-    {
-      var $item = item.eq(i);
-      var $block = $item.find('.carouselItemInner');
+      {
+        var $item = item.eq(i);
+        var $block = $item.find('.carouselItemInner');
 
-      //thanks @chrisgannon!
-      TweenMax.set($item, {rotationY:rY * i, z:radius, transformOrigin:"50% 50% " + -radius + "px"});
+        //thanks @chrisgannon!
+        TweenMax.set($item, {rotationY:rY * i, z:radius, transformOrigin:"50% 50% " + -radius + "px"});
 
-      animateIn( $item, $block )
+        animateIn( $item, $block )
+      }
+
+      // set mouse x and y props and looper ticker
+      window.addEventListener( "mousemove", onMouseMove, false );
+      ticker = setInterval( looper, 1000/60 );
     }
 
-    // set mouse x and y props and looper ticker
-    window.addEventListener( "mousemove", onMouseMove, false );
-    ticker = setInterval( looper, 1000/60 );
-  }
+    function animateIn( $item, $block )
+    {
+      var $nrX = 360 * getRandomInt(2);
+      var $nrY = 360 * getRandomInt(2);
 
-  function animateIn( $item, $block )
-  {
-    var $nrX = 360 * getRandomInt(2);
-    var $nrY = 360 * getRandomInt(2);
+      var $nx = -(2000) + getRandomInt( 4000 )
+      var $ny = -(2000) + getRandomInt( 4000 )
+      var $nz = -4
+      000 +  getRandomInt( 4000 )
 
-    var $nx = -(2000) + getRandomInt( 4000 )
-    var $ny = -(2000) + getRandomInt( 4000 )
-    var $nz = -4
-    000 +  getRandomInt( 4000 )
+      var $s = 1.5 + (getRandomInt( 10 ) * .1)
+      var $d = 1 - (getRandomInt( 8 ) * .1)
 
-    var $s = 1.5 + (getRandomInt( 10 ) * .1)
-    var $d = 1 - (getRandomInt( 8 ) * .1)
+      TweenMax.set( $item, { autoAlpha:1, delay:$d } )
+      TweenMax.set( $block, { z:$nz, rotationY:$nrY, rotationX:$nrX, x:$nx, y:$ny, autoAlpha:0} )
+      TweenMax.to( $block, $s, { delay:$d, rotationY:0, rotationX:0, z:0,  ease:Expo.easeInOut} )
+      TweenMax.to( $block, $s-.5, { delay:$d, x:0, y:0, autoAlpha:1, ease:Expo.easeInOut} )
+    }
 
-    TweenMax.set( $item, { autoAlpha:1, delay:$d } )
-    TweenMax.set( $block, { z:$nz, rotationY:$nrY, rotationX:$nrX, x:$nx, y:$ny, autoAlpha:0} )
-    TweenMax.to( $block, $s, { delay:$d, rotationY:0, rotationX:0, z:0,  ease:Expo.easeInOut} )
-    TweenMax.to( $block, $s-.5, { delay:$d, x:0, y:0, autoAlpha:1, ease:Expo.easeInOut} )
-  }
+    function onMouseMove(event)
+    {
+      mouseX = -(-(window.innerWidth * .5) + event.pageX) * .0025;
+      mouseY = -(-(window.innerHeight * .5) + event.pageY ) * .01;
+      mouseZ = -(radius) - (Math.abs(-(window.innerHeight * .5) + event.pageY ) - 200);
+    }
 
-  function onMouseMove(event)
-  {
-    mouseX = -(-(window.innerWidth * .5) + event.pageX) * .0025;
-    mouseY = -(-(window.innerHeight * .5) + event.pageY ) * .01;
-    mouseZ = -(radius) - (Math.abs(-(window.innerHeight * .5) + event.pageY ) - 200);
-  }
+    // loops and sets the carousel 3d properties
+    function looper()
+    {
+      addX += mouseX
+      TweenMax.to( carousel, 1, { rotationY:addX, rotationX:mouseY, ease:Quint.easeOut } )
+      TweenMax.set( carousel, {z:mouseZ } )
+      fps.text( 'Framerate: ' + counter.tick() + '/60 FPS' )
+    }
 
-  // loops and sets the carousel 3d properties
-  function looper()
-  {
-    addX += mouseX
-    TweenMax.to( carousel, 1, { rotationY:addX, rotationX:mouseY, ease:Quint.easeOut } )
-    TweenMax.set( carousel, {z:mouseZ } )
-    fps.text( 'Framerate: ' + counter.tick() + '/60 FPS' )
-  }
+    function getRandomInt( $n )
+    {
+      return Math.floor((Math.random()*$n)+1);
+    }
+    </script>
 
-  function getRandomInt( $n )
-  {
-    return Math.floor((Math.random()*$n)+1);
-  }
-</script>
-
-<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
 
-<!--FRONT PAGE LINKS-->
+    <!--FRONT PAGE LINKS-->
 
-<div class="buttonslide">
-  <div class="main">
+    <div class="buttonslide">
+    <div class="main">
     <a class='btn-twt' href="JAKE"></a>
-  </div>
-</div>
+    </div>
+    </div>
 
 
 
-<div class="buttonslidelow">
-  <div class="main">
+    <div class="buttonslidelow">
+    <div class="main">
     <a class='btn-twt2' href="JAKE"></a>
-  </div>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<div class="container">
-  <div class="container-inner">
+    </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+    <div class="container-inner">
     <h1>{microflow} <span>*fun#raise*</span></h1>
     <nav>
-      <ul>
-        <li><a class="a2" href="#">mission</a></li>
-        <li><a class="a2" href="#">contact</a></li>
-        <li><a class="a2" href="#">fcbk</a></li>
-        <li><a class="a2" href="#">articles</a></li>
-        <li><a class="a2" href="https://youtu.be/N82fP5hKZPY?t=1303" target="_blank">bebop</a></li>
-      </ul>
+    <ul>
+    <li><a class="a2" href="#">mission</a></li>
+    <li><a class="a2" href="#">contact</a></li>
+    <li><a class="a2" href="#">fcbk</a></li>
+    <li><a class="a2" href="#">articles</a></li>
+    <li><a class="a2" href="https://youtu.be/N82fP5hKZPY?t=1303" target="_blank">bebop</a></li>
+    </ul>
     </nav>
-  </div>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+    </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 
-<br>
-<div id="contentContainer positionlow" class="trans3d">
- <section id="carouselContainer" class="trans3d">
+    <br>
+    <div id="contentContainer positionlow" class="trans3d">
+    <section id="carouselContainer" class="trans3d">
     <%= for project <- @projects do %>
-        <% s = to_string(Microflow.Avatar.url({project.picture, project})) %>
-        <% img_url = String.slice(s, 11, String.length(s)) %>
+      <% s = to_string(Microflow.Avatar.url({project.picture, project})) %>
+      <% img_url = String.slice(s, 11, String.length(s)) %>
 
-        <figure id="item1" class="carouselItem trans3d carousel-control"><div class="carouselItemInner trans3d blur blur-edge"><img src="<%= img_url %>" width="200" height="200"/></div></figure>
-        <!--<figure id="item2" class="carouselItem trans3d"><div class="carouselItemInner trans3d">2</div></figure>-->
-        <!--<figure id="item3" class="carouselItem trans3d"><div class="carouselItemInner trans3d">3</div></figure>-->
-        <!--<figure id="item4" class="carouselItem trans3d"><div class="carouselItemInner trans3d">4</div></figure>-->
-        <!--<figure id="item5" class="carouselItem trans3d"><div class="carouselItemInner trans3d">5</div></figure>-->
-        <!--<figure id="item6" class="carouselItem trans3d"><div class="carouselItemInner trans3d">6</div></figure>-->
-        <!--<figure id="item7" class="carouselItem trans3d"><div class="carouselItemInner trans3d">7</div></figure>-->
-        <!--<figure id="item8" class="carouselItem trans3d"><div class="carouselItemInner trans3d">8</div></figure>-->
-        <!--<figure id="item9" class="carouselItem trans3d"><div class="carouselItemInner trans3d">9</div></figure>-->
-        <!--<figure id="item10" class="carouselItem trans3d"><div class="carouselItemInner trans3d">10</div></figure>-->
-        <!--<figure id="item11" class="carouselItem trans3d"><div class="carouselItemInner trans3d">11</div></figure>-->
-        <!--<figure id="item12" class="carouselItem trans3d"><div class="carouselItemInner trans3d">12</div></figure>-->
-    <% end %>
-  </section>
-</div>
+      <figure id="item1" class="carouselItem trans3d carousel-control"><div class="carouselItemInner trans3d blur blur-edge"><img src="<%= img_url %>" width="200" height="200"/></div></figure>
+      <!--<figure id="item2" class="carouselItem trans3d"><div class="carouselItemInner trans3d">2</div></figure>-->
+      <!--<figure id="item3" class="carouselItem trans3d"><div class="carouselItemInner trans3d">3</div></figure>-->
+      <!--<figure id="item4" class="carouselItem trans3d"><div class="carouselItemInner trans3d">4</div></figure>-->
+      <!--<figure id="item5" class="carouselItem trans3d"><div class="carouselItemInner trans3d">5</div></figure>-->
+      <!--<figure id="item6" class="carouselItem trans3d"><div class="carouselItemInner trans3d">6</div></figure>-->
+      <!--<figure id="item7" class="carouselItem trans3d"><div class="carouselItemInner trans3d">7</div></figure>-->
+      <!--<figure id="item8" class="carouselItem trans3d"><div class="carouselItemInner trans3d">8</div></figure>-->
+      <!--<figure id="item9" class="carouselItem trans3d"><div class="carouselItemInner trans3d">9</div></figure>-->
+      <!--<figure id="item10" class="carouselItem trans3d"><div class="carouselItemInner trans3d">10</div></figure>-->
+      <!--<figure id="item11" class="carouselItem trans3d"><div class="carouselItemInner trans3d">11</div></figure>-->
+      <!--<figure id="item12" class="carouselItem trans3d"><div class="carouselItemInner trans3d">12</div></figure>-->
+      <% end %>
+      </section>
+      </div>
 
-<br>
-<br>
-<img src="https://static.pexels.com/photos/65777/pexels-photo-65777-large.jpeg" width="100%" height="540px"/>  <!--Lower background pic --> 
-<br>
-<br>
-<br>
-<br>
-
-<br>
-<br>
-<br>
-<br>
+      <br>
+      <br>
+      <img src="https://static.pexels.com/photos/65777/pexels-photo-65777-large.jpeg" width="100%" height="540px"/>  <!--Lower background pic --> 
+      <br>
+      <br>
+      <br>
+      <br>
 
 
 
 
-<!--<!--<link rel="stylesheet" type="text/css" href="styles.css" />-->
-<!--<!--<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>-->
+
+      <!--<!--<link rel="stylesheet" type="text/css" href="styles.css" />-->
+      <!--<!--<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>-->
 
 
-<!--<div>-->
-<!--<div style="text-align: center;">-->
-<!--    <a href="#myModal7" role="button" class="largesectionbuttons" data-toggle="modal"><h2 style="font-family: Montserrat">Is Earth Poor?</h2></a>-->
-<!--      <div id="myModal7" class="modal" data-easein="whirlIn"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="text-align:center" > -->
-<!--        <div class="modal-dialog">-->
-<!--          <div class="modal-content">-->
-<!--            <div class="modal-header">-->
-<!--              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>-->
-<!--              <h1 style="font-family: Montserrat; text-shadow:1px 1px #786689">Is Earth Poor???</h1>-->
-<!--            </div>-->
-<!--            <div class="modal-body">-->
-<!--              <h4 class="msrt2"> Every day, Earth spends an estimated:</h4>-->
-        
-<!--        <h4 class="msrt2">2 billion dollars on cigarrettes. <a href="http://global.tobaccofreekids.org/files/pdfs/en/Global_Cigarette_Industry_pdf.pdf">Global Tobacco Industry</a></h4>-->
-        
-<!--        <h4 class="msrt2">1 billion dollars on alcohol. </h4>-->
-        
-<!--        <h4 class="msrt2">1 billion dollars on plastic toys. </h4>-->
-        
-<!--       <h4 class="msrt2"> So, at least 3 billion USD are spent per day on useless luxuries. </h4>-->
+      <!--<div>-->
+      <!--<div style="text-align: center;">-->
+      <!--    <a href="#myModal7" role="button" class="largesectionbuttons" data-toggle="modal"><h2 style="font-family: Montserrat">Is Earth Poor?</h2></a>-->
+      <!--      <div id="myModal7" class="modal" data-easein="whirlIn"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="text-align:center" > -->
+      <!--        <div class="modal-dialog">-->
+      <!--          <div class="modal-content">-->
+      <!--            <div class="modal-header">-->
+      <!--              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>-->
+      <!--              <h1 style="font-family: Montserrat; text-shadow:1px 1px #786689">Is Earth Poor???</h1>-->
+      <!--            </div>-->
+      <!--            <div class="modal-body">-->
+      <!--              <h4 class="msrt2"> Every day, Earth spends an estimated:</h4>-->
       
-<!--        <h4 class="msrt2">Just 5 percent of this, diverted to good causes, would equal 400million USD per day.</h4>-->
-            
-<!--            </div>-->
-<!--            <div class="modal-footer">-->
-<!--              <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      </div>-->
+      <!--        <h4 class="msrt2">2 billion dollars on cigarrettes. <a href="http://global.tobaccofreekids.org/files/pdfs/en/Global_Cigarette_Industry_pdf.pdf">Global Tobacco Industry</a></h4>-->
       
-     <!--jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.ui.min.js"></script>
-    <script>
-        $( ".modal" ).each(function(index) {
-           $(this).on('show.bs.modal', function (e) {
+      <!--        <h4 class="msrt2">1 billion dollars on alcohol. </h4>-->
+      
+      <!--        <h4 class="msrt2">1 billion dollars on plastic toys. </h4>-->
+      
+      <!--       <h4 class="msrt2"> So, at least 3 billion USD are spent per day on useless luxuries. </h4>-->
+      
+      <!--        <h4 class="msrt2">Just 5 percent of this, diverted to good causes, would equal 400million USD per day.</h4>-->
+      
+      <!--            </div>-->
+      <!--            <div class="modal-footer">-->
+      <!--              <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Close</button>-->
+      <!--            </div>-->
+      <!--        </div>-->
+      <!--      </div>-->
+      <!--      </div>-->
+      
+      <!--jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.ui.min.js"></script>
+      <script>
+      $( ".modal" ).each(function(index) {
+       $(this).on('show.bs.modal', function (e) {
          var open = $(this).attr('data-easein');
-             if(open == 'shake') {
-                         $('.modal-dialog').velocity('callout.' + open);
-                    } else if(open == 'pulse') {
-                         $('.modal-dialog').velocity('callout.' + open);
-                    } else if(open == 'tada') {
-                         $('.modal-dialog').velocity('callout.' + open);
-                    } else if(open == 'flash') {
-                         $('.modal-dialog').velocity('callout.' + open);
-                    }  else if(open == 'bounce') {
-                         $('.modal-dialog').velocity('callout.' + open);
-                    } else if(open == 'swing') {
-                         $('.modal-dialog').velocity('callout.' + open);
-                  }else {
+         if(open == 'shake') {
+           $('.modal-dialog').velocity('callout.' + open);
+           } else if(open == 'pulse') {
+             $('.modal-dialog').velocity('callout.' + open);
+             } else if(open == 'tada') {
+               $('.modal-dialog').velocity('callout.' + open);
+               } else if(open == 'flash') {
+                 $('.modal-dialog').velocity('callout.' + open);
+                 }  else if(open == 'bounce') {
+                   $('.modal-dialog').velocity('callout.' + open);
+                   } else if(open == 'swing') {
+                     $('.modal-dialog').velocity('callout.' + open);
+                     }else {
                       $('.modal-dialog').velocity('transition.' + open);
                     }
-                     
-        }); 
-        });
-   </script>
+                    
+                    }); 
+});
+</script>
 
 
 
@@ -646,8 +723,7 @@ li:last-child {
 <!--          <section class="col-lg-2"></section>-->
 <!--      </div>-->
 
-
-
+<!--START NEW JS FORM-->
 
 
 
@@ -668,4 +744,84 @@ li:last-child {
 
 <!--END CAROUSEL-->
 
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+<!--<img src="https://static.pexels.com/photos/65777/pexels-photo-65777-large.jpeg" width="100%" height="540px"/> -->
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+<div id="rootwizard" style="margin-left:30px">
+<div class="navbar">
+<div class="navbar-inner">
+<div class="container">
+<ul>
+<li><a href="#tab1" data-toggle="tab">First</a></li>
+<li><a href="#tab2" data-toggle="tab">Second</a></li>
+<li><a href="#tab3" data-toggle="tab">Third</a></li>
+<li><a href="#tab4" data-toggle="tab">Forth</a></li>
+<li><a href="#tab5" data-toggle="tab">Fifth</a></li>
+<li><a href="#tab6" data-toggle="tab">Sixth</a></li>
+<li><a href="#tab7" data-toggle="tab">Seventh</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="tab-content">
+<div class="tab-pane" id="tab1">
+<form>
+<h3 title="Getting the Word Out" style="border: none;"></h3>
+<br>
+<!-- Users have to check 3 out of 5 boxes to pass  -->
+<div class="control-group">
+<div class="controls">
+<label class="radio" for="size-2">
+<input name="size" id="size-2" value="Small" checked="checked" type="radio">I'll make an effort to get the word out about this project, I'll upload this to Facebook, tell friends, blog about this project, ask other bloggers to link to me...</label>
+<br>
+<label class="radio" for="size-2">
+<input name="size" id="size-2" value="Small" checked="checked" type="radio">I'll sit there and wait for money to rain from the sky</label>
+<br>
+<br>
+</div>
+</div>
+</form>
 
+</div>
+<div class="tab-pane" id="tab2">
+<h3>How much do you want to raise? Ƀ ¥ zł $ € ₴ Ft £ ₯</h3>  
+  <input type="number" name="project[raise_amount]" placeholder="How many USD do you need?"  
+  class="form-control biginput" min="0" max="100" sstyle="width: 300px;" />
+</div>
+<div class="tab-pane" id="tab3">
+3
+</div>
+<div class="tab-pane" id="tab4">
+4
+</div>
+<div class="tab-pane" id="tab5">
+5
+</div>
+<div class="tab-pane" id="tab6">
+6
+</div>
+<div class="tab-pane" id="tab7">
+7
+</div>
+<br>
+<div style="clear:both"></div>
+<ul class="pager wizard">
+<li class="previous first" style="display:none;"><a href="javascript:void(0)">First</a></li>
+<li class="previous"><a href="javascript:void(0)">Previous</a></li>
+<li class="next last" style="display:none;"><a href="javascript:void(0)">Last</a></li>
+<li class="next"><a href="javascript:void(0)">Next</a></li>
+</ul>
+</div>  
+</div>
+
+<script>
+$(document).ready(function() {
+  $('#rootwizard').bootstrapWizard();
+  });
+</script>
