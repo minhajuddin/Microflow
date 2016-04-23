@@ -1,4 +1,5 @@
 
+<link rel="stylesheet" href="/css/new_project.css">
 
 <style>
 /* hardware accelatator class */
@@ -758,23 +759,23 @@ var fps_counter = {
 <div class="navbar-inner">
 <div class="container">
 <ul>
-<li><a href="#tab1" data-toggle="tab">First</a></li>
-<li><a href="#tab2" data-toggle="tab">Second</a></li>
-<li><a href="#tab3" data-toggle="tab">Third</a></li>
-<li><a href="#tab4" data-toggle="tab">Forth</a></li>
-<li><a href="#tab5" data-toggle="tab">Fifth</a></li>
-<li><a href="#tab6" data-toggle="tab">Sixth</a></li>
-<li><a href="#tab7" data-toggle="tab">Seventh</a></li>
+<li><a href="#tab1" data-toggle="tab">1. Promotion</a></li>
+<li><a href="#tab2" data-toggle="tab">2. How much?</a></li>
+<li><a href="#tab3" data-toggle="tab">3. Video Link</a></li>
+<li><a href="#tab4" data-toggle="tab">4. Pic Upload</a></li>
+<li><a href="#tab5" data-toggle="tab">5. Project Title </a></li>
+<li><a href="#tab6" data-toggle="tab">6. What's your plan?</a></li>
+<li><a href="#tab7" data-toggle="tab">7. Submit</a></li>
 </ul>
 </div>
 </div>
 </div>
+
+
 <div class="tab-content">
 <div class="tab-pane" id="tab1">
-<form>
-<h3 title="Getting the Word Out" style="border: none;"></h3>
+<h3>Getting the Word Out</h3>
 <br>
-<!-- Users have to check 3 out of 5 boxes to pass  -->
 <div class="control-group">
 <div class="controls">
 <label class="radio" for="size-2">
@@ -786,28 +787,95 @@ var fps_counter = {
 <br>
 </div>
 </div>
-</form>
 
 </div>
+
+
+
+
+
+
+
+
 <div class="tab-pane" id="tab2">
 <h3>How much do you want to raise? Ƀ ¥ zł $ € ₴ Ft £ ₯</h3>  
+<br>
   <input type="number" name="project[raise_amount]" placeholder="How many USD do you need?"  
-  class="form-control biginput" min="0" max="100" sstyle="width: 300px;" />
+  class="form-control biginput" min="0" max="100" style="width: 300px;" />
+  <br>
+  <br>
+  <br>
 </div>
+
+
+
+
+
 <div class="tab-pane" id="tab3">
-3
+<h2>Submit a video link</h2>
+<h3>40 seconds maximum Youtube only accepted now. Vimeo will come later.</h3>
+                <div class="control-group">
+                    <!-- <label class="control-label" for="name">Name</label> -->
+                    <div class="controls">
+                        <input id="name" name="name" placeholder="Get to the point and be positive." class="input-xlarge" required="" type="text" ng-model="name" maxlength="800">
+                    </div>
+                </div>  
+                <br>
+<br>
+<br>
 </div>
+
+
+
+
+
 <div class="tab-pane" id="tab4">
-4
+<h2>Upload a picture</h2>
+<button class="btn btn-file upload-button">Select Photo<input type="file" name="project[picture]" class="file-upload">
+</button>
+<img class="prev-pic"/>
+
+<div class="spinner" style="display: none;">
+<div class="dot1"></div>
+<div class="dot2"></div>
 </div>
+</div>
+
+
+
+
+
 <div class="tab-pane" id="tab5">
-5
+<h2>Project Title</h2>  
+<br>
+             <label for="project[name]"></label> 
+     <input type="text" name="project[name]" placeholder="Project name here..." class="form-control raleway" data-toggle="tooltip", title ="Make an eye-catching title!"
+      style= 'width: 100%; display: block; raleway' class='Raleway' data-placement='right'/>
+      <br>
 </div>
+
+
+
 <div class="tab-pane" id="tab6">
-6
+  <h2>What's your plan?</h2>
+      <br>
+      <br>
+        <textarea name= "project[description]" input type="text" maxlength="5" placeholder="Describe your project in less than 800 characters" class= "raleway" id="ckeditor"  /></textarea>
+          </div>     
 </div>
+</div>
+</div>
+
+
+
+
+
 <div class="tab-pane" id="tab7">
-7
+  <h2>Submit</h2>
+  <button class="btn btn-file upload-button">Save project<input type="file" name="project[picture]" class="file-upload">
+</button>
+
+</div>
 </div>
 <br>
 <div style="clear:both"></div>
@@ -819,6 +887,7 @@ var fps_counter = {
 </ul>
 </div>  
 </div>
+
 
 <script>
 $(document).ready(function() {
