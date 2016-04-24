@@ -18,7 +18,7 @@ defmodule Microflow.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {Microflow, []},
-     applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
+     applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,:connection,
                     :phoenix_ecto, :postgrex, :arc, :comeonin, :braintree]]
   end
 

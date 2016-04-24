@@ -1,5 +1,4 @@
-
-<link rel="stylesheet" href="/css/new_project.css">
+<link rel="stylesheet" href="/css/new_project.css"> <!--This form contains all the upload and save button divs-->
 
 <style>
 /* hardware accelatator class */
@@ -754,140 +753,150 @@ var fps_counter = {
 <!--<br>-->
 <!--<br>-->
 <!--<br>-->
-<div id="rootwizard" style="margin-left:30px">
-<div class="navbar">
-<div class="navbar-inner">
-<div class="container">
-<ul>
-<li><a href="#tab1" data-toggle="tab">1. Promotion</a></li>
-<li><a href="#tab2" data-toggle="tab">2. How much?</a></li>
-<li><a href="#tab3" data-toggle="tab">3. Video Link</a></li>
-<li><a href="#tab4" data-toggle="tab">4. Pic Upload</a></li>
-<li><a href="#tab5" data-toggle="tab">5. Project Title </a></li>
-<li><a href="#tab6" data-toggle="tab">6. What's your plan?</a></li>
-<li><a href="#tab7" data-toggle="tab">7. Submit</a></li>
-</ul>
-</div>
-</div>
-</div>
 
-
-<div class="tab-content">
-<div class="tab-pane" id="tab1">
-<h3>Getting the Word Out</h3>
-<br>
-<div class="control-group">
-<div class="controls">
-<label class="radio" for="size-2">
-<input name="size" id="size-2" value="Small" checked="checked" type="radio">I'll make an effort to get the word out about this project, I'll upload this to Facebook, tell friends, blog about this project, ask other bloggers to link to me...</label>
-<br>
-<label class="radio" for="size-2">
-<input name="size" id="size-2" value="Small" checked="checked" type="radio">I'll sit there and wait for money to rain from the sky</label>
-<br>
-<br>
-</div>
-</div>
-
-</div>
-
-
-
-
-
-
-
-
-<div class="tab-pane" id="tab2">
-<h3>How much do you want to raise? Ƀ ¥ zł $ € ₴ Ft £ ₯</h3>  
-<br>
-  <input type="number" name="project[raise_amount]" placeholder="How many USD do you need?"  
-  class="form-control biginput" min="0" max="100" style="width: 300px;" />
-  <br>
-  <br>
-  <br>
-</div>
-
-
-
-
-
-<div class="tab-pane" id="tab3">
-<h2>Submit a video link</h2>
-<h3>40 seconds maximum Youtube only accepted now. Vimeo will come later.</h3>
-                <div class="control-group">
-                    <!-- <label class="control-label" for="name">Name</label> -->
-                    <div class="controls">
-                        <input id="name" name="name" placeholder="Get to the point and be positive." class="input-xlarge" required="" type="text" ng-model="name" maxlength="800">
-                    </div>
-                </div>  
-                <br>
-<br>
-<br>
-</div>
-
-
-
-
-
-<div class="tab-pane" id="tab4">
-<h2>Upload a picture</h2>
-<button class="btn btn-file upload-button">Select Photo<input type="file" name="project[picture]" class="file-upload">
-</button>
-<img class="prev-pic"/>
-
-<div class="spinner" style="display: none;">
-<div class="dot1"></div>
-<div class="dot2"></div>
-</div>
-</div>
-
-
-
-
-
-<div class="tab-pane" id="tab5">
-<h2>Project Title</h2>  
-<br>
-             <label for="project[name]"></label> 
-     <input type="text" name="project[name]" placeholder="Project name here..." class="form-control raleway" data-toggle="tooltip", title ="Make an eye-catching title!"
-      style= 'width: 100%; display: block; raleway' class='Raleway' data-placement='right'/>
+<%= form_for @changeset, project_path(@conn, :create), [multipart: true, class: "new-project-form col-md-12", style: ""], fn f -> %> 
+<div id="rootwizard" style="margin-left:30px;margin-bottom:50px"> <!-- Change margin botton to raise the floor of the JS input form wizard-->
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="container">
+        <ul>
+          <li><a href="#tab1" data-toggle="tab">First</a></li>
+          <li><a href="#tab2" data-toggle="tab">Second</a></li>
+          <li><a href="#tab3" data-toggle="tab">Third</a></li>
+          <li><a href="#tab4" data-toggle="tab">Forth</a></li>
+          <li><a href="#tab5" data-toggle="tab">Fifth</a></li>
+          <li><a href="#tab6" data-toggle="tab">Sixth</a></li>
+          <li><a href="#tab7" data-toggle="tab">Seventh</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <%= if f.errors != [] do %>
+    <div class="alert alert-danger">
+      <p class="Raleway font-weight:700">Oops, something went wrong! Please check the errors below:</p>
+      <ul>
+        <%= for {attr, message} <- f.errors do %>
+          <li><%= humanize(attr) %> <%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="tab-content">
+   
+    
+    <div class="tab-pane" id="tab1">
+      <h3>Getting the Word Out</h3>
       <br>
-</div>
+      <div class="control-group">
+        <div class="controls">
+          <label class="radio" for="size-2">
+            <input name="size" id="size-2" value="Small" checked="checked" type="radio">I'll make an effort to get the word out about this project, I'll upload this to Facebook, tell friends, blog about this project, ask other bloggers to link to me...</label>
+            <br>
+            <label class="radio" for="size-2">
+              <input name="size" id="size-2" value="Small" checked="checked" type="radio">I'll sit there and wait for money to rain from the sky</label>
+              <br>
+              <br>
+            </div>
+          </div>          
+      </div>
+      <div class="tab-pane" id="tab2">
+        <h3>How much do you want to raise? Ƀ ¥ zł $ € ₴ Ft £ ₯</h3>  
+        <input type="number" name="project[raise_amount]" placeholder="How many USD do you need?"  
+        class="form-control biginput" min="0" max="100" style="width: 300px;" />
+      </div>
+     
+     
+     
+     
+      <div class="tab-pane" id="tab3">
+        <h2>Submit a video link</h2>
+        <h3>40 seconds maximum Youtube only accepted now. Vimeo will come later.</h3>
+        <!--<div class="control-group">-->
+           <input type="text-area" name="project[video_url]" placeholder="Paste yr Youtube vid here   :)" 
+           class="form-control raleway textboxlarger youtubetxt" /> 
+          <!-- <label class="control-label" for="name">Name</label> -->
+          </div>
+          
+          
+          
+          
+          
+          <div class="controls">
+            <input id="name" name="name" placeholder="Get to the point and be positive." 
+            class="input-xlarge" required="" type="text" ng-model="name" maxlength="800">
+          </div>
+        </div>    
+      </div>
+      
+      
+      
+      
+      
+      
+      <div class="tab-pane" id="tab4">
+        <h2>Upload a picture</h2>
+        <button class="btn btn-file upload-button">Select Photo<input type="file" name="project[picture]" class="file-upload">
+        </button>
 
 
 
-<div class="tab-pane" id="tab6">
-  <h2>What's your plan?</h2>
+
+
+        <img class="prev-pic" style="width:300px"/>
+          <div class="spinner" style="display: none;">
+          <div class="dot1"></div>
+          <div class="dot2"></div>
+        </div>        
+      </div>
+      
+      
+      
+      
+      
+      
+      <div class="tab-pane" id="tab5">
+        <h2>Project Title</h2>            
+        <label for="project[name]"></label> 
+        <input type="text" name="project[name]" placeholder="Project name here..." class="form-control raleway" data-toggle="tooltip", title ="Make an eye-catching title!"
+        style= 'width: 100%; display: block; raleway' class='Raleway' data-placement='right'/>
+      </div>
+      
+      
+        
+        <div class="tab-pane" id="tab6">
+             <div class="form-group">
+      <label class="Raleway">What's your plan?</label>
       <br>
       <br>
-        <textarea name= "project[description]" input type="text" maxlength="5" placeholder="Describe your project in less than 800 characters" class= "raleway" id="ckeditor"  /></textarea>
-          </div>     
-</div>
-</div>
-</div>
-
-
-
-
-
-<div class="tab-pane" id="tab7">
-  <h2>Submit</h2>
-  <button class="btn btn-file upload-button">Save project<input type="file" name="project[picture]" class="file-upload">
-</button>
-
-</div>
-</div>
-<br>
-<div style="clear:both"></div>
-<ul class="pager wizard">
-<li class="previous first" style="display:none;"><a href="javascript:void(0)">First</a></li>
-<li class="previous"><a href="javascript:void(0)">Previous</a></li>
-<li class="next last" style="display:none;"><a href="javascript:void(0)">Last</a></li>
-<li class="next"><a href="javascript:void(0)">Next</a></li>
-</ul>
-</div>  
-</div>
-
+        <textarea name= "project[description]" input type="text" maxlength="800" placeholder="Describe your project in less than 800 characters" class= "raleway" id="ckeditor"  /></textarea>
+          </div>  
+        </div>
+        
+        
+        
+        
+          <div class="tab-pane" id="tab7">
+  <button type="submit" class="btn btn-file upload-button">SAVE PROJECT</button>
+        </div>
+        
+        
+        
+        
+        
+        
+        <br>
+        <div style="clear:both"></div>
+        <ul class="pager wizard">
+          <li class="previous first" style="display:none;"><a href="javascript:void(0)">First</a></li>
+          <li class="previous"><a href="javascript:void(0)">Previous</a></li>
+          <li class="next last" style="display:none;"><a href="javascript:void(0)">Last</a></li>
+          <li class="next"><a href="javascript:void(0)">Next</a></li>
+        </ul>
+        
+      </div>  
+      </div>
+      
+<%end%>
 
 <script>
 $(document).ready(function() {

@@ -8,7 +8,8 @@ defmodule Microflow.TestController do
 
   def index(conn, _params) do
     projects = Microflow.Repo.all(Microflow.Project)
-    render(conn, "index.html", projects: projects)
+    changeset = Project.changeset(%Project{})
+    render(conn, "index.html", projects: projects, changeset: changeset) #Added by Febbry to fix child assigns problem.
   end
   
    #def create(conn, %{"user" => user_params}) do
@@ -24,12 +25,13 @@ defmodule Microflow.TestController do
     changeset = Project.changeset(%Project{}, project_params)
     case Repo.insert(changeset) do
       {:ok, _project} ->
+        # project = Project.avatar_changeset(project, project_params) |> Repo.update
         conn
         
         |> put_flash(:info, "Project created successfully.")
         |> redirect(to: project_path(conn, :index))
       {:error, changeset} ->
-        IO.inspect changeset
+        # IO.inspect changeset #Commented this as it is commented in Project Controller
         render(conn, "new.html", changeset: changeset)
     end
   end
