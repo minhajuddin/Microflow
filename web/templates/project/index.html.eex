@@ -49,7 +49,7 @@
    <div class="col-sm-5">
     <!--position: static; -->
 
-    <div class="panel panel-default box6"  style="height: 2000px;width: 85%;"> 
+    <div class="panel panel-default box6"  style="height: 1500px;width: 85%;"> 
      <div class="panel-heading text-center" style="padding:0;background:#fff">
        <!--<div class="panel panel-default"  style="height: 1200px; margin-bottom:50px;">-->
      
@@ -107,6 +107,7 @@
       <div>
        <%= link "Admin Delete Project", to: project_path(@conn, :delete, project), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-default btn-large rounded-corners ralewaycustom", style: "float: center;" %>
        <%= link "Start Your Own Project", to: project_path(@conn, :new), class: "btn btn-default btn-large rounded-corners ralewaycustom", style: "float: center;" %>
+       <%= link "Fund this Project Now", to: success_path(@conn, :new), class: "btn btn-default btn-large rounded-corners ralewaycustom", style: "float: center;" %>
      </div>
    </div>
  </div>

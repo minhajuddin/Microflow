@@ -26,6 +26,8 @@ defmodule Microflow.Router do
     get "/users", Microflow.UserController, :index
     resources "/users", Microflow.UserController 
     resources "/sessions", Microflow.SessionController#, only: [:new, :create, :delete]
+    resources "/successes", Microflow.SuccessController
+    get "successes", Microflow.SuccessController, :index
     # get "/users", Microflow.UserController, :index # Added Microflow to both these routes.
     # get "/users/:id", Microflow.UserController, :show # Added Microflow to both these routes.
     # get "/", Microflow.PageController, :index #Commented this to avoid conflicts.

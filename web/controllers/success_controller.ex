@@ -1,15 +1,16 @@
-defmodule Microflow.HomeController do
+defmodule Microflow.SuccessController do
   require Logger
   use Microflow.Web, :controller
+  alias Braintree.Customer
+  alias Braintree.ErrorResponse, as: Error
+
 
   alias Microflow.Project
 
   plug :scrub_params, "project" when action in [:create, :update]
 
   def index(conn, _params) do
-    projects = Microflow.Repo.all(Microflow.Project)
-    changeset = Project.changeset(%Project{})
-    render(conn, "index.html", projects: projects, changeset: changeset) #Added by Febbry to fix child assigns problem.
+    render(conn, "index.html") #Added by Febbry to fix child assigns problem.
   end
   
    #def create(conn, %{"user" => user_params}) do
@@ -78,4 +79,3 @@ defmodule Microflow.HomeController do
   # |> redirect(to: project_path(conn, :index))
   end
 end
-
