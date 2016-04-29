@@ -8,6 +8,8 @@ defmodule Microflow.Router do
     plug :protect_from_forgery
     plug :put_secure_browser_headers
     plug Microflow.Auth, repo: Microflow.Repo
+   # plug Guardian.Plug.VerifySession
+   # plug Guardian.Plug.LoadResource
   end
 
   pipeline :api do

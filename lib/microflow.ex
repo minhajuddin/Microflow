@@ -14,6 +14,8 @@ defmodule Microflow do
       # Here you could define other workers and supervisors as children
       # worker(Microflow.Worker, []), 
      # worker(Microflow.Repo, []) #jnote. Added this as per internet advice: repo Microflow.Repo is not started, please ensure it is part of your supervision tree
+    worker(Microflow.Router, [], function: :start)
+
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

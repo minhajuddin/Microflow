@@ -15,8 +15,8 @@ defmodule Microflow.Project do
   @required_fields ~w(name description video_url raise_amount)
   @optional_fields ~w()
 
-  @required_file_fields ~w()
-  @optional_file_fields ~w(picture)
+  @required_file_fields ~w(picture) #jnote: Do I need to put picture here? OK I will.
+  @optional_file_fields ~w()
 
   @doc """
   Creates a changeset based on the `model` and `params`.
@@ -29,7 +29,7 @@ defmodule Microflow.Project do
     |> cast(params, @required_fields, @optional_fields)
     # |> cast_attachments(params, @required_file_fields, @optional_file_fields)
     |> validate_length(:description, min: 5)
-    |> validate_length(:description, max: 700) 
+    |> validate_length(:description, max: 800) 
     
   end
   

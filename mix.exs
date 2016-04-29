@@ -4,7 +4,7 @@ defmodule Microflow.Mixfile do
   def project do
     [app: :microflow,
      version: "0.0.1",
-     elixir: "~> 1.0",
+     elixir: "1.2.0",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
      build_embedded: Mix.env == :prod,
@@ -34,13 +34,15 @@ defmodule Microflow.Mixfile do
      {:postgrex, ">= 0.10.0"},
      {:phoenix_ecto, "~> 2.0"},
      {:phoenix_html, "~> 2.4"},
-     {:phoenix_live_reload, "~> 1.0", only: :dev},
+     {:phoenix_live_reload, "~> 1.0"}, #took away>>>    only: :dev},
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"},
      {:arc, "~> 0.3.0"},
      {:arc_ecto, "~> 0.3.2"},
      {:comeonin, "~> 2.0"},#From Programming Phoenix Page 74
-     {:braintree, "~> 0.3.2"}
+     {:braintree, "~> 0.3.2"},
+     #{:guardian, "~> 0.10.0"},
+     {:exrm, ">= 0.15.1"}
      ]
   end
 

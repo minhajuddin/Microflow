@@ -33,3 +33,12 @@ config :braintree,
   merchant_id: "2rjntp9zhzkvrp4y",
   public_key:  "svcn38vz5y6df6s2",
   private_key: "a09d0475326eccccff1fd4c3b097263d"
+  
+# config :guardian, Guardian,
+#  allowed_algos: ["HS512"], # optional
+#  verify_module: Guardian.JWT,  # optional
+#  issuer: "Microflow",
+#  ttl: { 30, :days },
+#  verify_issuer: true, # optional
+# secret_key: <guardian secret key>,
+#  serializer: Microflow.GuardianSerializer
