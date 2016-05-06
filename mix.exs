@@ -19,7 +19,7 @@ defmodule Microflow.Mixfile do
   def application do
     [mod: {Microflow, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,:connection,
-                    :phoenix_ecto, :postgrex, :arc, :comeonin, :braintree]]
+                    :phoenix_ecto, :postgrex, :arc, :arc_ecto, :comeonin, :braintree]]
   end
 
   # Specifies which paths to compile per environment.
@@ -40,7 +40,8 @@ defmodule Microflow.Mixfile do
      {:arc, "~> 0.3.0"},
      {:arc_ecto, "~> 0.3.2"},
      {:comeonin, "~> 2.0"},#From Programming Phoenix Page 74
-     {:braintree, "~> 0.3.2"}
+     {:braintree, "~> 0.3.2"},
+     {:exrm, "~> 1.0.0-rc7"}
      ]
   end
 

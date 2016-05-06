@@ -8,7 +8,7 @@ defmodule Microflow.Endpoint do
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :microflow, gzip: false,
+    at: "/", from: :microflow, gzip: false, #jnote: Set gzip tp true in production.
     only: ~w(css fonts images js favicon.ico robots.txt media)
     
 
@@ -32,7 +32,7 @@ defmodule Microflow.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
 
-  plug Plug.Session,
+  plug Plug.Session, #jnote: Probably need to delete session plug later and start again. 
     store: :cookie,
     key: "_microflow_key",
     signing_salt: "GajEm3B0"

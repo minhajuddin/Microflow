@@ -13,8 +13,9 @@ use Mix.Config
 # which you typically run after static files are built.
 config :microflow, Microflow.Endpoint,
   http: [port: {:system, "PORT"}],
-  url: [host: "example.com", port: 80],
-  cache_static_manifest: "priv/static/manifest.json"
+  url: [host: "188.166.147.101", port: 80], #using IP because domain is not configured yet.
+  cache_static_manifest: "priv/static/manifest.json",
+  server: true
 
 # Do not print debug messages in production
 config :logger, level: :info

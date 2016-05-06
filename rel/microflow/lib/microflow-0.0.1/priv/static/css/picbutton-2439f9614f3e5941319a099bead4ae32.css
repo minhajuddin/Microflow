@@ -1,0 +1,21 @@
+picbutton {
+    display: inline-block;
+    height: 134px;
+    padding: 0;
+    margin: 0;
+    vertical-align: top;
+    width: 104px;
+}
+
+#close-image img {
+    display: block;
+    height: 130px;  
+    width: 100px;
+}
+
+#close-CSS {
+    background-image: url( 'https://s-media-cache-ak0.pinimg.com/236x/08/61/54/08615465aa8a58a739d44621fca24925.jpg' );
+    background-size: 100px 130px;
+    height: 134px;  
+    width: 104px;
+}

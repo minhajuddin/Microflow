@@ -1,0 +1,90 @@
+
+=====
+===== LOGGING STARTED Fri May  6 00:41:53 UTC 2016
+=====
+Using /home/ubuntu/workspace/microflow/rel/microflow/releases/0.0.1/microflow.sh
+Exec: /home/ubuntu/workspace/microflow/rel/microflow/erts-7.2/bin/erlexec -boot /home/ubuntu/workspace/microflow/rel/microflow/releases/0.0.1/microflow -mode embedded -config /home/ubuntu/workspace/microflow/rel/microflow/running-config/sys.config -boot_var ERTS_LIB_DIR /home/ubuntu/workspace/microflow/rel/microflow/erts-7.2/../lib -env ERL_LIBS /home/ubuntu/workspace/microflow/rel/microflow/lib -pa /home/ubuntu/workspace/microflow/rel/microflow/lib/microflow-0.0.1/consolidated -args_file /home/ubuntu/workspace/microflow/rel/microflow/running-config/vm.args -user Elixir.IEx.CLI -extra --no-halt +iex -- console
+Root: /home/ubuntu/workspace/microflow/rel/microflow
+/home/ubuntu/workspace/microflow/rel/microflow
+Erlang/OTP 18 [erts-7.2] [source] [64-bit] [smp:8:8] [async-threads:10] [hipe] [kernel-poll:false]
+
+00:41:55.862 [info] Running Microflow.Endpoint with Cowboy using http on port 8080
+Interactive Elixir (1.2.0) - press Ctrl+C to exit (type h() ENTER for help)
+iex(microflow@mikeflow-microflow-2560413)1> 
+=====
+===== LOGGING STARTED Fri May  6 00:42:07 UTC 2016
+=====
+Using /home/ubuntu/workspace/microflow/rel/microflow/releases/0.0.1/microflow.sh
+Exec: /home/ubuntu/workspace/microflow/rel/microflow/erts-7.2/bin/erlexec -boot /home/ubuntu/workspace/microflow/rel/microflow/releases/0.0.1/microflow -mode embedded -config /home/ubuntu/workspace/microflow/rel/microflow/running-config/sys.config -boot_var ERTS_LIB_DIR /home/ubuntu/workspace/microflow/rel/microflow/erts-7.2/../lib -env ERL_LIBS /home/ubuntu/workspace/microflow/rel/microflow/lib -pa /home/ubuntu/workspace/microflow/rel/microflow/lib/microflow-0.0.1/consolidated -args_file /home/ubuntu/workspace/microflow/rel/microflow/running-config/vm.args -user Elixir.IEx.CLI -extra --no-halt +iex -- console
+Root: /home/ubuntu/workspace/microflow/rel/microflow
+/home/ubuntu/workspace/microflow/rel/microflow
+{error_logger,{{2016,5,6},{0,42,9}},"Protocol: ~tp: the name microflow@mikeflow-microflow-2560413 seems to be in use by another Erlang node",["inet_tcp"]}
+{error_logger,{{2016,5,6},{0,42,9}},crash_report,[[{initial_call,{net_kernel,init,['Argument__1']}},{pid,<0.1093.0>},{registered_name,[]},{error_info,{exit,{error,badarg},[{gen_server,init_it,6,[{file,"gen_server.erl"},{line,344}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,240}]}]}},{ancestors,[net_sup,kernel_sup,<0.1080.0>]},{messages,[]},{links,[#Port<0.3698>,<0.1090.0>]},{dictionary,[{longnames,false}]},{trap_exit,true},{status,running},{heap_size,987},{stack_size,27},{reductions,855}],[]]}
+{error_logger,{{2016,5,6},{0,42,9}},supervisor_report,[{supervisor,{local,net_sup}},{errorContext,start_error},{reason,{'EXIT',nodistribution}},{offender,[{pid,undefined},{id,net_kernel},{mfargs,{net_kernel,start_link,[[microflow,shortnames]]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]}]}
+{error_logger,{{2016,5,6},{0,42,9}},supervisor_report,[{supervisor,{local,kernel_sup}},{errorContext,start_error},{reason,{shutdown,{failed_to_start_child,net_kernel,{'EXIT',nodistribution}}}},{offender,[{pid,undefined},{id,net_sup},{mfargs,{erl_distribution,start_link,[]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]}]}
+{error_logger,{{2016,5,6},{0,42,9}},crash_report,[[{initial_call,{application_master,init,['Argument__1','Argument__2','Argument__3','Argument__4']}},{pid,<0.1079.0>},{registered_name,[]},{error_info,{exit,{{shutdown,{failed_to_start_child,net_sup,{shutdown,{failed_to_start_child,net_kernel,{'EXIT',nodistribution}}}}},{kernel,start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,134}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,240}]}]}},{ancestors,[<0.1078.0>]},{messages,[{'EXIT',<0.1080.0>,normal}]},{links,[<0.1078.0>,<0.1077.0>]},{dictionary,[]},{trap_exit,true},{status,running},{heap_size,376},{stack_size,27},{reductions,117}],[]]}
+{error_logger,{{2016,5,6},{0,42,9}},std_info,[{application,kernel},{exited,{{shutdown,{failed_to_start_child,net_sup,{shutdown,{failed_to_start_child,net_kernel,{'EXIT',nodistribution}}}}},{kernel,start,[normal,[]]}}},{type,permanent}]}
+{"Kernel pid terminated",application_controller,"{application_start_failure,kernel,{{shutdown,{failed_to_start_child,net_sup,{shutdown,{failed_to_start_child,net_kernel,{'EXIT',nodistribution}}}}},{kernel,start,[normal,[]]}}}"}
+
+Crash dump is being written to: erl_crash.dump...done
+Kernel pid terminated (application_controller) ({application_start_failure,kernel,{{shutdown,{failed_to_start_child,net_sup,{shutdown,{failed_to_start_child,net_kernel,{'EXIT',nodistribution}}}}},{k
+00:44:11.392 request_id=6r95d7h20nhvjhnh5iukbdb4hmo4bphs [info] GET /phoenix/live_reload/socket/websocket
+00:44:11.393 request_id=6r95d7h20nhvjhnh5iukbdb4hmo4bphs [info] Sent 404 in 175µs
+00:44:22.240 request_id=78f51j2av1n4sv64blhcbmaoveitnu66 [info] GET /phoenix/live_reload/socket/websocket
+00:44:22.240 request_id=78f51j2av1n4sv64blhcbmaoveitnu66 [info] Sent 404 in 152µs
+
+=====
+===== LOGGING STARTED Fri May  6 00:44:46 UTC 2016
+=====
+Using /home/ubuntu/workspace/microflow/rel/microflow/releases/0.0.1/microflow.sh
+Exec: /home/ubuntu/workspace/microflow/rel/microflow/erts-7.2/bin/erlexec -boot /home/ubuntu/workspace/microflow/rel/microflow/releases/0.0.1/microflow -mode embedded -config /home/ubuntu/workspace/microflow/rel/microflow/running-config/sys.config -boot_var ERTS_LIB_DIR /home/ubuntu/workspace/microflow/rel/microflow/erts-7.2/../lib -env ERL_LIBS /home/ubuntu/workspace/microflow/rel/microflow/lib -pa /home/ubuntu/workspace/microflow/rel/microflow/lib/microflow-0.0.1/consolidated -args_file /home/ubuntu/workspace/microflow/rel/microflow/running-config/vm.args -user Elixir.IEx.CLI -extra --no-halt +iex -- console
+Root: /home/ubuntu/workspace/microflow/rel/microflow
+/home/ubuntu/workspace/microflow/rel/microflow
+{error_logger,{{2016,5,6},{0,44,48}},"Protocol: ~tp: the name microflow@mikeflow-microflow-2560413 seems to be in use by another Erlang node",["inet_tcp"]}
+{error_logger,{{2016,5,6},{0,44,48}},crash_report,[[{initial_call,{net_kernel,init,['Argument__1']}},{pid,<0.1093.0>},{registered_name,[]},{error_info,{exit,{error,badarg},[{gen_server,init_it,6,[{file,"gen_server.erl"},{line,344}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,240}]}]}},{ancestors,[net_sup,kernel_sup,<0.1080.0>]},{messages,[]},{links,[#Port<0.3708>,<0.1090.0>]},{dictionary,[{longnames,false}]},{trap_exit,true},{status,running},{heap_size,987},{stack_size,27},{reductions,855}],[]]}
+{error_logger,{{2016,5,6},{0,44,48}},supervisor_report,[{supervisor,{local,net_sup}},{errorContext,start_error},{reason,{'EXIT',nodistribution}},{offender,[{pid,undefined},{id,net_kernel},{mfargs,{net_kernel,start_link,[[microflow,shortnames]]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]}]}
+{error_logger,{{2016,5,6},{0,44,48}},supervisor_report,[{supervisor,{local,kernel_sup}},{errorContext,start_error},{reason,{shutdown,{failed_to_start_child,net_kernel,{'EXIT',nodistribution}}}},{offender,[{pid,undefined},{id,net_sup},{mfargs,{erl_distribution,start_link,[]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]}]}
+{error_logger,{{2016,5,6},{0,44,48}},crash_report,[[{initial_call,{application_master,init,['Argument__1','Argument__2','Argument__3','Argument__4']}},{pid,<0.1079.0>},{registered_name,[]},{error_info,{exit,{{shutdown,{failed_to_start_child,net_sup,{shutdown,{failed_to_start_child,net_kernel,{'EXIT',nodistribution}}}}},{kernel,start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,134}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,240}]}]}},{ancestors,[<0.1078.0>]},{messages,[{'EXIT',<0.1080.0>,normal}]},{links,[<0.1078.0>,<0.1077.0>]},{dictionary,[]},{trap_exit,true},{status,running},{heap_size,376},{stack_size,27},{reductions,117}],[]]}
+{error_logger,{{2016,5,6},{0,44,48}},std_info,[{application,kernel},{exited,{{shutdown,{failed_to_start_child,net_sup,{shutdown,{failed_to_start_child,net_kernel,{'EXIT',nodistribution}}}}},{kernel,start,[normal,[]]}}},{type,permanent}]}
+{"Kernel pid terminated",application_controller,"{application_start_failure,kernel,{{shutdown,{failed_to_start_child,net_sup,{shutdown,{failed_to_start_child,net_kernel,{'EXIT',nodistribution}}}}},{kernel,start,[normal,[]]}}}"}
+
+Crash dump is being written to: erl_crash.dump...done
+Kernel pid terminated (application_controller) ({application_start_failure,kernel,{{shutdown,{failed_to_start_child,net_sup,{shutdown,{failed_to_start_child,net_kernel,{'EXIT',nodistribution}}}}},{k
+
+=====
+===== LOGGING STARTED Fri May  6 00:47:59 UTC 2016
+=====
+Using /home/ubuntu/workspace/microflow/rel/microflow/releases/0.0.1/microflow.sh
+Exec: /home/ubuntu/workspace/microflow/rel/microflow/erts-7.2/bin/erlexec -boot /home/ubuntu/workspace/microflow/rel/microflow/releases/0.0.1/microflow -mode embedded -config /home/ubuntu/workspace/microflow/rel/microflow/running-config/sys.config -boot_var ERTS_LIB_DIR /home/ubuntu/workspace/microflow/rel/microflow/erts-7.2/../lib -env ERL_LIBS /home/ubuntu/workspace/microflow/rel/microflow/lib -pa /home/ubuntu/workspace/microflow/rel/microflow/lib/microflow-0.0.1/consolidated -args_file /home/ubuntu/workspace/microflow/rel/microflow/running-config/vm.args -user Elixir.IEx.CLI -extra --no-halt +iex -- console
+Root: /home/ubuntu/workspace/microflow/rel/microflow
+/home/ubuntu/workspace/microflow/rel/microflow
+{error_logger,{{2016,5,6},{0,48,1}},"Protocol: ~tp: the name microflow@mikeflow-microflow-2560413 seems to be in use by another Erlang node",["inet_tcp"]}
+{error_logger,{{2016,5,6},{0,48,1}},crash_report,[[{initial_call,{net_kernel,init,['Argument__1']}},{pid,<0.1093.0>},{registered_name,[]},{error_info,{exit,{error,badarg},[{gen_server,init_it,6,[{file,"gen_server.erl"},{line,344}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,240}]}]}},{ancestors,[net_sup,kernel_sup,<0.1080.0>]},{messages,[]},{links,[#Port<0.3675>,<0.1090.0>]},{dictionary,[{longnames,false}]},{trap_exit,true},{status,running},{heap_size,987},{stack_size,27},{reductions,855}],[]]}
+{error_logger,{{2016,5,6},{0,48,1}},supervisor_report,[{supervisor,{local,net_sup}},{errorContext,start_error},{reason,{'EXIT',nodistribution}},{offender,[{pid,undefined},{id,net_kernel},{mfargs,{net_kernel,start_link,[[microflow,shortnames]]}},{restart_type,permanent},{shutdown,2000},{child_type,worker}]}]}
+{error_logger,{{2016,5,6},{0,48,1}},supervisor_report,[{supervisor,{local,kernel_sup}},{errorContext,start_error},{reason,{shutdown,{failed_to_start_child,net_kernel,{'EXIT',nodistribution}}}},{offender,[{pid,undefined},{id,net_sup},{mfargs,{erl_distribution,start_link,[]}},{restart_type,permanent},{shutdown,infinity},{child_type,supervisor}]}]}
+{error_logger,{{2016,5,6},{0,48,1}},crash_report,[[{initial_call,{application_master,init,['Argument__1','Argument__2','Argument__3','Argument__4']}},{pid,<0.1079.0>},{registered_name,[]},{error_info,{exit,{{shutdown,{failed_to_start_child,net_sup,{shutdown,{failed_to_start_child,net_kernel,{'EXIT',nodistribution}}}}},{kernel,start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,134}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,240}]}]}},{ancestors,[<0.1078.0>]},{messages,[{'EXIT',<0.1080.0>,normal}]},{links,[<0.1078.0>,<0.1077.0>]},{dictionary,[]},{trap_exit,true},{status,running},{heap_size,376},{stack_size,27},{reductions,117}],[]]}
+{error_logger,{{2016,5,6},{0,48,1}},std_info,[{application,kernel},{exited,{{shutdown,{failed_to_start_child,net_sup,{shutdown,{failed_to_start_child,net_kernel,{'EXIT',nodistribution}}}}},{kernel,start,[normal,[]]}}},{type,permanent}]}
+{"Kernel pid terminated",application_controller,"{application_start_failure,kernel,{{shutdown,{failed_to_start_child,net_sup,{shutdown,{failed_to_start_child,net_kernel,{'EXIT',nodistribution}}}}},{kernel,start,[normal,[]]}}}"}
+
+Crash dump is being written to: erl_crash.dump...done
+Kernel pid terminated (application_controller) ({application_start_failure,kernel,{{shutdown,{failed_to_start_child,net_sup,{shutdown,{failed_to_start_child,net_kernel,{'EXIT',nodistribution}}}}},{k
+00:48:22.338 request_id=j501o5osge32n9odgb5ll93f2d842pal [info] GET /phoenix/live_reload/socket/websocket
+00:48:22.338 request_id=j501o5osge32n9odgb5ll93f2d842pal [info] Sent 404 in 196µs
+00:48:31.182 request_id=8vrvcbtt9vius73qk9r5mmcqr497l55i [info] GET /phoenix/live_reload/socket/websocket
+00:48:31.182 request_id=8vrvcbtt9vius73qk9r5mmcqr497l55i [info] Sent 404 in 170µs
+
+=====
+===== LOGGING STARTED Fri May  6 00:50:40 UTC 2016
+=====
+Using /home/ubuntu/workspace/microflow/rel/microflow/releases/0.0.1/microflow.sh
+Exec: /home/ubuntu/workspace/microflow/rel/microflow/erts-7.2/bin/erlexec -boot /home/ubuntu/workspace/microflow/rel/microflow/releases/0.0.1/microflow -mode embedded -config /home/ubuntu/workspace/microflow/rel/microflow/running-config/sys.config -boot_var ERTS_LIB_DIR /home/ubuntu/workspace/microflow/rel/microflow/erts-7.2/../lib -env ERL_LIBS /home/ubuntu/workspace/microflow/rel/microflow/lib -pa /home/ubuntu/workspace/microflow/rel/microflow/lib/microflow-0.0.1/consolidated -args_file /home/ubuntu/workspace/microflow/rel/microflow/running-config/vm.args -user Elixir.IEx.CLI -extra --no-halt +iex -- console
+Root: /home/ubuntu/workspace/microflow/rel/microflow
+/home/ubuntu/workspace/microflow/rel/microflow
+Erlang/OTP 18 [erts-7.2] [source] [64-bit] [smp:8:8] [async-threads:10] [hipe] [kernel-poll:false]
+
+00:50:42.661 [info] Running Microflow.Endpoint with Cowboy using http on port 8080
+Interactive Elixir (1.2.0) - press Ctrl+C to exit (type h() ENTER for help)
+iex(microflow@mikeflow-microflow-2560413)1> 00:52:33.399 request_id=rcni9daodo7n6ftte26ofq1vkrea0ak0 [info] GET /phoenix/live_reload/socket/websocket
+00:52:33.399 request_id=rcni9daodo7n6ftte26ofq1vkrea0ak0 [info] Sent 404 in 183µs
+00:53:16.693 request_id=pj9724nbbjbfvt9hockt31r3a5eklhaa [info] GET /phoenix/live_reload/socket/websocket
+00:53:16.693 request_id=pj9724nbbjbfvt9hockt31r3a5eklhaa [info] Sent 404 in 164µs
