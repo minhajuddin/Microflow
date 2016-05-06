@@ -14,7 +14,7 @@ use Mix.Config
 config :microflow, Microflow.Endpoint,
   http: [port: 8888],
   url: [host: "188.166.147.101", port: 80], #using IP because domain is not configured yet.
-  cache_static_manifest: "priv/static/manifest.json",
+  # cache_static_manifest: "priv/static/manifest.json",
   server: true
 
 # Do not print debug messages in production

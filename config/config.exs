@@ -34,11 +34,11 @@ config :phoenix, :generators,
 #   public_key:  "svcn38vz5y6df6s2",
 #   private_key: "a09d0475326eccccff1fd4c3b097263d"
   
-config :ueberauth, Ueberauth,
-  providers: [
-  facebook: {Ueberauth.Strategy.Facebook, []}
-  ]
+#config :ueberauth, Ueberauth,
+#  providers: [
+#  facebook: {Ueberauth.Strategy.Facebook, []}
+#  ]
   
-config :ueberauth, Ueberauth.Strategy.Facebook.OAuth,
-  client_id: System.get_env("1691264427797090"),
-  client_secret: System.get_env("016a3c04763febeb2500be51b32c8889")
+#config :ueberauth, Ueberauth.Strategy.Facebook.OAuth,
+#  client_id: System.get_env("1691264427797090"),
+#  client_secret: System.get_env("016a3c04763febeb2500be51b32c8889")
