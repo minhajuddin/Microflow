@@ -551,15 +551,16 @@ var fps_counter = {
     <!--FRONT PAGE LINKS-->
     <div class="buttonslide">
     <div class="main">
-    <a class='btn-twt' href="JAKE"></a>
+    <a class='btn-twt' <%= link "", to: project_path(@conn, :index) %></a>
     </div>
     </div>
+
 
 
 
     <div class="buttonslidelow">
     <div class="main">
-    <a class='btn-twt2' href="JAKE"></a>
+    <a class='btn-twt2' href="#newproject"></a>
     </div>
     </div>
     <br>
@@ -755,7 +756,7 @@ var fps_counter = {
 <!--<br>-->
 
 <%= form_for @changeset, project_path(@conn, :create), [multipart: true, class: "new-project-form col-md-12", style: ""], fn f -> %> 
-<div id="rootwizard" style="margin-left:30px;margin-bottom:50px"> <!-- Change margin botton to raise the floor of the JS input form wizard-->
+<div id="newproject" style="margin-left:30px;margin-bottom:50px"> <!-- Change margin botton to raise the floor of the JS input form wizard-->
   <div class="navbar">
     <div class="navbar-inner">
       <div class="container">

@@ -11,5 +11,6 @@ config :microflow, Microflow.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "wowamazing",
+  template: "template0",
   database: "microflow_prod",
   pool_size: 20
