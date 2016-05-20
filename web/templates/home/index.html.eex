@@ -436,7 +436,9 @@ label.error {
  font-weight: 22px;   
 }
 
-
+.tab-height{
+  height: 71%;
+}
 
 </style>
 
@@ -769,7 +771,7 @@ var fps_counter = {
 <%= form_for @changeset, project_path(@conn, :create), [multipart: true, class: "new-project-form col-md-12", style: ""], fn f -> %> 
 <br>
 <br>
-<div id="newproject" style="margin-left:10px;margin-bottom:20%; position: relative; background-color:#fafaed; font-family: Raleway; "> <!-- Change margin botton to raise the floor of the JS input form wizard-->
+<div id="newproject" style="margin-left:10px;margin-bottom:20%; position: relative; background-color:#fafaed; font-family: Raleway; font-size: 25px"> <!-- Change margin botton to raise the floor of the JS input form wizard-->
   <div class="navbar">
     <div class="navbar-inner">
       <div class="container" style="width:100%;height:20%;">
@@ -795,14 +797,16 @@ var fps_counter = {
       </ul>
     </div>
   <% end %>
-  <div class="tab-content" style="margin-left:50px;margin-right:50px;">
+  <div class="tab-content" style="margin-left:50px;margin-right:50px; height: 400px;"> <!--jnote: Change this to a percentage later, for different screen sizes-->
    
     
     <div class="tab-pane" id="tab1">
-      <h3>Getting the Word Out</h3>
-      <br>
-      <div class="control-group">
-        <div class="controls">
+      <div class="row"> 
+        <div class="col-sm-6 col-sm-offset-3">
+          <h3>Getting the Word Out</h3>
+          <br>
+          <div class="control-group">
+            <div class="controls">
           <label class="radio" for="size-2">
             <input name="size" id="size-2" value="Small" checked="checked" type="radio">I'll make an effort to get the word out about this project, I'll upload this to Facebook, tell friends, blog about this project, ask other bloggers to link to me...</label>
             <br>
@@ -811,15 +815,17 @@ var fps_counter = {
               <br>
               <br>
             </div>
-          </div>          
+          </div>
+        </div>
       </div>
+    </div>
       
       
       
       
       
       
-      <div class="tab-pane" id="tab2">
+      <div class="tab-pane tab-height" id="tab2">
         <h3>How much do you want to raise? Ƀ ¥ zł $ € ₴ Ft £ ₯</h3>  
         <input type="number" name="project[raise_amount]" placeholder="How many USD do you need?"  
         class="form-control biginput" min="0" max="100" style="width: 300px;" />
@@ -833,7 +839,7 @@ var fps_counter = {
      
      
      
-      <div class="tab-pane" id="tab3">
+      <div class="tab-pane tab-height" id="tab3">
         <h2>Submit a video link</h2>
         <h3>40 seconds maximum Youtube only accepted now. Vimeo will come later.</h3>
         <div class="control-group">
@@ -851,7 +857,7 @@ var fps_counter = {
       
       
       
-      <div class="tab-pane" id="tab4">
+      <div class="tab-pane tab-height" id="tab4">
         <h2>Upload a picture</h2>
         <button class="btn btn-file upload-button">Select Photo<input type="file" name="project[picture]" class="file-upload">
         </button>
@@ -872,7 +878,7 @@ var fps_counter = {
       
       
       
-      <div class="tab-pane" id="tab5">
+      <div class="tab-pane tab-height" id="tab5">
         <h2>Project Title</h2>            
         <label for="project[name]"></label> 
         <input type="text" name="project[name]" placeholder="Project name here..." class="form-control raleway" data-toggle="tooltip", title ="Make an eye-catching title!"
@@ -881,9 +887,9 @@ var fps_counter = {
       
       
         
-        <div class="tab-pane" id="tab6">
+        <div class="tab-pane tab-height" id="tab6">
              <div class="form-group">
-      <label class="Raleway">What's your plan?</label>
+      <label class="Raleway"style="font-weight: normal;">What's your plan?</label>
       <br>
       <br>
         <textarea name= "project[description]" input type="text" maxlength="800" placeholder="Describe your project in less than 800 characters" class= "raleway" id="ckeditor"  /></textarea>
@@ -893,8 +899,12 @@ var fps_counter = {
         
         
         
-          <div class="tab-pane" id="tab7">
-  <button type="submit" class="btn btn-file upload-button">SAVE PROJECT</button>
+          <div class="tab-pane tab-height" id="tab7">
+            <div class="row">
+              <div class="col-sm-6 col-sm-offset-3" style="margin-top: 7%;">
+                <button type="submit" class="btn btn-file upload-button;">SAVE PROJECT</button>
+              </div>
+            </div>
         </div>
         
         
@@ -921,5 +931,9 @@ $(document).ready(function() {
   $('#rootwizard').bootstrapWizard();
   });
   $("a[href='#tab1']").click();
+  
+  
+  
+  
 </script>
 
