@@ -11,9 +11,9 @@ defmodule Microflow.HomeController do
     changeset = Project.changeset(%Project{})
     render(conn, "index.html", projects: projects, changeset: changeset) #Added by Febbry to fix child assigns problem.
   end
-  
+
    #def create(conn, %{"user" => user_params}) do
-    #IO.inspect user_params                         # Added from Phoenix Upload Guide. 
+    #IO.inspect user_params                         # Added from Phoenix Upload Guide.
 
   def new(conn, _params) do
     changeset = Project.changeset(%Project{})
@@ -21,13 +21,13 @@ defmodule Microflow.HomeController do
   end
 
   def create(conn, %{"project" => project_params}) do
-  
+
     changeset = Project.changeset(%Project{}, project_params)
     case Repo.insert(changeset) do
       {:ok, _project} ->
         # project = Project.avatar_changeset(project, project_params) |> Repo.update
         conn
-        
+
         |> put_flash(:info, "Project created successfully.")
         |> redirect(to: project_path(conn, :index))
       {:error, changeset} ->
@@ -67,11 +67,11 @@ defmodule Microflow.HomeController do
     conn
     |> put_flash(:info, "Project deleted successfully.")
     |> redirect(to: project_path(conn, :index))
-    
+
 
   # Here we use delete! (with a bang) because we expect
   #   # it to always work (and if it does not, it will raise).
-   
+
 
   # conn (UNECESSARY DELETION)
   # |> put_flash(:info, "Project deleted successfully.")

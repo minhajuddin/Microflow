@@ -1,0 +1,21 @@
+
+  +1. Remove auth hex packages.
+  *2. Setup authenication using FB
+
+
+Oauth
+
+  User => App (via browser) (Microflow)
+  click on the "login via facebook" (Microflow)
+  => we send them to FB (Are you ok with Microflow knowing email)
+  FB => Microflow (encrypted token) => FB
+  email, location
+  ....
+
+
+
+Rumbl Auth, and two other Hex packages, so please clean everything out (Session and User controllers) first, and talk viewers through the cleaning out. Thanks.
+
+https://developers.facebook.com/quickstarts/1691264427797090/?platform=web
+https://developers.facebook.com/apps/1691264427797090/dashboard/
+

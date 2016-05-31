@@ -35,8 +35,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :microflow, Microflow.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "wowamazing",
+  username: "ecto",
+  password: "ecto",
   database: "microflow_dev",
   hostname: "localhost",
    template: "template0",

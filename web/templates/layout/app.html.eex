@@ -8,130 +8,111 @@
     <meta name="author" content="">
 
     <title>Microflow! Funraise :)</title>
- 
-    
+
+
     <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<link href='https://fonts.googleapis.com/css?family=Jim+Nightshade' rel='stylesheet' type='text/css'>    
-<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:700' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Raleway:400,300,200' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Jim+Nightshade' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Josefin+Sans|Alegreya' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Jim+Nightshade' rel='stylesheet' type='text/css'>    
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,200' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Jim+Nightshade' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans|Alegreya' rel='stylesheet' type='text/css'>
 
-<link href='https://fonts.googleapis.com/css?family=Raleway|Noto-Serif|Jim Nightshade'>   
-<link rel="stylesheet" href="/css/box_peel_up.css">
+    <link href='https://fonts.googleapis.com/css?family=Raleway|Noto-Serif|Jim Nightshade'>   
+    <link rel="stylesheet" href="/css/box_peel_up.css">
 
 
-<!--<link href='/css/ckeditor/contents.css' rel='stylesheet' type='text/css'>-->
+    <!--<link href='/css/ckeditor/contents.css' rel='stylesheet' type='text/css'>-->
     <style>
 
-/*START FONTS*/
+      /*START FONTS*/
 
- .msrtsmallbox {
-            font-family: Montserrat; sans-serif; font-size:26px
-        }
-        
-.msrt2 {
-            font-family: Montserrat; sans-serif; font-weight: 300px;
-        }
-        
-.ralewaysmallbox  {  font-family: 'Raleway', sans-serif; font-size:18px}
+    .msrtsmallbox {
+      font-family: Montserrat; sans-serif; font-size:26px
+    }
 
-.raleway  {  font-family: 'Raleway', sans-serif; line-height: 32px; font-size:24px; text-align: justify; letter-spacing: 0.2px;}
+    .msrt2 {
+      font-family: Montserrat; sans-serif; font-weight: 300px;
+    }
 
-.highlight {
-  background-color : #ffff00;
-}
+    .ralewaysmallbox  {  font-family: 'Raleway', sans-serif; font-size:18px}
 
-.noto-serif{
-  font-family: 'Noto Serif', serif;
-}
+    .raleway  {  font-family: 'Raleway', sans-serif; line-height: 32px; font-size:24px; text-align: justify; letter-spacing: 0.2px;}
 
-/*END FONTS*/
+    .highlight {
+      background-color : #ffff00;
+    }
 
-</style>
-  </head>
-  
-  <body>
-    
-    
-  
-      <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-            </button>
-            <a class="navbar-brand pull-left" href="/"><image src="/images/trans.png" height="23" width="170"></image></a>
-          </div>
-        
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-           <ul class="nav navbar-nav">
-              <li style="font-family: Roboto Slab; font-size: 17px;"><%= link "Search Projects", to: project_path(@conn, :index) %></li>
-              <li style="font-family: Roboto Slab; font-size: 17px;"><a href="#newproject">Create New Project</a></li>
-              <li style="font-family: Roboto Slab; font-size: 17px;"><%= link "Home", to: home_path(@conn, :index) %></li> 
-              <li style="font-family: Roboto Slab; font-size: 17px;"><%= link "Music", to: "https://youtu.be/N82fP5hKZPY?t=1303"  %></li>
-              <!--(Broken navbar link)-->
-              
-          </ul>
-            <ul class="nav navbar-nav navbar-right">
-              
-              <%= if @current_user do %>
-              <li style="font-family: Roboto Slab; font-size: 17px;"><%= @current_user.username %></li>
-              <li style="font-family: Roboto Slab; font-size: 17px; float: right; padding: right 15px"><%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %></li>
-              <% else %> 
-              <li style="font-family: Roboto Slab; font-size: 17px; text-align: right;"><%= link "Log in", to: session_path(@conn, :new) %></li>
-              <li style="font-family: Roboto Slab; font-size: 17px; text-align: right;"><%= link "Sign up!", to: user_path(@conn, :new) %></li>
-              <% end %>
-              
-            </ul>
-          </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-      </nav>
-    </div>
-    <!--jnote: Added the below 5 lines, this now doubles the view. -->
+    .noto-serif{
+      font-family: 'Noto Serif', serif;
+    }
+
+    /*END FONTS*/
+
+  </style>
+</head>
+
+<body>
+
+
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+        <a class="navbar-brand pull-left" href="/"><image src="/images/trans.png" height="23" width="170"></image></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li style="font-family: Roboto Slab; font-size: 17px;"><%= link "Search Projects", to: project_path(@conn, :index) %></li>
+          <li style="font-family: Roboto Slab; font-size: 17px;"><a href="#newproject">Create New Project</a></li>
+          <li style="font-family: Roboto Slab; font-size: 17px;"><%= link "Home", to: home_path(@conn, :index) %></li> 
+          <li style="font-family: Roboto Slab; font-size: 17px;"><%= link "Music", to: "https://youtu.be/N82fP5hKZPY?t=1303"  %></li>
+          <!--(Broken navbar link)-->
+
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+</div>
+<!--jnote: Added the below 5 lines, this now doubles the view. -->
 
 
 <!--TTD: FIX THIS ALIGNMENT> MOVE BUTTONS TO NAVBAR.-->
-     <div class="header">
-      <ol class="text-right">
-<%= if @current_user do %>
-<%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %>
-<% else %> 
-<%#= link "Register", to: user_path(@conn, :new) %>
-<%#= link "Log in", to: session_path(@conn, :new) %>
-<% end %>
-</ol>
-<span class="logo"></span>
+<div class="header">
+  <span class="logo"></span>
 </div>
-    
-     
-    
+
+
+
 <%#= render @view_module, @view_template, assigns jnote: Commented this line out to avoid view repitition %>
 </div> </container>
 
-    
-    
-      <div style="margin-top:15px;">
-        
-      <!--<p class="alert alert-info" role="alert"><%#= get_flash(@conn, :info) %></p>-->
-      <!--<p class="alert alert-danger" role="alert"><%#= get_flash(@conn, :error) %></p>-->
 
-    <%= render @view_module, @view_template, assigns %>
-      </div>
-      
-     
-     
-    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
-    <script src="<%= static_path(@conn, "/css/ckeditor/ckeditor.js") %>"></script>
-    <script src="<%= static_path(@conn, "/js/main.js") %>"></script>
-    
+
+<div style="margin-top:15px;">
+
+  <!--<p class="alert alert-info" role="alert"><%#= get_flash(@conn, :info) %></p>-->
+  <!--<p class="alert alert-danger" role="alert"><%#= get_flash(@conn, :error) %></p>-->
+
+  <%= render @view_module, @view_template, assigns %>
+</div>
+
+
+
+<script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+<script src="<%= static_path(@conn, "/css/ckeditor/ckeditor.js") %>"></script>
+<script src="<%= static_path(@conn, "/js/main.js") %>"></script>
+
   </body>
 </html>
 
@@ -140,17 +121,17 @@
 <!--NOTEPAD SECTION-->
 
 
- <!--TTD MOVED THIS, MAY BE INTEGRAL TO THE APP> CHECK PROGRAMMING PHOENIX. <p class="alert alert-info" role="alert"><%#= get_flash(@conn, :info) %></p> TTD RED + BLUE BARS. CHECK FUNCTION IN PDF.-->
-      <!--p class="alert alert-danger" role="alert"><%#= get_flash(@conn, :error) %></p>
+<!--TTD MOVED THIS, MAY BE INTEGRAL TO THE APP> CHECK PROGRAMMING PHOENIX. <p class="alert alert-info" role="alert"><%#= get_flash(@conn, :info) %></p> TTD RED + BLUE BARS. CHECK FUNCTION IN PDF.-->
+<!--p class="alert alert-danger" role="alert"><%#= get_flash(@conn, :error) %></p>
 
 
 
 <!--IMPORTING LINES-->
 
 <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
-<!--         <ul class="nav navbar-nav">-->
-<!--            
-<!--            </ul>-->
+  <!--         <ul class="nav navbar-nav">-->
+    <!--            
+    <!--            </ul>-->
 
   <!--START CAROUSEL PROJECT PRESENTATION-->
- 
+

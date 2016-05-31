@@ -1,6 +1,6 @@
 defmodule Microflow.HomeView do
   use Microflow.Web, :view
-  
+
   def render("index.json", %{homes: homes}) do
     %{data: render_many(homes, Microflow.HomeView, "home.json")}
   end
